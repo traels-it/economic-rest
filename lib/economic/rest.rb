@@ -1,7 +1,13 @@
 require 'economic/rest/version'
 require 'rest-client'
 
-Dir.foreach('./lib/economic/') { |x| require "economic/#{x}" if x.include? '.rb' }
+require 'economic/base_repo'
+require 'economic/base'
+require 'economic/customer_repo'
+require 'economic/customer'
+require 'economic/product_repo'
+require 'economic/product'
+
 
 module Economic
   class Demo

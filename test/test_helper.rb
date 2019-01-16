@@ -3,3 +3,4 @@ require 'economic/rest'
 
 require 'minitest/autorun'
 require 'minitest/spec'
+require 'webmock/minitest'

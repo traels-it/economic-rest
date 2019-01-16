@@ -10,7 +10,6 @@ class ProductTest < Minitest::Test
             'Accept-Encoding' => 'gzip, deflate',
             'Content-Type' => 'application/json',
             'Host' => 'restapi.e-conomic.com',
-            'User-Agent' => 'rest-client/2.0.2 (darwin18.2.0 x86_64) ruby/2.3.1p112',
             'X-Agreementgranttoken' => 'Demo',
             'X-Appsecrettoken' => 'Demo'
           }
@@ -23,7 +22,6 @@ class ProductTest < Minitest::Test
             'Accept-Encoding' => 'gzip, deflate',
             'Content-Type' => 'application/json',
             'Host' => 'restapi.e-conomic.com',
-            'User-Agent' => 'rest-client/2.0.2 (darwin18.2.0 x86_64) ruby/2.3.1p112',
             'X-Agreementgranttoken' => 'Demo',
             'X-Appsecrettoken' => 'Demo'
           }

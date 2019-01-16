@@ -1,4 +1,4 @@
 module Economic
-  class Customer < Base
+  class Product < Base
   end
 end

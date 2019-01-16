@@ -13,5 +13,14 @@ module Economic
       end
       curtomers
     end
+
+    def self.find(customer_number)
+      response = RestClient.get("https://restapi.e-conomic.com/customers/#{customer_number}",
+                                'X-AppSecretToken': 'Demo',
+                                'X-AgreementGrantToken': 'Demo',
+                                'Content-Type': 'application/json')
+      customer_hash = JSON.parse(response.body)
+      Hashit.new(customer_hash)
+    end
   end
 end

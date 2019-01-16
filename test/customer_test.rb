@@ -7,5 +7,11 @@ class CustomerTest < Minitest::Test
 
       assert_equal customers[3].customer_number, 4
     end
+
+    it 'finds based on customer number' do
+      customer = Economic::Customer.find(4)
+
+      assert_equal customer.email, 'aaaa@aaa.com'
+    end
   end
 end

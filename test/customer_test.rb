@@ -5,13 +5,13 @@ class CustomerTest < Minitest::Test
     it 'uses snaked cased attribute' do
       customers = Economic::CustomerRepo.all
 
-      assert_equal customers[3].customer_number, 4
+      assert_equal customers[3].to_h['customerNumber'], 4
     end
 
     it 'finds based on customer number' do
       customer = Economic::CustomerRepo.find(4)
 
-      assert_equal customer.email, 'aaaa@aaa.com'
+      assert_equal 'aaaa@aaa.com', customer.to_h['email']
     end
   end
 end

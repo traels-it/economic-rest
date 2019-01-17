@@ -15,6 +15,7 @@ class CustomerTest < Minitest::Test
 
       assert_equal 4, customers[3].to_h['customerNumber']
       assert_equal 3684, customers.length
+      assert_kind_of Economic::Customer, customers[0]
     end
 
     it 'finds based on customer number' do
@@ -23,6 +24,7 @@ class CustomerTest < Minitest::Test
       customer = Economic::CustomerRepo.find(4)
 
       assert_equal 'aaaa@aaa.com', customer.to_h['email']
+      assert_kind_of Economic::Customer, customer
     end
   end
 end

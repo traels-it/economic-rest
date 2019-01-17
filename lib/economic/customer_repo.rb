@@ -12,7 +12,6 @@ module Economic
         hash = JSON.parse(response.body)
         hash['collection'].each do |customer_hash|
           customers.push Economic::Customer.new(customer_hash)
-          puts customers.length
         end
 
         pagination = hash['pagination']

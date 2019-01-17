@@ -3,6 +3,7 @@ require 'test_helper'
 class CustomerTest < Minitest::Test
   describe 'customer object' do
     before do
+      Economic::Session.authentication('Demo', 'Demo')
       stub_request(:get, 'https://restapi.e-conomic.com/customers/')
         .with(
           headers: {

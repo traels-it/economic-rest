@@ -6,8 +6,9 @@ require 'minitest/spec'
 require 'webmock/minitest'
 
 def stub_get_request(endpoint, page_or_id, fixture_name)
-  url = "https://restapi.e-conomic.com/#{endpoint}/#{page_or_id}"
-
+  url = 'https://restapi.e-conomic.com/'
+  url << "#{endpoint}" if endpoint
+  url << "/#{page_or_id}" unless page_or_id.nil? || page_or_id.to_s.empty?
   stub_request(:get, url)
     .with(
       headers: {

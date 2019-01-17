@@ -5,10 +5,14 @@ require 'minitest/autorun'
 require 'minitest/spec'
 require 'webmock/minitest'
 
-def stub_get_request(endpoint, page_or_id, fixture_name)
-  url = 'https://restapi.e-conomic.com/'
-  url << "#{endpoint}" if endpoint
-  url << "/#{page_or_id}" unless page_or_id.nil? || page_or_id.to_s.empty?
+def stub_get_request(endpoint:, page_or_id: nil, pageindex: 0, fixture_name:)
+      url = 'https://restapi.e-conomic.com/'
+      url << endpoint.to_s if endpoint
+      url << if page_or_id.nil? || page_or_id.to_s.empty?
+               "?skippages=#{pageindex}&pagesize=1000"
+             else
+               "/#{page_or_id}"
+             end
   stub_request(:get, url)
     .with(
       headers: {

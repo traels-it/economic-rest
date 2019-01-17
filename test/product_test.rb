@@ -6,7 +6,7 @@ class ProductTest < Minitest::Test
       Economic::Session.authentication('Demo', 'Demo')
     end
     it 'gets all' do
-      stub_get_request('products', '', 'products')
+      stub_get_request(endpoint: 'products', fixture_name: 'products')
 
       products = Economic::ProductRepo.all
 
@@ -14,7 +14,7 @@ class ProductTest < Minitest::Test
     end
 
     it 'finds based on customer number' do
-      stub_get_request('products', '01CF8D2E-A6A6-4', 'product')
+      stub_get_request(endpoint: 'products', page_or_id: '01CF8D2E-A6A6-4', fixture_name: 'product')
 
       product = Economic::ProductRepo.find('01CF8D2E-A6A6-4')
 

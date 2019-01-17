@@ -1,7 +1,7 @@
 module Economic
   class ProductRepo < Economic::BaseRepo
     def self.all
-      response = fetch('products', '')
+      response = fetch(endpoint: 'products')
       products_hash = JSON.parse(response.body)['collection']
       products = []
 
@@ -12,7 +12,7 @@ module Economic
     end
 
     def self.find(product_number)
-      response = fetch('products', product_number)
+      response = fetch(endpoint: 'products', page_or_id: product_number)
       hash = JSON.parse(response.body)
       Economic::Product.new(hash)
     end

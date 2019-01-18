@@ -18,5 +18,41 @@ module Economic
                      'X-AgreementGrantToken': Session.agreement_grant_token,
                      'Content-Type': 'application/json')
     end
+
+    def self.all
+      pagination = {}
+      pageindex = 0
+      entries = []
+
+      # Loop until last page, last page does not have a 'nextPage'
+      while pagination['nextPage'] || pageindex.zero?
+        response = fetch(endpoint: endpoint_name, pageindex: pageindex)
+
+        hash = JSON.parse(response.body)
+        hash['collection'].each do |entry_hash|
+          entries.push model.new(entry_hash)
+        end
+
+        pagination = hash['pagination']
+        pageindex += 1
+      end
+      entries
+    end
+
+    def self.find(entry_number)
+      response = fetch(endpoint: endpoint_name, page_or_id: entry_number)
+      entry_hash = JSON.parse(response.body)
+      model.new(entry_hash)
+    end
+
+    class << self
+      def model
+        Object.const_get(name.sub('Repo', ''))
+      end
+
+      def endpoint_name
+        name.sub('Repo', 's').sub('Economic::', '').downcase
+      end
+    end
   end
 end

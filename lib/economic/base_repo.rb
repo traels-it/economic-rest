@@ -1,6 +1,7 @@
 require 'rest-client'
 require 'json'
 require 'economic/session'
+require 'economic/camel_snake_hash'
 
 module Economic
   class BaseRepo

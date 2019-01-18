@@ -4,9 +4,22 @@ module Economic
       self.class::ATTRIBUTES.each do |attribute|
         self.class.field attribute
       end
+      self.class::OBJECTS.each do |objects|
+        self.class.field objects
+      end
+
+      Hash.class_eval { include ExtraMethods }
       @internal_hash = hash
       @internal_hash.each do |k, v|
         send("#{k}=", v) if self.class::ATTRIBUTES.include?(k)
+        if self.class::OBJECTS.include?(k)
+          v.each do |hash_k, hash_v|
+          end
+          v.keys.count.times do |i|
+            v.alias!(Base.snake_case(v.keys[i]), v.keys[i])
+          end
+          send("#{k}=", v)
+        end
       end
     end
 
@@ -27,6 +40,12 @@ module Economic
                  .tr('-', '_')
                  .downcase
     end
+  end
+end
 
+module ExtraMethods
+  def alias!(newkey, oldkey)
+    self[newkey] = self[oldkey] if self.has_key?(oldkey)
+    self
   end
 end

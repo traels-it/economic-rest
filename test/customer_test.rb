@@ -28,7 +28,7 @@ class CustomerTest < Minitest::Test
       assert_kind_of Economic::Customer, customer
     end
 
-    it 'can set attributes in camelCase' do
+    it 'can access attributes in camelCase' do
       c = Economic::Customer.new('corporateIdentificationNumber' => 1337)
 
       assert_equal 1337, c.corporateIdentificationNumber
@@ -46,12 +46,53 @@ class CustomerTest < Minitest::Test
       end
     end
 
-    it 'can set attributes in snake_case' do
+    it 'can access attributes in snake_case' do
       c = Economic::Customer.new('corporateIdentificationNumber' => 1337)
 
       assert_equal 1337, c.corporate_identification_number
       c.corporate_identification_number = 222
       assert_equal 222, c.corporate_identification_number
+    end
+
+    it 'assert no non-hashes in objects' do
+      stub_get_request(endpoint: 'customers', page_or_id: '4', fixture_name: 'customer')
+
+      customer = Economic::CustomerRepo.find(4)
+
+      Economic::Customer::OBJECTS.each do |obj|
+        assert false, "#{obj} was not a hash, customer.send(obj).inspect" unless customer.send(obj).is_a?(Hash) || customer.send(obj).nil?
+      end
+    end
+
+    it 'can access objects in camelCase' do
+      c = Economic::Customer.new('customerContact' => { 'customerContactNumber' => 97_939_393 } )
+
+      assert_equal 97_939_393, c.customerContact['customerContactNumber']
+      c.customerContact['customerContactNumber'] = 222
+      assert_equal 222, c.customerContact['customerContactNumber']
+    end
+
+    it 'can access objects in snake_case' do
+      c = Economic::Customer.new('customerContact' => { 'customerContactNumber' => 97_939_393, 'vatZoneNumber' => 'france' } )
+
+      assert_equal 97_939_393, c.customer_contact['customer_contact_number']
+      assert_equal 'france', c.customer_contact['vat_zone_number']
+      c.customerContact['customer_contact_number'] = 222
+      c.customerContact['vat_zone_number'] = 'germany'
+      assert_equal 222, c.customerContact['customer_contact_number']
+      assert_equal 'germany', c.customerContact['vat_zone_number']
+    end
+
+    it 'can access objects in mixed snake_case and camel case' do
+      skip
+      c = Economic::Customer.new('customerContact' => { 'customerContactNumber' => 97_939_393, 'vatZoneNumber' => 'france' } )
+
+      assert_equal 97_939_393, c.customer_contact['customer_contact_number']
+      assert_equal 'france', c.customer_contact['vatZoneNumber']
+      c.customerContact['customerContactNumber'] = 222
+      c.customerContact['vat_zone_number'] = 'germany'
+      assert_equal 222, c.customerContact['customer_contact_number']
+      assert_equal 'germany', c.customerContact['vat_zone_number']
     end
   end
 end

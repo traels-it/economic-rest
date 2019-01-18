@@ -45,5 +45,13 @@ class CustomerTest < Minitest::Test
         assert false, "#{att} was a hash" if customer.send(att).is_a?(Hash)
       end
     end
+
+    it 'can set attributes in snake_case' do
+      c = Economic::Customer.new('corporateIdentificationNumber' => 1337)
+
+      assert_equal 1337, c.corporate_identification_number
+      c.corporate_identification_number = 222
+      assert_equal 222, c.corporate_identification_number
+    end
   end
 end

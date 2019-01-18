@@ -16,6 +16,17 @@ module Economic
 
     def self.field(economic_cased_attibute_name)
       attr_accessor economic_cased_attibute_name
+      alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
+      alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
     end
+
+    def self.snake_case(camel_cased)
+      camel_cased.gsub(/::/, '/')
+                 .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+                 .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+                 .tr('-', '_')
+                 .downcase
+    end
+
   end
 end

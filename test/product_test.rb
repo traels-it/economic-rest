@@ -6,7 +6,7 @@ class ProductTest < Minitest::Test
       Economic::Session.authentication('Demo', 'Demo')
     end
     it 'gets all' do
-      stub_get_request(endpoint: 'products', fixture_name: 'products')
+      stub_get_request(endpoint: 'products', fixture_name: 'products_0')
 
       products = Economic::ProductRepo.all
 

@@ -14,7 +14,6 @@ module Economic
                else
                  "/#{page_or_id}"
                end
-
         RestClient.get(url,
                        'X-AppSecretToken': Session.app_secret_token,
                        'X-AgreementGrantToken': Session.agreement_grant_token,
@@ -52,7 +51,14 @@ module Economic
       end
 
       def endpoint_name
-        name.sub('Repo', 's').sub('Economic::', '').downcase
+        end_p = name.sub('Economic::', '')
+        if end_p.include?('::')
+          end_p = end_p.gsub('Repo', '')
+          end_p = end_p.gsub('::', '/')
+        else
+          end_p = end_p.gsub('Repo', 's')
+        end
+        end_p.downcase
       end
     end
   end

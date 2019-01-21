@@ -46,7 +46,9 @@ module Economic
       end
 
       def model
-        Object.const_get(name.sub('Repo', ''))
+        scopes = name.split('::')
+        scopes[1] = scopes[1][0...-1] if scopes.count == 3
+        Object.const_get("#{scopes[0]}::#{scopes[1].sub('Repo', '')}")
       end
 
       def endpoint_name

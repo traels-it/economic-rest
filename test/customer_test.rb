@@ -94,5 +94,21 @@ class CustomerTest < Minitest::Test
       assert_equal 222, c.customerContact['customer_contact_number']
       assert_equal 'germany', c.customerContact['vat_zone_number']
     end
+
+    it 'returns default not dirty' do
+      stub_get_request(endpoint: 'customers', page_or_id: '4', fixture_name: 'customer')
+      customer = Economic::CustomerRepo.find(4)
+
+      refute customer.dirty?
+    end
+
+    it 'return dirty when dirty attribute' do
+      stub_get_request(endpoint: 'customers', page_or_id: '4', fixture_name: 'customer')
+      customer = Economic::CustomerRepo.find(4)
+
+      customer.name = 'Biscuit'
+
+      assert customer.dirty?
+    end
   end
 end

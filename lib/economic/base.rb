@@ -13,8 +13,6 @@ module Economic
       @internal_hash.each do |k, v|
         send("#{k}=", v) if self.class::ATTRIBUTES.include?(k)
         if self.class::OBJECTS.include?(k)
-          v.each do |hash_k, hash_v|
-          end
           v.keys.count.times do |i|
             v.alias!(Base.snake_case(v.keys[i]), v.keys[i])
           end
@@ -25,6 +23,13 @@ module Economic
 
     def to_h
       @internal_hash
+    end
+
+    def dirty?
+      self.class::ATTRIBUTES.each do |attribute|
+        return true unless send(attribute) == @internal_hash[attribute]
+      end
+      false
     end
 
     def self.field(economic_cased_attibute_name)

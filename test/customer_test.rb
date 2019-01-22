@@ -110,5 +110,14 @@ class CustomerTest < Minitest::Test
 
       assert customer.dirty?
     end
+
+    it 'returns json data based on changes to the model' do
+      stub_get_request(endpoint: 'customers', page_or_id: '4', fixture_name: 'customer')
+      customer = Economic::CustomerRepo.find(4)
+
+      customer.name = 'Biscuit'
+
+      assert customer.to_h.inspect.include? "Biscuit"
+    end
   end
 end

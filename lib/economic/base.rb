@@ -22,6 +22,9 @@ module Economic
     end
 
     def to_h
+      self.class::ATTRIBUTES.each do |attribute|
+        @internal_hash[attribute] = send(attribute)
+      end
       @internal_hash
     end
 
@@ -30,6 +33,10 @@ module Economic
         return true unless send(attribute) == @internal_hash[attribute]
       end
       false
+    end
+
+    def save
+      repo.save(self)
     end
 
     def self.field(economic_cased_attibute_name)
@@ -44,6 +51,10 @@ module Economic
                  .gsub(/([a-z\d])([A-Z])/, '\1_\2')
                  .tr('-', '_')
                  .downcase
+    end
+
+    def repo
+      Object.const_get("#{self.class}Repo")
     end
   end
 end

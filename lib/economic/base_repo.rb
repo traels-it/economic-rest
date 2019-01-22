@@ -13,10 +13,22 @@ module Economic
                else
                  "/#{page_or_id}"
                end
-        RestClient.get(url,
-                       'X-AppSecretToken': Session.app_secret_token,
-                       'X-AgreementGrantToken': Session.agreement_grant_token,
-                       'Content-Type': 'application/json')
+        response = RestClient.get(url,
+                                  'X-AppSecretToken': Session.app_secret_token,
+                                  'X-AgreementGrantToken': Session.agreement_grant_token,
+                                  'Content-Type': 'application/json')
+        response
+      end
+
+      def save(model)
+        url = 'https://restapi.e-conomic.com/'
+        url << endpoint_name.to_s if endpoint_name
+        url << "/#{model.product_number}"
+        response = RestClient.put(url, model.to_h.to_json,
+                                  'X-AppSecretToken': Session.app_secret_token,
+                                  'X-AgreementGrantToken': 'azyyQkO3vj8lcOn0Rq7BwHJX0hc5wnuhMLvv6FPOMVE1',
+                                  'Content-Type': 'application/json')
+        response
       end
 
       def all

@@ -38,5 +38,14 @@ class OrderTest < Minitest::Test
       assert_kind_of Economic::Order, orders_drafts_one
       assert_kind_of Economic::Order, orders_sent_one
     end
+
+    it 'returns json data based on changes to the model' do
+      stub_get_request(endpoint: 'orders/archived', page_or_id: '35072', fixture_name: 'orders_archived_one')
+      orders_archived_one = Economic::Orders::ArchivedRepo.find(35072)
+
+      orders_archived_one.due_date = '2019-12-24'
+
+      assert orders_archived_one.to_h.inspect.include? '2019-12-24'
+    end
   end
 end

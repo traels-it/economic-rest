@@ -26,7 +26,7 @@ module Economic
         url << "/#{model.product_number}"
         response = RestClient.put(url, model.to_h.to_json,
                                   'X-AppSecretToken': Session.app_secret_token,
-                                  'X-AgreementGrantToken': 'azyyQkO3vj8lcOn0Rq7BwHJX0hc5wnuhMLvv6FPOMVE1',
+                                  'X-AgreementGrantToken': Session.app_secret_token,
                                   'Content-Type': 'application/json')
         response
       end

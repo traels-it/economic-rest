@@ -5,6 +5,9 @@ require 'economic/session'
 module Economic
   class BaseRepo
     class << self
+      def headers
+        { 'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': 'application/json' }
+      end
       def fetch(endpoint:, page_or_id: nil, pageindex: 0)
         url = 'https://restapi.e-conomic.com/'
         url << endpoint.to_s if endpoint
@@ -13,21 +16,19 @@ module Economic
                else
                  "/#{page_or_id}"
                end
-        response = RestClient.get(url,
-                                  'X-AppSecretToken': Session.app_secret_token,
-                                  'X-AgreementGrantToken': Session.agreement_grant_token,
-                                  'Content-Type': 'application/json')
+        response = RestClient.get(url, headers)
         response
       end
 
       def save(model)
         url = 'https://restapi.e-conomic.com/'
         url << endpoint_name.to_s if endpoint_name
-        url << "/#{model.product_number}"
-        response = RestClient.put(url, model.to_h.to_json,
-                                  'X-AppSecretToken': Session.app_secret_token,
-                                  'X-AgreementGrantToken': Session.app_secret_token,
-                                  'Content-Type': 'application/json')
+        url << "/#{model.id_key}"
+        if model.id_key
+          response = RestClient.put(url, model.to_h.to_json, headers)
+        else
+          response = RestClient.post(url, model.to_h.to_json, headers)
+        end
         response
       end
 

@@ -7,7 +7,10 @@ module Economic
       self.class::OBJECTS.each do |objects|
         self.class.field objects
       end
+      values_based_on_hash(hash)
+    end
 
+    def values_based_on_hash(hash)
       Hash.class_eval { include ExtraMethods }
       @internal_hash = hash
       @internal_hash.each do |k, v|
@@ -23,7 +26,7 @@ module Economic
 
     def to_h
       self.class::ATTRIBUTES.each do |attribute|
-        @internal_hash[attribute] = send(attribute)
+        @internal_hash[attribute] = send(attribute) unless send(attribute).nil?
       end
       @internal_hash
     end
@@ -36,7 +39,8 @@ module Economic
     end
 
     def save
-      repo.save(self)
+      response = repo.save(self)
+      values_based_on_hash(JSON.parse(response.body))
     end
 
     def self.field(economic_cased_attibute_name)

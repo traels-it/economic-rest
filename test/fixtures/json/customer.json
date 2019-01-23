@@ -1,54 +1,61 @@
 {
-  "customerNumber": 4,
-  "currency": "INR",
+  "customerNumber": 1,
+  "currency": "DKK",
   "paymentTerms": {
-    "paymentTermsNumber": 1,
-    "self": "https://restapi.e-conomic.com/payment-terms/1"
+    "paymentTermsNumber": 5,
+    "self": "https://restapi.e-conomic.com/payment-terms/5"
   },
   "customerGroup": {
     "customerGroupNumber": 1,
     "self": "https://restapi.e-conomic.com/customer-groups/1"
   },
-  "balance": 0.0,
-  "dueAmount": 0.00,
-  "city": "aaaaa",
   "country": "aaaaaa",
   "email": "aaaa@aaa.com",
   "barred": true,
-  "name": "Aaaaa",
+  "address": "High road 32",
+  "balance": 151875.00,
+  "dueAmount": 151875.00,
+  "city": "Horsens",
+  "name": "Horsens Kommune",
+  "zip": "8700",
+  "telephoneAndFaxNumber": "7629 2929",
   "vatZone": {
     "vatZoneNumber": 1,
     "self": "https://restapi.e-conomic.com/vat-zones/1"
   },
-  "lastUpdated": "2017-11-28T11:13:17Z",
-  "contacts": "https://restapi.e-conomic.com/customers/4/contacts",
+  "layout": {
+    "layoutNumber": 16,
+    "self": "https://restapi.e-conomic.com/layouts/16"
+  },
+  "lastUpdated": "2019-01-22T16:03:55Z",
+  "contacts": "https://restapi.e-conomic.com/customers/201/contacts",
   "templates": {
-    "invoice": "https://restapi.e-conomic.com/customers/4/templates/invoice",
-    "invoiceLine": "https://restapi.e-conomic.com/customers/4/templates/invoiceline",
-    "self": "https://restapi.e-conomic.com/customers/4/templates"
+    "invoice": "https://restapi.e-conomic.com/customers/201/templates/invoice",
+    "invoiceLine": "https://restapi.e-conomic.com/customers/201/templates/invoiceline",
+    "self": "https://restapi.e-conomic.com/customers/201/templates"
   },
   "totals": {
-    "drafts": "https://restapi.e-conomic.com/invoices/totals/drafts/customers/4",
-    "booked": "https://restapi.e-conomic.com/invoices/totals/booked/customers/4",
-    "self": "https://restapi.e-conomic.com/customers/4/totals"
+    "drafts": "https://restapi.e-conomic.com/invoices/totals/drafts/customers/201",
+    "booked": "https://restapi.e-conomic.com/invoices/totals/booked/customers/201",
+    "self": "https://restapi.e-conomic.com/customers/201/totals"
   },
-  "deliveryLocations": "https://restapi.e-conomic.com/customers/4/delivery-locations",
+  "deliveryLocations": "https://restapi.e-conomic.com/customers/201/delivery-locations",
   "invoices": {
-    "drafts": "https://restapi.e-conomic.com/customers/4/invoices/drafts",
-    "booked": "https://restapi.e-conomic.com/customers/4/invoices/booked",
-    "self": "https://restapi.e-conomic.com/customers/4/invoices"
+    "drafts": "https://restapi.e-conomic.com/customers/201/invoices/drafts",
+    "booked": "https://restapi.e-conomic.com/customers/201/invoices/booked",
+    "self": "https://restapi.e-conomic.com/customers/201/invoices"
   },
   "metaData": {
     "delete": {
       "description": "Delete this customer.",
-      "href": "https://restapi.e-conomic.com/customers/4",
+      "href": "https://restapi.e-conomic.com/customers/201",
       "httpMethod": "delete"
     },
     "replace": {
       "description": "Replace this customer.",
-      "href": "https://restapi.e-conomic.com/customers/4",
+      "href": "https://restapi.e-conomic.com/customers/201",
       "httpMethod": "put"
     }
   },
-  "self": "https://restapi.e-conomic.com/customers/4"
+  "self": "https://restapi.e-conomic.com/customers/201"
 }

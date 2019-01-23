@@ -34,7 +34,10 @@ module Economic
 
     def to_h
       self.class::ATTRIBUTES.each do |attribute|
-        @internal_hash[attribute] = send(attribute) unless send(attribute).nil?
+        @internal_hash[attribute.to_sym] = send(attribute) unless send(attribute).nil?
+      end
+      self.class::OBJECTS.each do |object|
+        @internal_hash[object.to_sym] = send(object) unless send(object).nil?
       end
       @internal_hash
     end

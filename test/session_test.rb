@@ -6,7 +6,7 @@ class SessionTest < Minitest::Test
       assert_raises
     end
 
-    it 'uses private tekens if logged in' do
+    it 'uses private tokens if logged in' do
       Economic::Session.authentication('ybyb9a8c', 'awesome_app_id')
 
       assert_equal 'ybyb9a8c', Economic::Session.app_secret_token

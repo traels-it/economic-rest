@@ -1,13 +1,14 @@
 module Economic
   class Base
     def initialize(hash)
-      self.class::ATTRIBUTES.each do |attribute|
-        self.class.field attribute
-      end
-      self.class::OBJECTS.each do |objects|
-        self.class.field objects
-      end
       values_based_on_hash(hash)
+    end
+
+    def self.field(name:)
+      economic_cased_attibute_name = name
+      attr_accessor economic_cased_attibute_name
+      alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
+      alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
     end
 
     def values_based_on_hash(hash)
@@ -47,12 +48,6 @@ module Economic
     def save
       response = repo.save(self)
       values_based_on_hash(JSON.parse(response.body))
-    end
-
-    def self.field(economic_cased_attibute_name)
-      attr_accessor economic_cased_attibute_name
-      alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
-      alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
     end
 
     def self.snake_case(camel_cased)

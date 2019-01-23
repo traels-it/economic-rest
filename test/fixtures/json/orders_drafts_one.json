@@ -1,1 +1,86 @@
-{"orderNumber":35070,"templates":{"upgradeInstructions":"https://restapi.e-conomic.com/orders/drafts/35070/templates/upgrade-instructions/draftInvoice","self":"https://restapi.e-conomic.com/orders/drafts/35070/templates"},"soap":{"orderHandle":{"id":29}},"attachment":"https://restapi.e-conomic.com/orders/drafts/35070/attachment","lines":[{"lineNumber":1,"sortKey":1,"description":"My Test Product 2","unit":{"unitNumber":1,"name":"stk.","products":"https://restapi.e-conomic.com/units/1/products","self":"https://restapi.e-conomic.com/units/1"},"product":{"productNumber":"15","self":"https://restapi.e-conomic.com/products/15"},"quantity":1.00,"unitNetPrice":1000.00,"discountPercentage":20.00,"unitCostPrice":0.00,"totalNetAmount":800.00,"marginInBaseCurrency":800.00,"marginPercentage":100.00,"departmentalDistribution":{"departmentalDistributionNumber":1,"distributionType":"department","self":"https://restapi.e-conomic.com/departmental-distributions/departments/1"}}],"date":"2019-01-21","currency":"DKK","exchangeRate":100.000000,"netAmount":800.000000,"netAmountInBaseCurrency":800.00,"grossAmount":1000.00,"grossAmountInBaseCurrency":1000.00,"marginInBaseCurrency":800.00,"marginPercentage":100.00,"vatAmount":200.000000,"roundingAmount":0.00,"costPriceInBaseCurrency":0.0000,"dueDate":"2019-01-29","paymentTerms":{"paymentTermsNumber":1,"daysOfCredit":8,"name":"Netto 8 dage","paymentTermsType":"net","self":"https://restapi.e-conomic.com/payment-terms/1"},"customer":{"customerNumber":8,"self":"https://restapi.e-conomic.com/customers/8"},"recipient":{"name":"Customer 8","address":"street","zip":"110058","city":"Delhi","country":"India","vatZone":{"vatZoneNumber":1,"self":"https://restapi.e-conomic.com/vat-zones/1"},"nemHandelType":"ean"},"layout":{"layoutNumber":20,"self":"https://restapi.e-conomic.com/layouts/20"},"pdf":{"download":"https://restapi.e-conomic.com/orders/drafts/35070/pdf"},"self":"https://restapi.e-conomic.com/orders/drafts/35070"}
+{
+  "orderNumber": 35070,
+  "templates": {
+    "upgradeInstructions": "https://restapi.e-conomic.com/orders/drafts/35070/templates/upgrade-instructions/draftInvoice",
+    "self": "https://restapi.e-conomic.com/orders/drafts/35070/templates"
+  },
+  "soap": {
+    "orderHandle": {
+      "id": 29
+    }
+  },
+  "attachment": "https://restapi.e-conomic.com/orders/drafts/35070/attachment",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "My Test Product 2",
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      },
+      "product": {
+        "productNumber": "15",
+        "self": "https://restapi.e-conomic.com/products/15"
+      },
+      "quantity": 1.00,
+      "unitNetPrice": 1000.00,
+      "discountPercentage": 20.00,
+      "unitCostPrice": 0.00,
+      "totalNetAmount": 800.00,
+      "marginInBaseCurrency": 800.00,
+      "marginPercentage": 100.00,
+      "departmentalDistribution": {
+        "departmentalDistributionNumber": 1,
+        "distributionType": "department",
+        "self": "https://restapi.e-conomic.com/departmental-distributions/departments/1"
+      }
+    }
+  ],
+  "date": "2019-01-21",
+  "currency": "DKK",
+  "exchangeRate": 100.000000,
+  "netAmount": 800.000000,
+  "netAmountInBaseCurrency": 800.00,
+  "grossAmount": 1000.00,
+  "grossAmountInBaseCurrency": 1000.00,
+  "marginInBaseCurrency": 800.00,
+  "marginPercentage": 100.00,
+  "vatAmount": 200.000000,
+  "roundingAmount": 0.00,
+  "costPriceInBaseCurrency": 0.0000,
+  "dueDate": "2019-01-29",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "daysOfCredit": 8,
+    "name": "Netto 8 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "customer": {
+    "customerNumber": 8,
+    "self": "https://restapi.e-conomic.com/customers/8"
+  },
+  "recipient": {
+    "name": "Customer 8",
+    "address": "street",
+    "zip": "110058",
+    "city": "Delhi",
+    "country": "India",
+    "vatZone": {
+      "vatZoneNumber": 1,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    },
+    "nemHandelType": "ean"
+  },
+  "layout": {
+    "layoutNumber": 20,
+    "self": "https://restapi.e-conomic.com/layouts/20"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/orders/drafts/35070/pdf"
+  },
+  "self": "https://restapi.e-conomic.com/orders/drafts/35070"
+}

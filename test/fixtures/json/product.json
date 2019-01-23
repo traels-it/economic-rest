@@ -1,1 +1,51 @@
-{"productNumber":"01CF8D2E-A6A6-4","name":"fudge","costPrice":0.00,"recommendedPrice":0.00,"salesPrice":0.00,"barred":true,"lastUpdated":"2017-11-30T13:27:00Z","productGroup":{"productGroupNumber":1,"name":"Varer m/moms","salesAccounts":"https://restapi.e-conomic.com/product-groups/1/sales-accounts","products":"https://restapi.e-conomic.com/product-groups/1/products","self":"https://restapi.e-conomic.com/product-groups/1"},"unit":{"unitNumber":3,"name":"pcs.","products":"https://restapi.e-conomic.com/units/3/products","self":"https://restapi.e-conomic.com/units/3"},"inventory":{"available":0.0,"inStock":0.0,"orderedFromSuppliers":0.0,"orderedByCustomers":0.0,"packageVolume":0.00,"recommendedCostPrice":0.00},"invoices":{"drafts":"https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/invoices/drafts","booked":"https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/invoices/booked","self":"https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/invoices"},"pricing":{"currencySpecificSalesPrices":"https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/pricing/currency-specific-sales-prices"},"metaData":{"delete":{"description":"Delete this product.","href":"https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4","httpMethod":"delete"},"replace":{"description":"Replace this product.","href":"https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4","httpMethod":"put"}},"self":"https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4"}
+{
+  "productNumber": "01CF8D2E-A6A6-4",
+  "name": "fudge",
+  "costPrice": 0.00,
+  "recommendedPrice": 0.00,
+  "salesPrice": 0.00,
+  "barred": true,
+  "lastUpdated": "2017-11-30T13:27:00Z",
+  "productGroup": {
+    "productGroupNumber": 1,
+    "name": "Varer m/moms",
+    "salesAccounts": "https://restapi.e-conomic.com/product-groups/1/sales-accounts",
+    "products": "https://restapi.e-conomic.com/product-groups/1/products",
+    "self": "https://restapi.e-conomic.com/product-groups/1"
+  },
+  "unit": {
+    "unitNumber": 3,
+    "name": "pcs.",
+    "products": "https://restapi.e-conomic.com/units/3/products",
+    "self": "https://restapi.e-conomic.com/units/3"
+  },
+  "inventory": {
+    "available": 0.0,
+    "inStock": 0.0,
+    "orderedFromSuppliers": 0.0,
+    "orderedByCustomers": 0.0,
+    "packageVolume": 0.00,
+    "recommendedCostPrice": 0.00
+  },
+  "invoices": {
+    "drafts": "https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/invoices/drafts",
+    "booked": "https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/invoices/booked",
+    "self": "https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/invoices"
+  },
+  "pricing": {
+    "currencySpecificSalesPrices": "https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4/pricing/currency-specific-sales-prices"
+  },
+  "metaData": {
+    "delete": {
+      "description": "Delete this product.",
+      "href": "https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4",
+      "httpMethod": "delete"
+    },
+    "replace": {
+      "description": "Replace this product.",
+      "href": "https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4",
+      "httpMethod": "put"
+    }
+  },
+  "self": "https://restapi.e-conomic.com/products/01CF8D2E-A6A6-4"
+}

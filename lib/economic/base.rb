@@ -4,11 +4,12 @@ module Economic
       values_based_on_hash(hash)
     end
 
-    def self.field(name:)
+    def self.field(name:, id: false)
       economic_cased_attibute_name = name
       attr_accessor economic_cased_attibute_name
       alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
       alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
+      alias_method 'id_key', name if id
     end
 
     def values_based_on_hash(hash)

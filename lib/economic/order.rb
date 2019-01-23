@@ -2,9 +2,6 @@ module Economic
   class Order < Base
     ATTRIBUTES = %w[attachment costPriceInBaseCurrency currency date dueDate exchangeRate grossAmount grossAmountInBaseCurrency lines marginInBaseCurrency marginPercentage netAmount netAmountInBaseCurrency orderNumber roundingAmount vatAmount].freeze
     OBJECTS = %w[customer delivery notes paymentTerms pdf project recipient references templates]
-    def id_key
-      orderNumber
-    end
 
     field name: 'attachment'
     field name: 'costPriceInBaseCurrency'
@@ -19,7 +16,7 @@ module Economic
     field name: 'marginPercentage'
     field name: 'netAmount'
     field name: 'netAmountInBaseCurrency'
-    field name: 'orderNumber'
+    field name: 'orderNumber', id: true
     field name: 'roundingAmount'
     field name: 'vatAmount'
 

@@ -54,8 +54,10 @@ module Economic
     end
 
     def save
-      response = repo.save(self)
-      values_based_on_hash(JSON.parse(response.body))
+      if dirty?
+        response = repo.save(self)
+        values_based_on_hash(JSON.parse(response.body))
+      end
     end
 
     def self.snake_case(camel_cased)

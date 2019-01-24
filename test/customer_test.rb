@@ -127,7 +127,10 @@ class CustomerTest < Minitest::Test
       customer = Economic::CustomerRepo.find(1)
 
       customer.payment_terms = { 'paymentTermsNumber' => 5 }
+
+      assert customer.dirty?
       customer.save
+      refute customer.dirty?
 
       assert_equal 5, customer.payment_terms['payment_terms_number']
     end

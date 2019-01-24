@@ -74,6 +74,8 @@ module Economic
     end
 
     def repo
+      return Economic::Orders::DraftsRepo if self.class == Order
+
       Object.const_get("#{self.class}Repo")
     end
   end

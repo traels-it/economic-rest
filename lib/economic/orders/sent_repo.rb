@@ -1,6 +1,6 @@
 module Economic
   module Orders
-    class SentRepo < Economic::BaseRepo
+    class SentRepo < Economic::Orders::Repo
     end
   end
 end

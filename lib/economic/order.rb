@@ -26,5 +26,13 @@ module Economic
     field name: 'recipient'
     field name: 'references'
     field name: 'templates'
+
+    def move_to_drafts
+      Economic::Orders::Repo.post self, 'drafts'
+    end
+
+    def move_to_sent
+      Economic::Orders::Repo.post self, 'sent'
+    end
   end
 end

@@ -1,6 +1,6 @@
 module Economic
   module Orders
-    class ArchivedRepo < Economic::BaseRepo
+    class ArchivedRepo < Economic::Orders::Repo
     end
   end
 end

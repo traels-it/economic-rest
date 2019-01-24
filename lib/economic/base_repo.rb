@@ -4,12 +4,14 @@ require 'economic/session'
 
 module Economic
   class BaseRepo
+    URL = 'https://restapi.e-conomic.com/'.freeze
     class << self
       def headers
         { 'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': 'application/json' }
       end
       def fetch(endpoint:, page_or_id: nil, pageindex: 0)
-        url = 'https://restapi.e-conomic.com/'
+        url = ''
+        url << URL
         url << endpoint.to_s if endpoint
         url << if page_or_id.nil? || page_or_id.to_s.empty?
                  "?skippages=#{pageindex}&pagesize=1000"
@@ -21,7 +23,8 @@ module Economic
       end
 
       def save(model)
-        url = 'https://restapi.e-conomic.com/'
+        url = ''
+        url << URL
         url << endpoint_name.to_s if endpoint_name
         url << "/#{model.id_key}"
         if model.id_key

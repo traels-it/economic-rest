@@ -36,32 +36,12 @@ class CustomerTest < Minitest::Test
       assert_equal 222, c.corporateIdentificationNumber
     end
 
-    it 'assert no hashes in attributes' do
-      stub_get_request(endpoint: 'customers', page_or_id: '4', fixture_name: 'customer')
-
-      customer = Economic::CustomerRepo.find(4)
-
-      Economic::Customer::ATTRIBUTES.each do |att|
-        assert false, "#{att} was a hash" if customer.send(att).is_a?(Hash)
-      end
-    end
-
     it 'can access attributes in snake_case' do
       c = Economic::Customer.new('corporateIdentificationNumber' => 1337)
 
       assert_equal 1337, c.corporate_identification_number
       c.corporate_identification_number = 222
       assert_equal 222, c.corporate_identification_number
-    end
-
-    it 'assert no non-hashes in objects' do
-      stub_get_request(endpoint: 'customers', page_or_id: '4', fixture_name: 'customer')
-
-      customer = Economic::CustomerRepo.find(4)
-
-      Economic::Customer::OBJECTS.each do |obj|
-        assert false, "#{obj} was not a hash, customer.send(obj).inspect" unless customer.send(obj).is_a?(Hash) || customer.send(obj).nil?
-      end
     end
 
     it 'can access objects in camelCase' do

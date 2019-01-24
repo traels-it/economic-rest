@@ -4,12 +4,21 @@ module Economic
       values_based_on_hash(hash)
     end
 
+    def self.attributes
+      @attributes
+    end
+
+    def self.add_attribute(name)
+      (@attributes ||= []).push(name)
+    end
+
     def self.field(name:, id: false)
       economic_cased_attibute_name = name
       attr_accessor economic_cased_attibute_name
       alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
       alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
       alias_method 'id_key', name if id
+      add_attribute name
     end
 
     def values_based_on_hash(hash)
@@ -17,13 +26,11 @@ module Economic
       @internal_hash = hash
       @internal_hash.each do |k, v|
         k = k.to_s
-        if self.class::ATTRIBUTES.include?(k)
-          warn "#{k} in #{self.class.name} contains a Hash #{self.class.name}" if v.class == Hash
-          send("#{k}=", v)
-        elsif self.class::OBJECTS.include?(k)
-          warn "#{k} in #{self.class.name} does not contain a Hash" unless v.class == Hash
-          v.keys.count.times do |i|
-            v.alias!(Base.snake_case(v.keys[i]), v.keys[i])
+        if self.class.attributes.include? k
+          if v.class == Hash
+            v.keys.count.times do |i|
+              v.alias!(Base.snake_case(v.keys[i]), v.keys[i])
+            end
           end
           send("#{k}=", v)
         else
@@ -33,17 +40,14 @@ module Economic
     end
 
     def to_h
-      self.class::ATTRIBUTES.each do |attribute|
+      self.class.attributes.each do |attribute|
         @internal_hash[attribute.to_sym] = send(attribute) unless send(attribute).nil?
-      end
-      self.class::OBJECTS.each do |object|
-        @internal_hash[object.to_sym] = send(object) unless send(object).nil?
       end
       @internal_hash
     end
 
     def dirty?
-      self.class::ATTRIBUTES.each do |attribute|
+      self.class.attributes.each do |attribute|
         return true unless send(attribute) == @internal_hash[attribute]
       end
       false
@@ -60,6 +64,11 @@ module Economic
                  .gsub(/([a-z\d])([A-Z])/, '\1_\2')
                  .tr('-', '_')
                  .downcase
+    end
+
+    def self.low_camel_case(snake_cased)
+      camel = snake_cased.split('_').collect(&:capitalize).join
+      camel[0, 1].downcase + camel[1..-1]
     end
 
     def repo

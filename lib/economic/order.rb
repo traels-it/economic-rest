@@ -1,6 +1,6 @@
 module Economic
   class Order < Base
-    field :attachment #skriv som symbol
+    field :attachment
     field :costPriceInBaseCurrency
     field :currency
     field :date
@@ -26,16 +26,5 @@ module Economic
     field :recipient
     field :references
     field :templates
-
-
-    # ud med dem
-    def move_to_drafts
-      Economic::Orders::Repo.post self, 'drafts'
-    end
-
-    def move_to_sent
-      Economic::Orders::Repo.post self, 'sent'
-    end
-    # end ud med dem
   end
 end

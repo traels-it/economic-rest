@@ -1,20 +1,20 @@
 module Economic
   class Product < Base
-    field name: 'barCode'
-    field name: 'barred'
-    field name: 'costPrice'
-    field name: 'description'
-    field name: 'lastUpdated'
-    field name: 'name'
-    field name: 'productNumber', id: true
-    field name: 'recommendedPrice'
-    field name: 'salesPrice'
+    field :barCode
+    field :barred
+    field :costPrice
+    field :description
+    field :lastUpdated
+    field :name
+    field :productNumber, id: true
+    field :recommendedPrice
+    field :salesPrice
 
-    field name: 'departmentalDistribution'
-    field name: 'inventory'
-    field name: 'invoices'
-    field name: 'pricing'
-    field name: 'productGroup'
-    field name: 'unit'
+    field :departmentalDistribution
+    field :inventory
+    field :invoices
+    field :pricing
+    field :productGroup
+    field :unit
   end
 end

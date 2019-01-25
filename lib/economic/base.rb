@@ -12,13 +12,13 @@ module Economic
       (@attributes ||= []).push(name)
     end
 
-    def self.field(name:, id: false)
-      economic_cased_attibute_name = name
+    def self.field(name, id: false)
+      economic_cased_attibute_name = name.to_s
       attr_accessor economic_cased_attibute_name
       alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
       alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
-      alias_method 'id_key', name if id
-      add_attribute name
+      alias_method 'id_key', economic_cased_attibute_name if id
+      add_attribute economic_cased_attibute_name
     end
 
     def values_based_on_hash(hash)

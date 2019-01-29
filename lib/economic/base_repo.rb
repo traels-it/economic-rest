@@ -55,8 +55,23 @@ module Economic
         entries
       end
 
+      def filter(filter_text)
+        entries = []
+        url = ''
+        url << URL
+        url << endpoint_name
+        url << "?filter=#{filter_text}"
+
+        response = RestClient.get(url, headers)
+        hash = JSON.parse(response.body)
+        hash['collection'].each do |entry_hash|
+          entries.push model.new(entry_hash)
+        end
+        entries
+      end
+
       def updated_after(date)
-        all.select { |c| Date.parse(c.last_updated) > date }
+        filter("lastUpdated$gt:#{date}")
       end
 
       def find(entry_number)

@@ -9,6 +9,7 @@ module Economic
       def headers
         { 'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': 'application/json' }
       end
+
       def fetch(endpoint:, page_or_id: nil, pageindex: 0)
         url = ''
         url << URL
@@ -27,11 +28,11 @@ module Economic
         url << URL
         url << endpoint_name.to_s if endpoint_name
         url << "/#{model.id_key}"
-        if model.id_key
-          response = RestClient.put(url, model.to_h.to_json, headers)
-        else
-          response = RestClient.post(url, model.to_h.to_json, headers)
-        end
+        response = if model.id_key
+                     RestClient.put(url, model.to_h.to_json, headers)
+                   else
+                     RestClient.post(url, model.to_h.to_json, headers)
+                   end
         response
       end
 

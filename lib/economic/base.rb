@@ -4,8 +4,8 @@ module Economic
       values_based_on_hash(hash)
     end
 
-    def self.attributes
-      @attributes
+    class << self
+      attr_reader :attributes
     end
 
     def self.add_attribute(name)
@@ -81,7 +81,7 @@ end
 
 module ExtraMethods
   def alias!(newkey, oldkey)
-    self[newkey] = self[oldkey] if self.has_key?(oldkey)
+    self[newkey] = self[oldkey] if key?(oldkey)
     self
   end
 end

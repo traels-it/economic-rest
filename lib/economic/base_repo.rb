@@ -55,6 +55,10 @@ module Economic
         entries
       end
 
+      def updated_after(date)
+        all.select { |c| Date.parse(c.last_updated) > date }
+      end
+
       def find(entry_number)
         response = fetch(endpoint: endpoint_name, page_or_id: entry_number)
         entry_hash = JSON.parse(response.body)

@@ -134,5 +134,20 @@ class CustomerTest < Minitest::Test
 
       assert_equal 5, customer.payment_terms['payment_terms_number']
     end
+
+    it 'can get customers based un update' do
+      stub_get_request(endpoint: 'customers', pageindex: 0, fixture_name: 'customers_0')
+      stub_get_request(endpoint: 'customers', pageindex: 1, fixture_name: 'customers_1')
+      stub_get_request(endpoint: 'customers', pageindex: 2, fixture_name: 'customers_2')
+      stub_get_request(endpoint: 'customers', pageindex: 3, fixture_name: 'customers_3')
+
+      customers = Economic::CustomerRepo.updated_after(Date.parse('2019-01-13'))
+
+      assert Date.parse(customers.last.last_updated) > Date.parse('2019-01-13')
+
+      customers = Economic::CustomerRepo.updated_after(Date.today + 9000)
+
+      assert_empty customers
+    end
   end
 end

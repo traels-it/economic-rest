@@ -72,7 +72,12 @@ module Economic
       end
 
       def updated_after(date)
-        filter("lastUpdated$gt:#{date}")
+        filter("lastUpdated$gt:#{to_iso8601z(date)}")
+      end
+
+      def to_iso8601z(date)
+        date = date.iso8601[0...-5].tr('+', 'Z') if date.iso8601.include?('+')
+        date
       end
 
       def find(entry_number)

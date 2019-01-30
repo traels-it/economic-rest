@@ -20,7 +20,7 @@ module Economic
                  "/#{page_or_id}"
                end
         response = RestClient.get(url, headers)
-        response
+        test_response(response)
       end
 
       def save(model)
@@ -33,7 +33,7 @@ module Economic
                    else
                      RestClient.post(url, model.to_h.to_json, headers)
                    end
-        response
+        test_response(response)
       end
 
       def all
@@ -62,8 +62,9 @@ module Economic
         url << URL
         url << endpoint_name
         url << "?filter=#{filter_text}"
-
         response = RestClient.get(url, headers)
+        response = test_response(response)
+
         hash = JSON.parse(response.body)
         hash['collection'].each do |entry_hash|
           entries.push model.new(entry_hash)
@@ -76,7 +77,8 @@ module Economic
       end
 
       def to_iso8601z(date)
-        date = date.iso8601[0...-5].tr('+', 'Z') if date.iso8601.include?('+')
+        date = date.iso8601
+        date = date[0...-5].tr('+', 'Z') if date.include?('+')
         date
       end
 
@@ -101,6 +103,12 @@ module Economic
           end_p = end_p.gsub('Repo', 's')
         end
         end_p.downcase
+      end
+
+      def test_response(response)
+        raise response if response.code != 200
+
+        response
       end
     end
   end

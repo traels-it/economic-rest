@@ -14,6 +14,9 @@ require 'economic/orders/archived_repo'
 require 'economic/orders/drafts_repo'
 require 'economic/orders/sent_repo'
 
+require 'economic/journal_repo'
+require 'economic/journal'
+
 module Economic
   class Demo
     def self.hello

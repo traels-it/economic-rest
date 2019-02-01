@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class JournalTest < Minitest::Test
+class JournalRepoTest < Minitest::Test
   describe 'product object' do
     before do
       Economic::Session.authentication('Demo', 'Demo')
@@ -59,7 +59,7 @@ class JournalTest < Minitest::Test
       )
     end
 
-    it 'posl' do
+    it 'post financeVouchers' do
       stub_get_request(endpoint: 'journals-experimental', page_or_id: 5, fixture_name: 'journal')
 
       stub_request(:post, 'https://restapi.e-conomic.com/journals-experimental/2/vouchers')

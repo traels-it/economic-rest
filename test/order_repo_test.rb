@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OrderTest < Minitest::Test
+class OrderRepoTest < Minitest::Test
   describe 'order object' do
     before do
       Economic::Session.authentication('Demo', 'Demo')

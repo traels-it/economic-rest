@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ProductRepoTest < Minitest::Test
-  describe 'product object' do
+  describe 'For product' do
     before do
       Economic::Session.authentication('Demo', 'Demo')
     end

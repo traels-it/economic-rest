@@ -20,19 +20,31 @@ module Economic
                  "/#{page_or_id}"
                end
         url << "&filter=#{filter_text}" unless filter_text == ''
-        response = RestClient.get(url, headers)
+        response = RestClient.get(url, headers) do |response, _request, _result|
+          response
+        end
         test_response(response)
       end
 
-      def save(model)
+      def save(model, submodel: '')
         url = ''
         url << URL
         url << endpoint_name.to_s if endpoint_name
         url << "/#{model.id_key}"
-        response = if model.id_key
-                     RestClient.put(url, model.to_h.to_json, headers)
+        url << sub_endpoint_name(submodel) unless submodel == ''
+        relevant_model = if submodel == ''
+                           model
+                         else
+                           submodel
+                         end
+        response = if relevant_model.id_key.nil?
+                     RestClient.post(url, relevant_model.to_h.to_json, headers) do |response, _request, _result|
+                       response
+                     end
                    else
-                     RestClient.post(url, model.to_h.to_json, headers)
+                     RestClient.put(url, relevant_model.to_h.to_json, headers) do |response, _request, _result|
+                       response
+                     end
                    end
         test_response(response)
       end
@@ -91,11 +103,18 @@ module Economic
         else
           end_p = end_p.gsub('Repo', 's')
         end
+        end_p = end_p.gsub('Journals', 'Journals-Experimental')
+        end_p.downcase
+      end
+
+      def sub_endpoint_name(submodel)
+        end_p = submodel.class.name.sub('Economic::', '')
+        end_p = "/#{end_p}s"
         end_p.downcase
       end
 
       def test_response(response)
-        raise response if response.code != 200
+        raise response unless response.code.between?(200, 299)
 
         response
       end

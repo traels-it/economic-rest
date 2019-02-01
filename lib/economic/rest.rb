@@ -17,6 +17,8 @@ require 'economic/orders/sent_repo'
 require 'economic/journal_repo'
 require 'economic/journal'
 
+require 'economic/voucher'
+
 module Economic
   class Demo
     def self.hello

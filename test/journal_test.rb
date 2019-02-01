@@ -67,7 +67,7 @@ class JournalTest < Minitest::Test
           body: '{"accountingYear":{"year":"2017","year":"2017"},"journal":{"journalNumber":5,"journal_number":5},"entries":{"financeVouchers":[{"contraAccount":{"accountNumber":1010},"amount":100,"date":"2017-02-01"}],"finance_vouchers":[{"contraAccount":{"accountNumber":1010},"amount":100,"date":"2017-02-01"}]}}'
         ).to_return(status: 201, body: '', headers: {})
 
-      puts journal = Economic::JournalRepo.find(5)
+      journal = Economic::JournalRepo.find(5)
       v = Economic::Voucher.new(
         accountingYear: { "year": '2017' },
         journal: { "journalNumber": 5 },

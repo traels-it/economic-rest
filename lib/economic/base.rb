@@ -26,6 +26,15 @@ module Economic
       end
     end
 
+    def self.relation(name, fields:)
+      related_model = Object.const_get('Economic::' + name.slice(0, 1).capitalize + name.slice(1..-1)).new({})
+      define_method(name) do
+        @internal_hash[name] = related_model.to_h(fields: fields)
+        related_model
+      end
+      alias_method snake_case(name), name
+    end
+
     def values_based_on_hash(hash)
       Hash.class_eval { include ExtraMethods }
       @internal_hash = hash
@@ -44,9 +53,20 @@ module Economic
       end
     end
 
-    def to_h
+    def to_h(fields: [])
       self.class.attributes.each do |attribute|
         @internal_hash[attribute.to_sym] = send(attribute) unless send(attribute).nil?
+      end
+      @internal_hash.each do |k, _v|
+        send(k) if respond_to? k
+      end
+      unless fields.empty?
+        # because we have field we should only return those values from the hash
+        limited_hash = {}
+        fields.each do |field|
+          limited_hash[field.to_sym] = send(field) unless send(field).nil?
+        end
+        return limited_hash
       end
       @internal_hash
     end

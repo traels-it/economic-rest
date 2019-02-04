@@ -17,6 +17,7 @@ require 'economic/orders/sent_repo'
 require 'economic/journal_repo'
 require 'economic/journal'
 
+require 'economic/accounting_year'
 require 'economic/voucher'
 
 module Economic

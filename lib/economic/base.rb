@@ -5,11 +5,15 @@ module Economic
     end
 
     class << self
-      attr_reader :attributes
+      attr_reader :attributes, :relations
     end
 
     def self.add_attribute(name)
       (@attributes ||= []).push(name)
+    end
+
+    def self.add_relation(name, fields)
+      (@relations ||= []).push(name: name, fields: fields)
     end
 
     def self.field(name, id: false, model: nil)
@@ -27,6 +31,9 @@ module Economic
     end
 
     def self.relation(name, fields:)
+      economic_cased_attibute_name = name.to_s
+      add_relation economic_cased_attibute_name, fields
+
       related_model = Object.const_get('Economic::' + name.slice(0, 1).capitalize + name.slice(1..-1)).new({})
       define_method(name) do
         @internal_hash[name] = related_model.to_h(fields: fields)

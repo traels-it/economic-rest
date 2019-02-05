@@ -20,30 +20,21 @@ class BaseModelTest < Minitest::Test
     end
   end
 
-  describe 'snake cased versions of attributes' do
-    it 'can access attributes in snake_case' do
-      base_model = Economic::BaseModel.new('corporateIdentificationNumber' => 1337)
-
-      assert_equal 1337, base_model.corporate_identification_number
-      base_model.corporate_identification_number = 222
-      assert_equal 222, base_model.corporate_identification_number
-    end
-
-    it 'can access objects' do
-      base_model = Economic::BaseModel.new('baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393, 'vatZoneNumber' => 'france' })
+  describe '.relations' do
+    it 'list relations with details on model' do
+      assert_equal [{ name: 'baseModelRelation', fields: [:baseModelRelationNumber] }], Economic::BaseModel.relations
     end
   end
 
-  describe 'camelCased versions of attributes' do
-    it 'can access attributes' do
+  describe 'initialize' do
+    it 'fills in attributes from hash-values' do
       base_model = Economic::BaseModel.new('corporateIdentificationNumber' => 1337)
 
+      assert_equal 1337, base_model.corporate_identification_number
       assert_equal 1337, base_model.corporateIdentificationNumber
-      base_model.corporateIdentificationNumber = 222
-      assert_equal 222, base_model.corporateIdentificationNumber
     end
 
-    it 'can access objects' do
+    it 'creates and populates relations from hash-values' do
       base_model = Economic::BaseModel.new('baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393 })
     end
   end

@@ -28,8 +28,6 @@ class CustomerRepoTest < Minitest::Test
       assert_kind_of Economic::Customer, customer
     end
 
-
-
     it 'returns default not dirty' do
       stub_get_request(endpoint: 'customers', page_or_id: '4', fixture_name: 'customer')
       customer = Economic::CustomerRepo.find(4)

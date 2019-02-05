@@ -1,13 +1,25 @@
 require 'test_helper'
 
 module Economic
+  class BaseModelRelation < Base
+    field :baseModelRelationNumber
+  end
+
   class BaseModel < Base
     field :corporateIdentificationNumber
-    field :customerContact
+    field :name
+
+    relation :baseModelRelation, fields: [:baseModelRelationNumber]
   end
 end
 
 class BaseModelTest < Minitest::Test
+  describe '.attributes' do
+    it 'list attributes on model' do
+      assert_equal %w[corporateIdentificationNumber name], Economic::BaseModel.attributes
+    end
+  end
+
   describe 'snake cased versions of attributes' do
     it 'can access attributes in snake_case' do
       base_model = Economic::BaseModel.new('corporateIdentificationNumber' => 1337)
@@ -18,14 +30,7 @@ class BaseModelTest < Minitest::Test
     end
 
     it 'can access objects' do
-      base_model = Economic::BaseModel.new('customerContact' => { 'customerContactNumber' => 97_939_393, 'vatZoneNumber' => 'france' })
-
-      assert_equal 97_939_393, base_model.customer_contact['customer_contact_number']
-      assert_equal 'france', base_model.customer_contact['vat_zone_number']
-      base_model.customerContact['customer_contact_number'] = 222
-      base_model.customerContact['vat_zone_number'] = 'germany'
-      assert_equal 222, base_model.customerContact['customer_contact_number']
-      assert_equal 'germany', base_model.customerContact['vat_zone_number']
+      base_model = Economic::BaseModel.new('baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393, 'vatZoneNumber' => 'france' })
     end
   end
 
@@ -39,11 +44,7 @@ class BaseModelTest < Minitest::Test
     end
 
     it 'can access objects' do
-      base_model = Economic::BaseModel.new('customerContact' => { 'customerContactNumber' => 97_939_393 })
-
-      assert_equal 97_939_393, base_model.customerContact['customerContactNumber']
-      base_model.customerContact['customerContactNumber'] = 222
-      assert_equal 222, base_model.customerContact['customerContactNumber']
+      base_model = Economic::BaseModel.new('baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393 })
     end
   end
 end

@@ -54,6 +54,7 @@ class CustomerRepoTest < Minitest::Test
     end
 
     it 'saves' do
+      skip 'not active record, Use CustomerRepo'
       stub_get_request(endpoint: 'customers', page_or_id: '1', fixture_name: 'customer')
       stub_get_request(endpoint: 'customers', page_or_id: '1', fixture_name: 'customer', method: :put)
       customer = Economic::CustomerRepo.find(1)
@@ -65,16 +66,16 @@ class CustomerRepoTest < Minitest::Test
     end
 
     it 'makes a new customer that is reloaded from economics after saving' do
+      skip 'not active record, Use CustomerRepo'
       stub_request(:post, 'https://restapi.e-conomic.com/customers/')
         .with(body: '{"currency":"DKK","paymentTerms":{"paymentTermsNumber":5,"payment_terms_number":5},"customerGroup":{"customerGroupNumber":1,"customer_group_number":1},"name":"Horsens Kommune","vatZone":{"vatZoneNumber":1,"vat_zone_number":1}}')
         .to_return(status: 200, body: '{"customerNumber":201,"currency":"DKK","paymentTerms":{"paymentTermsNumber":5,"self":"https://restapi.e-conomic.com/payment-terms/5"},"customerGroup":{"customerGroupNumber":1,"self":"https://restapi.e-conomic.com/customer-groups/1"},"address":"High road 32","balance":151875.00,"dueAmount":151875.00,"city":"Horsens","name":"Horsens Kommune","zip":"8700","telephoneAndFaxNumber":"7629 2929","vatZone":{"vatZoneNumber":1,"self":"https://restapi.e-conomic.com/vat-zones/1"},"layout":{"layoutNumber":16,"self":"https://restapi.e-conomic.com/layouts/16"},"lastUpdated":"2019-01-22T16:03:55Z","contacts":"https://restapi.e-conomic.com/customers/201/contacts","templates":{"invoice":"https://restapi.e-conomic.com/customers/201/templates/invoice","invoiceLine":"https://restapi.e-conomic.com/customers/201/templates/invoiceline","self":"https://restapi.e-conomic.com/customers/201/templates"},"totals":{"drafts":"https://restapi.e-conomic.com/invoices/totals/drafts/customers/201","booked":"https://restapi.e-conomic.com/invoices/totals/booked/customers/201","self":"https://restapi.e-conomic.com/customers/201/totals"},"deliveryLocations":"https://restapi.e-conomic.com/customers/201/delivery-locations","invoices":{"drafts":"https://restapi.e-conomic.com/customers/201/invoices/drafts","booked":"https://restapi.e-conomic.com/customers/201/invoices/booked","self":"https://restapi.e-conomic.com/customers/201/invoices"},"metaData":{"delete":{"description":"Delete this customer.","href":"https://restapi.e-conomic.com/customers/201","httpMethod":"delete"},"replace":{"description":"Replace this customer.","href":"https://restapi.e-conomic.com/customers/201","httpMethod":"put"}},"self":"https://restapi.e-conomic.com/customers/201"}', headers: {})
       customer = Economic::Customer.new("currency": 'DKK', "paymentTerms": { "paymentTermsNumber": 5 }, "customerGroup": { "customerGroupNumber": 1 }, "name": 'Horsens Kommune', "vatZone": { "vatZoneNumber": 1 })
 
-      customer.save
-
       assert customer.customer_number
     end
     it 'changes saves changes to an object value' do
+      skip 'not active record, Use CustomerRepo'
       stub_get_request(endpoint: 'customers', page_or_id: '1', fixture_name: 'customer')
       stub_get_request(endpoint: 'customers', page_or_id: '1', fixture_name: 'customer', method: :put)
       customer = Economic::CustomerRepo.find(1)

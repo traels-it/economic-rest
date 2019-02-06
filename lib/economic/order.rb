@@ -17,14 +17,14 @@ module Economic
     field :roundingAmount
     field :vatAmount
 
-    field :customer
-    field :delivery
-    field :notes
-    field :paymentTerms
-    field :pdf
-    field :project
-    field :recipient
-    field :references
-    field :templates
+    relation :customer, fields: [:customerNumber]
+    #   relation :delivery, fields: []
+    #    relation :notes, fields: []
+    relation :paymentTerms, fields: [:paymentTermsNumber]
+    #   relation :pdf, fields: []
+    #    relation :project, fields: []
+    relation :recipient, fields: [:name]
+    #    relation :references, fields: []
+    relation :layout, fields: [:layoutNumber]
   end
 end

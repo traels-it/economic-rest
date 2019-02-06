@@ -3,6 +3,7 @@ require 'test_helper'
 module Economic
   class BaseModelRelation < Base
     field :baseModelRelationNumber
+    field :notInHash
   end
 
   class BaseModel < Base
@@ -36,6 +37,43 @@ class BaseModelTest < Minitest::Test
 
     it 'creates and populates relations from hash-values' do
       base_model = Economic::BaseModel.new('baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393 })
+
+      assert_kind_of Economic::BaseModelRelation, base_model.base_model_relation
+      assert_equal 97_939_393, base_model.baseModelRelation.base_model_relation_number
+      assert_equal 97_939_393, base_model.base_model_relation.base_model_relation_number
+    end
+
+    it 'is not the same for 2 different base model' do
+      base_model = Economic::BaseModel.new('baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393 })
+
+      base_model2 = Economic::BaseModel.new('baseModelRelation' => { 'baseModelRelationNumber' => 97_222 })
+
+      refute_equal base_model.base_model_relation, base_model2.base_model_relation
+    end
+  end
+
+  describe 'to_h' do
+    it 'returns attributes' do
+      h = { 'corporateIdentificationNumber' => 1337 }
+      base_model = Economic::BaseModel.new(h)
+
+      assert_equal h, base_model.to_h
+    end
+
+    it 'returns relations' do
+      h = { 'baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393 } }
+      base_model = Economic::BaseModel.new(h)
+
+      assert_equal h, base_model.to_h
+    end
+
+    it 'only includes relation fields mentioned in relations' do
+      h = { 'baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393, 'notInHash' => 4711 } }
+
+      base_model = Economic::BaseModel.new(h)
+
+      h_expected = { 'baseModelRelation' => { 'baseModelRelationNumber' => 97_939_393 } }
+      assert_equal h_expected, base_model.to_h
     end
   end
 end

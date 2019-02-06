@@ -33,49 +33,47 @@ module Economic
     def self.relation(name, fields:)
       economic_cased_attibute_name = name.to_s
       add_relation economic_cased_attibute_name, fields
-
-      related_model = Object.const_get('Economic::' + name.slice(0, 1).capitalize + name.slice(1..-1)).new({})
-      define_method(name) do
-        @internal_hash[name] = related_model.to_h(fields: fields)
-        related_model
-      end
-      alias_method snake_case(name), name
+      attr_reader economic_cased_attibute_name
+      alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
     end
 
     def values_based_on_hash(hash)
-      Hash.class_eval { include ExtraMethods }
-      @internal_hash = hash
-      @internal_hash.each do |k, v|
-        k = k.to_s
-        if self.class.attributes.include? k
-          if v.class == Hash
-            v.keys.count.times do |i|
-              v.alias!(Base.snake_case(v.keys[i]), v.keys[i])
-            end
-          end
-          send("#{k}=", v)
-        else
-          warn "unassigned k #{k} in #{self.class.name}" unless %w[layout self soap metaData].include? k
+      @internal_hash = hash || {}
+
+      self.class.attributes.each do |field_name|
+        public_send("#{field_name}=", @internal_hash[field_name])
+      end
+
+      if self.class.relations
+        self.class.relations.each do |relation_hash|
+          name = relation_hash[:name]
+          related_model = model_class(name).new(@internal_hash[name])
+
+          instance_variable_set("@#{name}", related_model)
         end
       end
     end
 
-    def to_h(fields: [])
-      self.class.attributes.each do |attribute|
-        @internal_hash[attribute.to_sym] = send(attribute) unless send(attribute).nil?
+    def to_h(only_fields: [])
+      return_hash = {}
+
+      self.class.attributes.each do |field_name|
+        next if only_fields.any? && !only_fields.include?(field_name.to_sym)
+
+        return_hash[field_name] = public_send(field_name) if public_send(field_name)
       end
-      @internal_hash.each do |k, _v|
-        send(k) if respond_to? k
-      end
-      unless fields.empty?
-        # because we have field we should only return those values from the hash
-        limited_hash = {}
-        fields.each do |field|
-          limited_hash[field.to_sym] = send(field) unless send(field).nil?
+
+      if self.class.relations
+        self.class.relations.each do |relation_hash|
+          relation_name = relation_hash[:name]
+          relation_fields = relation_hash[:fields]
+
+          relation_data = public_send(relation_name).to_h(only_fields: relation_fields)
+
+          return_hash[relation_name] = relation_data unless relation_data.empty?
         end
-        return limited_hash
       end
-      @internal_hash
+      return_hash
     end
 
     def dirty?
@@ -83,13 +81,6 @@ module Economic
         return true unless send(attribute) == @internal_hash[attribute]
       end
       false
-    end
-
-    def save
-      if dirty?
-        response = repo.save(self)
-        values_based_on_hash(JSON.parse(response.body))
-      end
     end
 
     def self.snake_case(camel_cased)
@@ -108,12 +99,9 @@ module Economic
     def repo
       Object.const_get("#{self.class}Repo")
     end
-  end
-end
 
-module ExtraMethods
-  def alias!(newkey, oldkey)
-    self[newkey] = self[oldkey] if key?(oldkey)
-    self
+    def model_class(name)
+      Object.const_get('Economic::' + name.slice(0, 1).capitalize + name.slice(1..-1))
+    end
   end
 end

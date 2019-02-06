@@ -3,6 +3,18 @@ require 'rest-client'
 
 require 'economic/base_repo'
 require 'economic/base'
+
+require 'economic/vat_zone'
+
+require 'economic/delivery'
+require 'economic/layout'
+require 'economic/notes'
+require 'economic/payment_terms'
+require 'economic/pdf'
+require 'economic/project'
+require 'economic/recipient'
+require 'economic/references'
+
 require 'economic/customer_repo'
 require 'economic/customer'
 require 'economic/product_repo'

@@ -4,5 +4,3 @@ git_source(:bitbucket) { |_repo_name| 'https://bitbucket.org/traels/economic-res
 
 # Specify your gem's dependencies in economic-rest.gemspec
 gemspec
-
-gem 'webmock', '~> 3.5'

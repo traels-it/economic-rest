@@ -27,5 +27,8 @@ The documentation can be found at https://restdocs.e-conomic.com'
   spec.add_development_dependency 'm'
   spec.add_development_dependency 'minitest', '~> 5.0'
   spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'webmock', '~> 3.5'
+
   spec.add_dependency 'rest-client'
 end

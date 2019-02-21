@@ -61,7 +61,7 @@ class JournalRepoTest < Minitest::Test
 
       stub_request(:post, 'https://restapi.e-conomic.com/journals-experimental/5/vouchers')
         .with(
-          body: { "accountingYear": { "year": '2017', "year": '2017' }, "journal": { "journalNumber": 5 }, "entries": { "financeVouchers": [{ "contraAccount": { "accountNumber": 1010 }, "amount": 100, "date": '2017-02-01' }] } }
+          body: { "accountingYear": { "year": '2017' }, "journal": { "journalNumber": 5 }, "entries": { "financeVouchers": [{ "contraAccount": { "accountNumber": 1010 }, "amount": 100, "date": '2017-02-01' }] } }
         ).to_return(status: 201, body: '', headers: {})
 
       journal = Economic::JournalRepo.find(5)

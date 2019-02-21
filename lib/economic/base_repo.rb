@@ -49,6 +49,16 @@ module Economic
         test_response(response)
       end
 
+      def post(model)
+        url = ''
+        url << URL
+        url << endpoint_name
+        response = RestClient.post(url, model.to_h.to_json, headers) do |response, _request, _result|
+          response
+        end
+        test_response(response)
+      end
+
       def all(filter_text: '')
         pagination = {}
         pageindex = 0

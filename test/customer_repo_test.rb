@@ -53,16 +53,20 @@ class CustomerRepoTest < Minitest::Test
       assert customer.to_h.inspect.include? 'Biscuit'
     end
 
-    it 'saves' do
-      skip 'not active record, Use CustomerRepo'
-      stub_get_request(endpoint: 'customers', page_or_id: '1', fixture_name: 'customer')
-      stub_get_request(endpoint: 'customers', page_or_id: '1', fixture_name: 'customer', method: :put)
-      customer = Economic::CustomerRepo.find(1)
+    it 'can post' do
+      stub_request(:post, 'https://restapi.e-conomic.com/customers')
+        .with(
+          body: { "currency": 'DKK', "name": 'Mr. Anderson', "customerGroup": { "customerGroupNumber": 1 }, "paymentTerms": { "paymentTermsNumber": 1 }, "vatZone": { "vatZoneNumber": 1 } }
+        ).to_return(status: 200, body: '', headers: {})
 
-      customer.address = 'High road 32'
-      customer.save
+      c = Economic::Customer.new({})
+      c.currency = 'DKK'
+      c.customer_group.customer_group_number = 1
+      c.vat_zone.vat_zone_number = 1
+      c.name = 'Mr. Anderson'
+      c.payment_terms.payment_terms_number = 1
 
-      assert_equal 'High road 32', customer.address
+      assert Economic::CustomerRepo.post(c)
     end
 
     it 'makes a new customer that is reloaded from economics after saving' do

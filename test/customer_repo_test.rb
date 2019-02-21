@@ -66,7 +66,7 @@ class CustomerRepoTest < Minitest::Test
       c.name = 'Mr. Anderson'
       c.payment_terms.payment_terms_number = 1
 
-      assert Economic::CustomerRepo.post(c)
+      assert Economic::CustomerRepo.send c
     end
 
     it 'makes a new customer that is reloaded from economics after saving' do

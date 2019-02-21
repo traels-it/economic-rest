@@ -49,7 +49,7 @@ module Economic
         test_response(response)
       end
 
-      def post(model)
+      def send(model)
         url = ''
         url << URL
         url << endpoint_name

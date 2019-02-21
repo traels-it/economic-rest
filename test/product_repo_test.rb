@@ -30,5 +30,17 @@ class ProductRepoTest < Minitest::Test
 
       assert product.to_h.inspect.include? 'fudge'
     end
+
+    it 'can post' do
+      stub_request(:post, 'https://restapi.e-conomic.com/products')
+        .with(body: { "name": 'awesome toothbrush', "productNumber": 'B123', "productGroup": { "productGroupNumber": 10 } }).to_return(status: 200, body: '', headers: {})
+
+      p = Economic::Product.new({})
+      p.product_number = 'B123'
+      p.name = 'awesome toothbrush'
+      p.product_group.product_group_number = 10
+
+      assert Economic::ProductRepo.send p
+    end
   end
 end

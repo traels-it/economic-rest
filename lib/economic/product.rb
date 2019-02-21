@@ -10,11 +10,11 @@ module Economic
     field :recommendedPrice
     field :salesPrice
 
-    field :departmentalDistribution
-    field :inventory
-    field :invoices
-    field :pricing
-    field :productGroup
-    field :unit
+    # field :departmentalDistribution
+    # field :inventory
+    # field :invoices
+    # field :pricing
+    relation :productGroup, fields: [:productGroupNumber]
+    # field :unit
   end
 end

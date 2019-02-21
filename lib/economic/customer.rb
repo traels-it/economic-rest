@@ -24,16 +24,16 @@ module Economic
     field :website
     field :zip
 
-    #field :attention
-    #field :customerContact
+    # field :attention
+    # field :customerContact
     relation :customerGroup, fields: [:customerGroupNumber]
-    #field :defaultDeliveryLocation
-    #field :invoices
-    #field :layout
+    # field :defaultDeliveryLocation
+    # field :invoices
+    # field :layout
     relation :paymentTerms, fields: [:paymentTermsNumber]
-    #field :salesPerson
-    #field :templates
-    #field :totals
+    # field :salesPerson
+    # field :templates
+    # field :totals
     relation :vatZone, fields: [:vatZoneNumber]
   end
 end

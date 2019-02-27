@@ -3,8 +3,8 @@ module Economic
     field :voucherNumber, id: true
 
     field :entries
-    field :journal
 
+    relation :journal, fields: [:journalNumber]
     relation :accountingYear, fields: [:year]
   end
 end

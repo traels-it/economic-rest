@@ -5,24 +5,18 @@ require 'economic/session'
 module Economic
   class BaseRepo
     URL = 'https://restapi.e-conomic.com/'.freeze
+
     class << self
       def headers
         { 'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': 'application/json' }
       end
 
-      def fetch(endpoint:, page_or_id: nil, pageindex: 0, filter_text: '')
-        url = ''
-        url << URL
-        url << endpoint.to_s if endpoint
-        url << if page_or_id.nil? || page_or_id.to_s.empty?
-                 "?skippages=#{pageindex}&pagesize=1000"
-               else
-                 "/#{page_or_id}"
-               end
+      def fetch(pageindex: 0, filter_text: '')
+        url = endpoint_url
+        url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ''
-        response = RestClient.get(url, headers) do |response, _request, _result|
-          response
-        end
+
+        response = RestClient.get(url, headers)
         test_response(response)
       end
 
@@ -35,12 +29,7 @@ module Economic
       end
 
       def send(model)
-        url = ''
-        url << URL
-        url << endpoint_name
-        response = RestClient.post(url, model.to_h.to_json, headers) do |response, _request, _result|
-          response
-        end
+        response = RestClient.post(endpoint_url, model.to_h.to_json, headers)
         test_response(response)
       end
 
@@ -51,7 +40,7 @@ module Economic
 
         # Loop until last page, last page does not have a 'nextPage'
         while pagination['nextPage'] || pageindex.zero?
-          response = fetch(endpoint: endpoint_name, pageindex: pageindex, filter_text: filter_text)
+          response = fetch(pageindex: pageindex, filter_text: filter_text)
 
           hash = JSON.parse(response.body)
           hash['collection'].each do |entry_hash|
@@ -79,7 +68,7 @@ module Economic
       end
 
       def find(entry_number)
-        response = fetch(endpoint: endpoint_name, page_or_id: entry_number)
+        response = test_response(RestClient.get(endpoint_url + '/' + entry_number.to_s, headers))
         entry_hash = JSON.parse(response.body)
         model.new(entry_hash)
       end
@@ -102,10 +91,8 @@ module Economic
         end_p.downcase
       end
 
-      def sub_endpoint_name(submodel)
-        end_p = submodel.class.name.sub('Economic::', '')
-        end_p = "/#{end_p}s"
-        end_p.downcase
+      def endpoint_url
+        URL + endpoint_name
       end
 
       def test_response(response)

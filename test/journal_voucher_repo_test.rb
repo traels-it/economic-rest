@@ -7,6 +7,12 @@ class JournalVoucherRepoTest < Minitest::Test
       stub_get_request(endpoint: 'journals-experimental', page_or_id: 2, fixture_name: 'journal')
     end
 
+    it 'only implements save' do
+      assert_raises StandardError do
+        Economic::JournalVoucherRepo.all
+      end
+    end
+
     it 'creates finance vouchers' do
       stub_request(:post, 'https://restapi.e-conomic.com/journals-experimental/5/vouchers')
         .with(

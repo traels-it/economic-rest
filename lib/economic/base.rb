@@ -16,18 +16,13 @@ module Economic
       (@relations ||= []).push(name: name, fields: fields)
     end
 
-    def self.field(name, id: false, model: nil)
+    def self.field(name, id: false)
       economic_cased_attibute_name = name.to_s
       attr_accessor economic_cased_attibute_name
       alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
       alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
       alias_method 'id_key', economic_cased_attibute_name if id
       add_attribute economic_cased_attibute_name
-      if model
-        define_method("create_#{economic_cased_attibute_name[0...-1]}") do |class_instance|
-          repo.save(self, submodel: class_instance)
-        end
-      end
     end
 
     def self.relation(name, fields:)

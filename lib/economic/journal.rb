@@ -3,7 +3,7 @@ module Economic
     field :entries
     field :journalNumber, id: true
     field :name
-    field :vouchers, model: :Voucher
+    field :vouchers
 
     field :settings
     field :templates

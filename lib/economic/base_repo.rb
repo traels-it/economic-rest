@@ -26,26 +26,11 @@ module Economic
         test_response(response)
       end
 
-      def save(model, submodel: '')
-        url = ''
-        url << URL
-        url << endpoint_name.to_s if endpoint_name
-        url << "/#{model.id_key}"
-        url << sub_endpoint_name(submodel) unless submodel == ''
-        relevant_model = if submodel == ''
-                           model
-                         else
-                           submodel
-                         end
-        response = if relevant_model.id_key.nil?
-                     RestClient.post(url, relevant_model.to_h.to_json, headers) do |response, _request, _result|
-                       response
-                     end
-                   else
-                     RestClient.put(url, relevant_model.to_h.to_json, headers) do |response, _request, _result|
-                       response
-                     end
-                   end
+      def save(model)
+        post_or_put = model.id_key.nil? ? :post : :put
+
+        response = RestClient.public_send(post_or_put, endpoint_url + '/' + model.id_key.to_s, model.to_h.to_json, headers)
+
         test_response(response)
       end
 

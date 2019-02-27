@@ -1,6 +1,6 @@
 module Economic
   class Base
-    def initialize(hash)
+    def initialize(hash = {})
       values_based_on_hash(hash)
     end
 

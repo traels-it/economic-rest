@@ -13,27 +13,6 @@ class JournalVoucherRepoTest < Minitest::Test
       end
     end
 
-    it 'creates finance vouchers' do
-      stub_request(:post, 'https://restapi.e-conomic.com/journals-experimental/5/vouchers')
-        .with(
-          body: { "accountingYear": { "year": '2017' }, "journal": { "journalNumber": 5 }, "entries": { "financeVouchers": [{ "contraAccount": { "accountNumber": 1010 }, "amount": 100, "date": '2017-02-01' }] } }
-        ).to_return(status: 201, body: '', headers: {})
-
-      v = Economic::Voucher.new({})
-      v.entries = { 'financeVouchers':
-          [{
-            'contraAccount': {
-              'accountNumber': 1010
-            },
-            'amount': 100,
-            'date': '2017-02-01'
-          }] }
-      v.journal.journalNumber = 5
-      v.accountingYear.year = '2017'
-
-      assert Economic::JournalVoucherRepo.save(v)
-    end
-
     it 'can create customer payment vouchers' do
       stub_request(:post, 'https://restapi.e-conomic.com/journals-experimental/2/vouchers')
         .with(
@@ -53,7 +32,9 @@ class JournalVoucherRepoTest < Minitest::Test
       v.journal.journalNumber = 2
       v.accountingYear.year = '2017'
 
-      assert Economic::JournalVoucherRepo.save(v)
+      created = Economic::JournalVoucherRepo.save(v)
+      assert_kind_of Economic::Voucher, created
+      assert_equal 1, created.entries['customerPayments'].count
     end
   end
 end

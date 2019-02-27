@@ -8,6 +8,8 @@ module Economic
       )
 
       test_response(response)
+
+      Voucher.new(JSON.parse(response.body).first)
     end
 
     def self.endpoint_name

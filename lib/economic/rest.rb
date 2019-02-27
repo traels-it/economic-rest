@@ -30,9 +30,10 @@ require 'economic/orders/sent_repo'
 
 require 'economic/journal_repo'
 require 'economic/journal'
+require 'economic/journal_voucher_repo'
+require 'economic/voucher'
 
 require 'economic/accounting_year'
-require 'economic/voucher'
 
 module Economic
   class Demo

@@ -16,12 +16,7 @@ module Economic
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ''
 
-        response = RestClient.get(url, headers) do |response, request, result|
-          puts response.body
-          puts request.inspect
-          puts result.inspect
-          response
-        end
+        response = RestClient.get(url, headers)
         test_response(response)
       end
 

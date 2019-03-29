@@ -16,7 +16,12 @@ module Economic
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ''
 
-        response = RestClient.get(url, headers)
+        response = RestClient.get(url, headers) do |response, request, result|
+          puts response.body
+          puts request.inspect
+          puts result.inspect
+          response
+        end
         test_response(response)
       end
 
@@ -88,7 +93,7 @@ module Economic
           end_p = end_p.gsub('Repo', 's')
         end
         end_p = end_p.gsub('Journals', 'Journals-Experimental')
-        end_p.downcase
+        kebab(end_p)
       end
 
       def endpoint_url
@@ -99,6 +104,14 @@ module Economic
         raise response unless response.code.between?(200, 299)
 
         response
+      end
+
+      def kebab(string)
+        string.gsub(/::/, '/')
+              .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+              .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+              .tr('_', '-')
+              .downcase
       end
     end
   end

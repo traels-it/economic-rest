@@ -1,0 +1,42 @@
+{
+  "collection": [
+    {
+      "productGroupNumber": 1,
+      "name": "Varer m/moms",
+      "salesAccounts": "https://restapi.e-conomic.com/product-groups/1/sales-accounts",
+      "products": "https://restapi.e-conomic.com/product-groups/1/products",
+      "self": "https://restapi.e-conomic.com/product-groups/1"
+    },
+    {
+      "productGroupNumber": 2,
+      "name": "Varer u/moms",
+      "salesAccounts": "https://restapi.e-conomic.com/product-groups/2/sales-accounts",
+      "products": "https://restapi.e-conomic.com/product-groups/2/products",
+      "self": "https://restapi.e-conomic.com/product-groups/2"
+    },
+    {
+      "productGroupNumber": 3,
+      "name": "Ydelser m/moms",
+      "salesAccounts": "https://restapi.e-conomic.com/product-groups/3/sales-accounts",
+      "products": "https://restapi.e-conomic.com/product-groups/3/products",
+      "self": "https://restapi.e-conomic.com/product-groups/3"
+    },
+    {
+      "productGroupNumber": 4,
+      "name": "Ydelser u/moms",
+      "salesAccounts": "https://restapi.e-conomic.com/product-groups/4/sales-accounts",
+      "products": "https://restapi.e-conomic.com/product-groups/4/products",
+      "self": "https://restapi.e-conomic.com/product-groups/4"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 4,
+    "resultsWithoutFilter": 4,
+    "firstPage": "https://restapi.e-conomic.com/product-groups?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/product-groups?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/product-groups?skippages=0&pagesize=1000"
+}

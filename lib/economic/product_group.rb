@@ -1,5 +1,8 @@
 module Economic
   class ProductGroup < Base
-    field :productGroupNumber
+    field :name
+    field :productGroupNumber, id: true
+    field :salesAccounts
+    field :products
   end
 end

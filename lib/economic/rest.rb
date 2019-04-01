@@ -5,6 +5,7 @@ require 'economic/base_repo'
 require 'economic/base'
 
 require 'economic/vat_zone'
+require 'economic/inventory'
 require 'economic/customer_group'
 require 'economic/product_group'
 

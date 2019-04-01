@@ -1,0 +1,149 @@
+{
+  "collection": [
+    {
+      "productNumber": "90001",
+      "name": "Post Nord",
+      "salesPrice": 100.00,
+      "barred": false,
+      "lastUpdated": "2019-03-29T07:59:00Z",
+      "productGroup": {
+        "productGroupNumber": 5,
+        "name": "Forsendelse",
+        "salesAccounts": "https://restapi.e-conomic.com/product-groups/5/sales-accounts",
+        "products": "https://restapi.e-conomic.com/product-groups/5/products",
+        "self": "https://restapi.e-conomic.com/product-groups/5"
+      },
+      "inventory": {
+        "available": 0.0,
+        "inStock": 0.0,
+        "orderedFromSuppliers": 0.0,
+        "orderedByCustomers": 0.0,
+        "netWeight": 10.00,
+        "recommendedCostPrice": 100.00
+      },
+      "invoices": {
+        "drafts": "https://restapi.e-conomic.com/products/90001/invoices/drafts",
+        "booked": "https://restapi.e-conomic.com/products/90001/invoices/booked",
+        "self": "https://restapi.e-conomic.com/products/90001/invoices"
+      },
+      "pricing": {
+        "currencySpecificSalesPrices": "https://restapi.e-conomic.com/products/90001/pricing/currency-specific-sales-prices"
+      },
+      "self": "https://restapi.e-conomic.com/products/90001"
+    },
+    {
+      "productNumber": "90002",
+      "name": "Danske fragt mænd",
+      "salesPrice": 2000.00,
+      "barred": false,
+      "lastUpdated": "2019-03-29T08:00:00Z",
+      "productGroup": {
+        "productGroupNumber": 5,
+        "name": "Forsendelse",
+        "salesAccounts": "https://restapi.e-conomic.com/product-groups/5/sales-accounts",
+        "products": "https://restapi.e-conomic.com/product-groups/5/products",
+        "self": "https://restapi.e-conomic.com/product-groups/5"
+      },
+      "inventory": {
+        "available": 0.0,
+        "inStock": 0.0,
+        "orderedFromSuppliers": 0.0,
+        "orderedByCustomers": 0.0,
+        "netWeight": 10000.00,
+        "recommendedCostPrice": 2000.00
+      },
+      "invoices": {
+        "drafts": "https://restapi.e-conomic.com/products/90002/invoices/drafts",
+        "booked": "https://restapi.e-conomic.com/products/90002/invoices/booked",
+        "self": "https://restapi.e-conomic.com/products/90002/invoices"
+      },
+      "pricing": {
+        "currencySpecificSalesPrices": "https://restapi.e-conomic.com/products/90002/pricing/currency-specific-sales-prices"
+      },
+      "self": "https://restapi.e-conomic.com/products/90002"
+    },
+    {
+      "productNumber": "90003",
+      "name": "Cykelbud",
+      "recommendedPrice": 0.00,
+      "salesPrice": 72.00,
+      "barred": false,
+      "lastUpdated": "2019-04-01T10:02:00Z",
+      "productGroup": {
+        "productGroupNumber": 5,
+        "name": "Forsendelse",
+        "salesAccounts": "https://restapi.e-conomic.com/product-groups/5/sales-accounts",
+        "products": "https://restapi.e-conomic.com/product-groups/5/products",
+        "self": "https://restapi.e-conomic.com/product-groups/5"
+      },
+      "inventory": {
+        "available": 0.0,
+        "inStock": 0.0,
+        "orderedFromSuppliers": 0.0,
+        "orderedByCustomers": 0.0,
+        "netWeight": 5.00,
+        "recommendedCostPrice": 72.00
+      },
+      "invoices": {
+        "drafts": "https://restapi.e-conomic.com/products/90003/invoices/drafts",
+        "booked": "https://restapi.e-conomic.com/products/90003/invoices/booked",
+        "self": "https://restapi.e-conomic.com/products/90003/invoices"
+      },
+      "pricing": {
+        "currencySpecificSalesPrices": "https://restapi.e-conomic.com/products/90003/pricing/currency-specific-sales-prices"
+      },
+      "self": "https://restapi.e-conomic.com/products/90003"
+    },
+    {
+      "productNumber": "90004",
+      "name": "Maxibrev",
+      "recommendedPrice": 0.00,
+      "salesPrice": 50.00,
+      "barred": false,
+      "lastUpdated": "2019-04-01T10:03:00Z",
+      "productGroup": {
+        "productGroupNumber": 5,
+        "name": "Forsendelse",
+        "salesAccounts": "https://restapi.e-conomic.com/product-groups/5/sales-accounts",
+        "products": "https://restapi.e-conomic.com/product-groups/5/products",
+        "self": "https://restapi.e-conomic.com/product-groups/5"
+      },
+      "inventory": {
+        "available": 0.0,
+        "inStock": 0.0,
+        "orderedFromSuppliers": 0.0,
+        "orderedByCustomers": 0.0,
+        "packageVolume": 0.80,
+        "grossWeight": 0.80,
+        "netWeight": 0.80,
+        "recommendedCostPrice": 50.00
+      },
+      "invoices": {
+        "drafts": "https://restapi.e-conomic.com/products/90004/invoices/drafts",
+        "booked": "https://restapi.e-conomic.com/products/90004/invoices/booked",
+        "self": "https://restapi.e-conomic.com/products/90004/invoices"
+      },
+      "pricing": {
+        "currencySpecificSalesPrices": "https://restapi.e-conomic.com/products/90004/pricing/currency-specific-sales-prices"
+      },
+      "self": "https://restapi.e-conomic.com/products/90004"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 20,
+    "results": 4,
+    "resultsWithoutFilter": 4,
+    "firstPage": "https://restapi.e-conomic.com/product-groups/5/products?skippages=0&pagesize=20",
+    "lastPage": "https://restapi.e-conomic.com/product-groups/5/products?skippages=0&pagesize=20"
+  },
+  "metaData": {
+    "create": {
+      "description": "Create a new product",
+      "href": "https://restapi.e-conomic.com/product-groups/5/products",
+      "httpMethod": "post"
+    }
+  },
+  "self": "https://restapi.e-conomic.com/product-groups/5/products"
+}

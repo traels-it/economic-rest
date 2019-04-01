@@ -11,7 +11,7 @@ module Economic
     field :salesPrice
 
     # field :departmentalDistribution
-    # field :inventory
+    relation :inventory, fields: []
     # field :invoices
     # field :pricing
     relation :productGroup, fields: [:productGroupNumber]

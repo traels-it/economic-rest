@@ -1,0 +1,26 @@
+{
+  "collection": [
+    {
+      "currency": {
+        "code": "EUR",
+        "self": "https://restapi.e-conomic.com/currencies/EUR"
+      },
+      "product": {
+        "productNumber": "90003",
+        "self": "https://restapi.e-conomic.com/products/90003"
+      },
+      "price": 10.00,
+      "self": "https://restapi.e-conomic.com/products/90003/pricing/currency-specific-sales-prices/EUR"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 20,
+    "results": 1,
+    "resultsWithoutFilter": 1,
+    "firstPage": "https://restapi.e-conomic.com/products/90003/pricing/currency-specific-sales-prices?skippages=0&pagesize=20",
+    "lastPage": "https://restapi.e-conomic.com/products/90003/pricing/currency-specific-sales-prices?skippages=0&pagesize=20"
+  },
+  "self": "https://restapi.e-conomic.com/products/90003/pricing/currency-specific-sales-prices"
+}

@@ -4,11 +4,13 @@ require 'rest-client'
 require 'economic/base_repo'
 require 'economic/base'
 
+require 'economic/currency'
 require 'economic/vat_zone'
 require 'economic/inventory'
 require 'economic/customer_group'
 require 'economic/product_group'
 
+require 'economic/pricing'
 require 'economic/delivery'
 require 'economic/layout'
 require 'economic/notes'

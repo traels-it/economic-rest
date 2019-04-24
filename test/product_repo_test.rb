@@ -53,5 +53,15 @@ class ProductRepoTest < Minitest::Test
       assert_equal 10.0, pricings.first.price
       assert_equal '90003', pricings.first.product.product_number
     end
+
+    it 'gets products in group' do
+      stub_request(:get, 'https://restapi.e-conomic.com/product-groups/3/products')
+        .to_return(status: 200, body: File.read(json_fixture('products_0')), headers: {})
+
+      products = Economic::ProductRepo.in_group(3)
+
+      assert_equal 'M', products[2].name
+      assert_kind_of Economic::Product, products[0]
+    end
   end
 end

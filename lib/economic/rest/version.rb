@@ -1,5 +1,5 @@
 module Economic
   module Rest
-    VERSION = '0.2.5'.freeze
+    VERSION = '0.2.7'.freeze
   end
 end

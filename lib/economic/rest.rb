@@ -24,6 +24,7 @@ require 'economic/customer_repo'
 require 'economic/customer'
 require 'economic/product_repo'
 require 'economic/product'
+require 'economic/pricing_repo'
 
 require 'economic/orders/repo'
 require 'economic/order'

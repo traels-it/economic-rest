@@ -67,8 +67,8 @@ module Economic
         date
       end
 
-      def find(entry_number)
-        response = test_response(RestClient.get(endpoint_url + '/' + entry_number.to_s, headers))
+      def find(id)
+        response = test_response(RestClient.get(endpoint_url + '/' + id.to_s, headers))
         entry_hash = JSON.parse(response.body)
         model.new(entry_hash)
       end

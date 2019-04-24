@@ -6,11 +6,25 @@ class PricingRepoTest < Minitest::Test
       Economic::Session.authentication('Demo', 'Demo')
     end
 
-    it 'can get currency_specific_sales_prices' do
+    it 'can get currency_specific_sales_prices from product id' do
       stub_request(:get, 'https://restapi.e-conomic.com/products/90003/pricing/currency-specific-sales-prices')
         .to_return(status: 200, body: File.read(json_fixture('pricings')), headers: {})
 
       pricings = Economic::PricingRepo.currency_specific_sales_prices_for(90_003)
+      assert_equal Economic::Pricing, pricings.first.class
+      assert_equal 'EUR', pricings.first.currency.code
+      assert_equal 10.0, pricings.first.price
+      assert_equal '90003', pricings.first.product.product_number
+    end
+
+    it 'can get currency_specific_sales_prices from product' do
+      stub_request(:get, 'https://restapi.e-conomic.com/products/90003/pricing/currency-specific-sales-prices')
+        .to_return(status: 200, body: File.read(json_fixture('pricings')), headers: {})
+
+      product = Economic::Product.new
+      product.product_number = 90_003
+
+      pricings = Economic::PricingRepo.currency_specific_sales_prices_for(product)
       assert_equal Economic::Pricing, pricings.first.class
       assert_equal 'EUR', pricings.first.currency.code
       assert_equal 10.0, pricings.first.price

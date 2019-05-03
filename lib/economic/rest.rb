@@ -39,6 +39,7 @@ require 'economic/journal_voucher_repo'
 require 'economic/voucher'
 
 require 'economic/accounting_year'
+require 'economic/accounting_year_repo'
 
 module Economic
   class Demo

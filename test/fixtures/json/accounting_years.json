@@ -1,0 +1,64 @@
+{
+  "collection": [
+    {
+      "fromDate": "2015-01-01",
+      "toDate": "2015-12-31",
+      "year": "2015",
+      "periods": "https://restapi.e-conomic.com/accounting-years/2015/periods",
+      "entries": "https://restapi.e-conomic.com/accounting-years/2015/entries",
+      "totals": "https://restapi.e-conomic.com/accounting-years/2015/totals",
+      "vouchers": "https://restapi.e-conomic.com/accounting-years/2015/vouchers",
+      "self": "https://restapi.e-conomic.com/accounting-years/2015"
+    },
+    {
+      "fromDate": "2016-01-01",
+      "toDate": "2016-12-31",
+      "year": "2016",
+      "periods": "https://restapi.e-conomic.com/accounting-years/2016/periods",
+      "entries": "https://restapi.e-conomic.com/accounting-years/2016/entries",
+      "totals": "https://restapi.e-conomic.com/accounting-years/2016/totals",
+      "vouchers": "https://restapi.e-conomic.com/accounting-years/2016/vouchers",
+      "self": "https://restapi.e-conomic.com/accounting-years/2016"
+    },
+    {
+      "fromDate": "2017-01-01",
+      "toDate": "2017-12-31",
+      "year": "2017",
+      "periods": "https://restapi.e-conomic.com/accounting-years/2017/periods",
+      "entries": "https://restapi.e-conomic.com/accounting-years/2017/entries",
+      "totals": "https://restapi.e-conomic.com/accounting-years/2017/totals",
+      "vouchers": "https://restapi.e-conomic.com/accounting-years/2017/vouchers",
+      "self": "https://restapi.e-conomic.com/accounting-years/2017"
+    },
+    {
+      "fromDate": "2018-01-01",
+      "toDate": "2018-12-31",
+      "year": "2018",
+      "periods": "https://restapi.e-conomic.com/accounting-years/2018/periods",
+      "entries": "https://restapi.e-conomic.com/accounting-years/2018/entries",
+      "totals": "https://restapi.e-conomic.com/accounting-years/2018/totals",
+      "vouchers": "https://restapi.e-conomic.com/accounting-years/2018/vouchers",
+      "self": "https://restapi.e-conomic.com/accounting-years/2018"
+    },
+    {
+      "fromDate": "2019-01-01",
+      "toDate": "2019-12-31",
+      "year": "2019",
+      "periods": "https://restapi.e-conomic.com/accounting-years/2019/periods",
+      "entries": "https://restapi.e-conomic.com/accounting-years/2019/entries",
+      "totals": "https://restapi.e-conomic.com/accounting-years/2019/totals",
+      "vouchers": "https://restapi.e-conomic.com/accounting-years/2019/vouchers",
+      "self": "https://restapi.e-conomic.com/accounting-years/2019"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 5,
+    "resultsWithoutFilter": 5,
+    "firstPage": "https://restapi.e-conomic.com/accounting-years?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/accounting-years?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/accounting-years?skippages=0&pagesize=1000"
+}

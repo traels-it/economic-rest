@@ -29,6 +29,31 @@ require 'economic/rest'
 
 Economic::Demo.hello
 
+Filter text can be added to the all query to avoid getting everything. e.g. a method for finding an accounting year for a specific date
+
+def get_accounting_year(date)
+    Economic::AccountingYearRepo.all(filter_text: "toDate$gte:#{date}$and:fromDate$lte:#{date}")
+end
+
+note: you need to use Lower Camel Case for variable names.
+Filter Operators
+
+The allowed filtering operators are:
+
+Operator	Syntax
+Equals	“$eq:”
+Not equals	“$ne:”
+Greater than	“$gt:”
+Greater than or equal	“$gte:”
+Less than	“$lt:”
+Less than or equal	“$lte:”
+Substring match	“$like:”
+And also	“$and:”
+Or else	“$or:”
+In	“$in:”
+Not In	“$nin:”
+copy pasta from https://restdocs.e-conomic.com/#specifying-operator-affinity
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` or 'bundle exec m' to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

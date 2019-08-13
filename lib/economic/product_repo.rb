@@ -5,7 +5,7 @@ module Economic
       id ||= product_group_or_product_group_number
 
       end_point = [ProductGroupRepo.endpoint_url, id, 'products'].join('/')
-      response = test_response(RestClient.get(end_point, headers))
+      response = test_response(RestClient.get(URI.escape(end_point), headers))
       entry_hash = JSON.parse(response.body)
       products = []
 

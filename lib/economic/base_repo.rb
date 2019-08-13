@@ -16,20 +16,20 @@ module Economic
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ''
 
-        response = RestClient.get(url, headers)
+        response = RestClient.get(URI.escape(url), headers)
         test_response(response)
       end
 
       def save(model)
         post_or_put = model.id_key.nil? ? :post : :put
 
-        response = RestClient.public_send(post_or_put, endpoint_url + '/' + model.id_key.to_s, model.to_h.to_json, headers)
+        response = RestClient.public_send(post_or_put, URI.escape(endpoint_url + '/' + model.id_key.to_s), model.to_h.to_json, headers)
 
         test_response(response)
       end
 
       def send(model)
-        response = RestClient.post(endpoint_url, model.to_h.to_json, headers)
+        response = RestClient.post(URI.escape(endpoint_url), model.to_h.to_json, headers)
         test_response(response)
       end
 

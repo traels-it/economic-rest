@@ -24,7 +24,7 @@ module Economic
     #   relation :pdf, fields: []
     #    relation :project, fields: []
     relation :recipient, fields: [:name]
-    #    relation :references, fields: []
+    relation :references, fields: [:other]
     relation :layout, fields: [:layoutNumber]
   end
 end

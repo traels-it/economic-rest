@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    economic-rest (0.3.2)
+    economic-rest (0.3.3)
       rest-client
 
 GEM

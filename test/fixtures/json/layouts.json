@@ -1,0 +1,29 @@
+{
+  "collection": [
+    {
+      "layoutNumber": 19,
+      "name": "DK. std. m. bankoplys. 1.5",
+      "self": "https://restapi.e-conomic.com/layouts/19"
+    },
+    {
+      "layoutNumber": 20,
+      "name": "DK. std. m. girokort 1.5",
+      "self": "https://restapi.e-conomic.com/layouts/20"
+    },
+    {
+      "layoutNumber": 21,
+      "name": "Eng. std. m. bankoplys. 1.5 07.01.14",
+      "self": "https://restapi.e-conomic.com/layouts/21"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 3,
+    "resultsWithoutFilter": 3,
+    "firstPage": "https://restapi.e-conomic.com/layouts?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/layouts?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/layouts?skippages=0&pagesize=1000"
+}

@@ -22,6 +22,7 @@ require 'economic/references'
 
 require 'economic/customer_repo'
 require 'economic/customer'
+require 'economic/customer_group_repo'
 require 'economic/product_repo'
 require 'economic/product'
 require 'economic/pricing_repo'

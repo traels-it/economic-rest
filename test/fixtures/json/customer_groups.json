@@ -1,0 +1,298 @@
+{
+  "collection": [
+    {
+      "customerGroupNumber": 1,
+      "name": "Danske",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/1/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/1"
+    },
+    {
+      "customerGroupNumber": 2,
+      "name": "Udenlandske",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "name": "Eng. std. m. bankoplys. 1.5 07.01.14",
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/2/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/2"
+    },
+    {
+      "customerGroupNumber": 3,
+      "name": "Danskee",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/3/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/3"
+    },
+    {
+      "customerGroupNumber": 4,
+      "name": "Danskee",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/4/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/4"
+    },
+    {
+      "customerGroupNumber": 5,
+      "name": "abc",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/5/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/5"
+    },
+    {
+      "customerGroupNumber": 6,
+      "name": "abc",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/6/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/6"
+    },
+    {
+      "customerGroupNumber": 70,
+      "name": "Home Fords",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/70/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/70"
+    },
+    {
+      "customerGroupNumber": 131,
+      "name": "madhurir",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/131/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/131"
+    },
+    {
+      "customerGroupNumber": 348,
+      "name": "Arizona overriding neutral",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/348/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/348"
+    },
+    {
+      "customerGroupNumber": 456,
+      "name": "copying sensor revolutionize",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/456/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/456"
+    },
+    {
+      "customerGroupNumber": 807,
+      "name": "harness",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/807/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/807"
+    },
+    {
+      "customerGroupNumber": 888,
+      "name": "My Group",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/888/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/888"
+    },
+    {
+      "customerGroupNumber": 1000,
+      "name": "Unit Test",
+      "account": {
+        "accountNumber": 1020,
+        "accountType": "profitAndLoss",
+        "balance": -2577288.14,
+        "blockDirectEntries": false,
+        "debitCredit": "credit",
+        "name": "Salg af varer til udland",
+        "vatAccount": {
+          "vatCode": "Abr",
+          "self": "https://restapi.e-conomic.com/vat-accounts/Abr"
+        },
+        "accountingYears": "https://restapi.e-conomic.com/accounts/1020/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/1020"
+      },
+      "layout": {
+        "layoutNumber": 20,
+        "name": "DK. std. m. girokort 1.5",
+        "self": "https://restapi.e-conomic.com/layouts/20"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/1000/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/1000"
+    },
+    {
+      "customerGroupNumber": 9999,
+      "name": "Testing",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "layout": {
+        "layoutNumber": 19,
+        "name": "DK. std. m. bankoplys. 1.5",
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/9999/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/9999"
+    },
+    {
+      "customerGroupNumber": 577173,
+      "name": "Unit Test",
+      "account": {
+        "accountNumber": 1020,
+        "accountType": "profitAndLoss",
+        "balance": -2577288.14,
+        "blockDirectEntries": false,
+        "debitCredit": "credit",
+        "name": "Salg af varer til udland",
+        "vatAccount": {
+          "vatCode": "Abr",
+          "self": "https://restapi.e-conomic.com/vat-accounts/Abr"
+        },
+        "accountingYears": "https://restapi.e-conomic.com/accounts/1020/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/1020"
+      },
+      "layout": {
+        "layoutNumber": 20,
+        "name": "DK. std. m. girokort 1.5",
+        "self": "https://restapi.e-conomic.com/layouts/20"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/577173/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/577173"
+    },
+    {
+      "customerGroupNumber": 1233422123,
+      "name": "Sausages South Carolina",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 62547501.84,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/1233422123/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/1233422123"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 16,
+    "resultsWithoutFilter": 16,
+    "firstPage": "https://restapi.e-conomic.com/customer-groups?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/customer-groups?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/customer-groups?skippages=0&pagesize=1000"
+}

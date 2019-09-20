@@ -1,0 +1,42 @@
+{
+  "collection": [
+    {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    },
+    {
+      "name": "EU",
+      "vatZoneNumber": 2,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/2"
+    },
+    {
+      "name": "Abroad",
+      "vatZoneNumber": 3,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/3"
+    },
+    {
+      "name": "Domestic exempt VAT",
+      "vatZoneNumber": 4,
+      "enabledForCustomer": true,
+      "enabledForSupplier": false,
+      "self": "https://restapi.e-conomic.com/vat-zones/4"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 4,
+    "resultsWithoutFilter": 4,
+    "firstPage": "https://restapi.e-conomic.com/vat-zones?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/vat-zones?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/vat-zones?skippages=0&pagesize=1000"
+}

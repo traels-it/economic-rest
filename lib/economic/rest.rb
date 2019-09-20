@@ -6,6 +6,7 @@ require 'economic/base'
 
 require 'economic/currency'
 require 'economic/vat_zone'
+require 'economic/vat_zone_repo'
 require 'economic/vat_type'
 require 'economic/vat_type_repo'
 require 'economic/inventory'

@@ -43,6 +43,9 @@ require 'economic/voucher'
 require 'economic/accounting_year'
 require 'economic/accounting_year_repo'
 
+require 'economic/unit'
+require 'economic/unit_repo'
+
 module Economic
   class Demo
     def self.hello

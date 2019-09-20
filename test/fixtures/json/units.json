@@ -1,0 +1,80 @@
+{
+  "collection": [
+    {
+      "unitNumber": 1,
+      "name": "stk.",
+      "products": "https://restapi.e-conomic.com/uni ts/1/products",
+      "self": "https://restapi.e-conomic.com/units/1"
+    },
+    {
+      "unitNumber": 2,
+      "name": "tim er",
+      "products": "https://restapi.e-conomic.com/units/2/products",
+      "self": "https://restapi.e- conomic.com/units/2"
+    },
+    {
+      "unitNumber": 3,
+      "name": "pcs.",
+      "products": "https://restapi.e-conomic. com/units/3/products",
+      "self": "https://restapi.e-conomic.com/units/3"
+    },
+    {
+      "unitNumber": 4,
+      "nam e": "meter",
+      "products": "https://restapi.e-conomic.com/units/4/products",
+      "self": "https://res tapi.e-conomic.com/units/4"
+    },
+    {
+      "unitNumber": 5,
+      "name": "hours",
+      "products": "https://restapi.e- conomic.com/units/5/products",
+      "self": "https://restapi.e-conomic.com/units/5"
+    },
+    {
+      "unitNumber ": 6,
+      "name": "Mdr",
+      "products": "https://restapi.e-conomic.com/units/6/products",
+      "self": "https ://restapi.e-conomic.com/units/6"
+    },
+    {
+      "unitNumber": 7,
+      "name": "Mdr.",
+      "products": "https://restapi.e-conomic.com/units/7/products",
+      "self": "https://restapi.e-conomic.com/units/7"
+    },
+    {
+      "unitNumber": 8,
+      "name": "Måned",
+      "products": "https://restapi.e-conomic.com/units/8/products",
+      "self": "https://restapi.e-conomic.com/units/8"
+    },
+    {
+      "unitNumber": 10,
+      "name": "År",
+      "products": "https://restapi.e-conomic.com/units/10/products",
+      "self": "https://restapi.e-conomic.com/units/10"
+    },
+    {
+      "unitNumber": 12,
+      "name": "Kilo",
+      "products": "https://restapi.e-conomic.com/units/12/products",
+      "self": "https://restapi.e-conomic.com/units/12"
+    },
+    {
+      "unitNumber": 13,
+      "name": "Snit",
+      "products": "https://restapi.e-conomic.com/units/13/products",
+      "self": "https://restapi.e-conomic.com/units/13"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 11,
+    "resultsWithoutFilter": 11,
+    "firstPage": "https://restapi.e-conomic.com/units?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/units?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/units?skippages=0&pagesize=1000"
+}

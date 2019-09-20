@@ -1,0 +1,29 @@
+{
+  "collection": [
+    {
+      "vatTypeNumber": 1,
+      "name": "Outgoing Sales Domestic",
+      "self": "https://restapi.e-conomic.com/vat-types/1"
+    },
+    {
+      "vatTypeNumber": 2,
+      "name": "Ingoing Purchase Domestic",
+      "self": "https://restapi.e-conomic.com/vat-types/2"
+    },
+    {
+      "vatTypeNumber": 3,
+      "name": "Reversed charge",
+      "self": "https://restapi.e-conomic.com/vat-types/3"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 3,
+    "resultsWithoutFilter": 3,
+    "firstPage": "https://restapi.e-conomic.com/vat-types?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/vat-types?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/vat-types?skippages=0&pagesize=1000"
+}

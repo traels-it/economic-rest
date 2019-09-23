@@ -7,6 +7,18 @@ module Economic
     URL = 'https://restapi.e-conomic.com/'.freeze
 
     class << self
+      def send_request(method:, url:, payload: '', &block)
+        begin
+          if payload.strip.empty?
+            RestClient::Request.execute(method: method, url: url, :headers => headers, &block)
+          else
+            RestClient::Request.execute(method: method, url: url, payload: payload, :headers => headers, &block)
+          end
+        rescue  => e
+          raise e.to_s + ": "+ e.response.to_s
+        end
+      end
+
       def headers
         { 'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': 'application/json' }
       end
@@ -16,21 +28,19 @@ module Economic
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ''
 
-        response = RestClient.get(URI.escape(url), headers)
-        test_response(response)
+        send_request(method: :get, url: URI.escape(url))
       end
 
       def save(model)
         post_or_put = model.id_key.nil? ? :post : :put
 
-        response = RestClient.public_send(post_or_put, URI.escape(endpoint_url + '/' + model.id_key.to_s), model.to_h.to_json, headers)
+        send_request(method: post_or_put, url: URI.escape(endpoint_url + '/' + model.id_key.to_s), payload: model.to_h.to_json)
 
-        test_response(response)
+
       end
 
       def send(model)
-        response = RestClient.post(URI.escape(endpoint_url), model.to_h.to_json, headers)
-        test_response(response)
+        send_request(method: :post, url: URI.escape(endpoint_url), payload: model.to_h.to_json)
       end
 
       def all(filter_text: '')
@@ -68,7 +78,7 @@ module Economic
       end
 
       def find(id)
-        response = test_response(RestClient.get(endpoint_url + '/' + id.to_s, headers))
+        response = send_request(method: :get, url: endpoint_url + '/' + id.to_s)
         entry_hash = JSON.parse(response.body)
         model.new(entry_hash)
       end
@@ -93,12 +103,6 @@ module Economic
 
       def endpoint_url
         URL + endpoint_name
-      end
-
-      def test_response(response)
-        raise response unless response.code.between?(200, 299)
-
-        response
       end
 
       def kebab(string)

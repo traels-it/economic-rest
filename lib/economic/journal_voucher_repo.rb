@@ -1,13 +1,7 @@
 module Economic
   class JournalVoucherRepo < Economic::BaseRepo
     def self.save(voucher)
-      response = RestClient.post(
-        URI.escape(Economic::JournalRepo.endpoint_url + '/' + voucher.journal.journalNumber.to_s + '/vouchers'),
-        voucher.to_h.to_json,
-        headers
-      )
-
-      test_response(response)
+      response = send_request(method: :post, url: URI.escape(Economic::JournalRepo.endpoint_url + '/' + voucher.journal.journalNumber.to_s + '/vouchers'),payload: voucher.to_h.to_json)
 
       Voucher.new(JSON.parse(response.body).first)
     end

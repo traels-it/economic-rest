@@ -8,13 +8,13 @@ module Economic
     end
 
     def self.app_secret_token
-      raise ArgumentError, 'Authentication tokens not set, Call Session.authentication' if @private_app_id.nil?
+      raise ArgumentError, "Authentication tokens not set, Call Session.authentication" if @private_app_id.nil?
 
       @private_app_id
     end
 
     def self.agreement_grant_token
-      raise ArgumentError, 'Authentication tokens not set, Call Session.authentication' if @access_id.nil?
+      raise ArgumentError, "Authentication tokens not set, Call Session.authentication" if @access_id.nil?
 
       @access_id
     end

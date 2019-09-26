@@ -24,6 +24,7 @@ The documentation can be found at https://restdocs.e-conomic.com'
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.17"
+  spec.add_development_dependency "standard"
   spec.add_development_dependency "m"
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "rake", "~> 10.0"

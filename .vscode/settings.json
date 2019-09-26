@@ -1,0 +1,9 @@
+{
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {"standard": true},
+  "ruby.format": "standard",
+  "[ruby]": {
+      "editor.formatOnSave": true,
+  },
+  "editor.formatOnSaveTimeout": 1500,
+}

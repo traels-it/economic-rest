@@ -12,6 +12,6 @@ module Economic
     # relation :bankInformation  object      The company’s bank settings.
     relation :company, fields: []
     # relation :settings  object      Other settings.
-    # relation :user  object      The currently logged in user.
+    relation :user, fields: []
   end
 end

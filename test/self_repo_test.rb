@@ -12,6 +12,7 @@ class SelfRepoTest < Minitest::Test
       _self = Economic::SelfRepo.self
       assert_equal "The Demo Company", _self.company.name
       assert_kind_of Economic::Company, _self.company
+      assert_equal "John Doe", _self.user.name
     end
   end
 end

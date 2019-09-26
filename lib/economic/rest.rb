@@ -49,6 +49,7 @@ require "economic/accounting_year_repo"
 require "economic/unit"
 require "economic/unit_repo"
 
+require 'economic/user'
 require "economic/company"
 require "economic/self"
 require "economic/self_repo"

@@ -36,22 +36,25 @@ def get_accounting_year(date)
 end
 
 note: you need to use Lower Camel Case for variable names.
-Filter Operators
+
+### Filter Operators
 
 The allowed filtering operators are:
 
-Operator	Syntax
-Equals	“$eq:”
-Not equals	“$ne:”
-Greater than	“$gt:”
-Greater than or equal	“$gte:”
-Less than	“$lt:”
-Less than or equal	“$lte:”
-Substring match	“$like:”
-And also	“$and:”
-Or else	“$or:”
-In	“$in:”
-Not In	“$nin:”
+| Operator | Syntax |
+| -------- | --------- |
+| Equals   | `$eq:` |
+| Not equals | `$ne:` |
+| Greater than | `$gt:` |
+| Greater than or equal | `$gte:` |
+| Less than | `$lt:` |
+| Less than or equal | `$lte:` |
+| Substring match | `$like:` |
+| And also | `$and:` |
+| Or else | `$or:` |
+| In | `$in:` |
+| Not In | `$nin:` |
+
 copy pasta from https://restdocs.e-conomic.com/#specifying-operator-affinity
 
 ## Development

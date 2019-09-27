@@ -1,6 +1,6 @@
 # Economic::Rest
 
-[![Build Status](https://semaphoreci.com/api/v1/traels-it/economic-rest/branches/ipos-adjustments/badge.svg)](https://semaphoreci.com/traels-it/economic-rest)
+[![Build Status](https://semaphoreci.com/api/v1/traels-it/economic-rest/branches/master/badge.svg)](https://semaphoreci.com/traels-it/economic-rest)
 
 Ruby wrapper for the e-conomic REST API, that aims at making working with the API bearable.
 E-conomic is a web-based accounting system. For their marketing speak, see http://www.e-conomic.co.uk/about/. More details about their API at http://www.e-conomic.co.uk/integration/integration-partner/'.

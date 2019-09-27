@@ -1,6 +1,6 @@
 # Economic::Rest
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/economic/rest`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://semaphoreci.com/api/v1/traels-it/economic-rest/branches/ipos-adjustments/badge.svg)](https://semaphoreci.com/traels-it/economic-rest)
 
 Ruby wrapper for the e-conomic REST API, that aims at making working with the API bearable.
 E-conomic is a web-based accounting system. For their marketing speak, see http://www.e-conomic.co.uk/about/. More details about their API at http://www.e-conomic.co.uk/integration/integration-partner/'.
@@ -25,15 +25,19 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
 require 'economic/rest'
 
 Economic::Demo.hello
+```
 
 Filter text can be added to the all query to avoid getting everything. e.g. a method for finding an accounting year for a specific date
 
+```ruby
 def get_accounting_year(date)
     Economic::AccountingYearRepo.all(filter_text: "toDate$gte:#{date}$and:fromDate$lte:#{date}")
 end
+```
 
 note: you need to use Lower Camel Case for variable names.
 

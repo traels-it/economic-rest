@@ -72,10 +72,6 @@ require "economic/self"
 require "economic/self_repo"
 require "economic/line"
 
-# developer dependencies
-require "dotenv/load", require: false
-require "awesome_print", require: false
-
 module Economic
   class Demo
     def self.hello

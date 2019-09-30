@@ -98,7 +98,7 @@ module Economic
           RestClient::Request.execute(method: method, url: url, payload: payload, headers: headers, &block)
         end
       rescue => e
-        raise e.to_s + ": " + e.response.to_s
+        raise "#{e}#{e.respond_to?(:response) ? ": #{e.response}" : ""}"
       end
 
       def headers

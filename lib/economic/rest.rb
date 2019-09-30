@@ -1,8 +1,7 @@
 require "economic/rest/version"
-require "dotenv/load"
+
 require "rest-client"
 require "savon"
-require "awesome_print"
 require "active_support/inflector"
 
 require "economic/base_repo"
@@ -72,6 +71,10 @@ require "economic/company"
 require "economic/self"
 require "economic/self_repo"
 require "economic/line"
+
+# developer dependencies
+require "dotenv/load", require: false
+require "awesome_print", require: false
 
 module Economic
   class Demo

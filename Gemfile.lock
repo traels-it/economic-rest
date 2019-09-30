@@ -1,9 +1,8 @@
 PATH
   remote: .
   specs:
-    economic-rest (0.4.1)
+    economic-rest (0.4.2)
       activesupport
-      awesome_print
       rest-client
       savon
 
@@ -117,6 +116,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bundler (~> 1.17)
   dotenv
   economic-rest!

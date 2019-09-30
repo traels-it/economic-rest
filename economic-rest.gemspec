@@ -31,9 +31,9 @@ The documentation can be found at https://restdocs.e-conomic.com'
   spec.add_development_dependency "webmock", "~> 3.5"
   spec.add_development_dependency "dotenv"
   spec.add_development_dependency "standard"
+  spec.add_development_dependency "awesome_print"
 
   spec.add_dependency "savon"
   spec.add_dependency "rest-client"
   spec.add_dependency "activesupport"
-  spec.add_dependency "awesome_print"
 end

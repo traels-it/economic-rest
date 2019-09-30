@@ -1,0 +1,74 @@
+{
+  "collection": [
+    {
+      "paymentTermsNumber": 1,
+      "daysOfCredit": 8,
+      "name": "Netto 8 dage",
+      "paymentTermsType": "net",
+      "self": "https://restapi.e-conomic.com/payment-terms/1"
+    },
+    {
+      "paymentTermsNumber": 2,
+      "daysOfCredit": 14,
+      "name": "Netto 14 dage",
+      "paymentTermsType": "net",
+      "self": "https://restapi.e-conomic.com/payment-terms/2"
+    },
+    {
+      "paymentTermsNumber": 3,
+      "daysOfCredit": 0,
+      "name": "Til omgående betaling",
+      "paymentTermsType": "net",
+      "self": "https://restapi.e-conomic.com/payment-terms/3"
+    },
+    {
+      "paymentTermsNumber": 4,
+      "daysOfCredit": 30,
+      "name": "Løbende måned 30 dage",
+      "paymentTermsType": "invoiceMonth",
+      "self": "https://restapi.e-conomic.com/payment-terms/4"
+    },
+    {
+      "paymentTermsNumber": 5,
+      "daysOfCredit": 30,
+      "name": "Netto 30 dage",
+      "paymentTermsType": "net",
+      "self": "https://restapi.e-conomic.com/payment-terms/5"
+    },
+    {
+      "paymentTermsNumber": 6,
+      "daysOfCredit": 14,
+      "name": "Net 14 days",
+      "paymentTermsType": "net",
+      "self": "https://restapi.e-conomic.com/payment-terms/6"
+    },
+    {
+      "paymentTermsNumber": 7,
+      "name": "DemoDueDatePaymentTerms",
+      "paymentTermsType": "dueDate",
+      "self": "https://restapi.e-conomic.com/payment-terms/7"
+    },
+    {
+      "paymentTermsNumber": 8,
+      "name": "Prepaid",
+      "paymentTermsType": "prepaid",
+      "self": "https://restapi.e-conomic.com/payment-terms/8"
+    },
+    {
+      "paymentTermsNumber": 14,
+      "name": "Factors",
+      "paymentTermsType": "prepaid",
+      "self": "https://restapi.e-conomic.com/payment-terms/14"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 9,
+    "resultsWithoutFilter": 9,
+    "firstPage": "https://restapi.e-conomic.com/payment-terms?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/payment-terms?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/payment-terms?skippages=0&pagesize=1000"
+}

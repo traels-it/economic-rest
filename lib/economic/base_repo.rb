@@ -57,6 +57,12 @@ module Economic
 
       private
 
+      def destroy(id)
+        response = send_request(method: :delete, url: endpoint_url + "/" + id.to_s)
+
+        JSON.parse(response.body)["message"] == "Deleted #{model.to_s.split("::").last.downcase}."
+      end
+
       def model
         scopes = name.split("::")
         scopes[1] = scopes[1][0...-1] if scopes.count == 3
@@ -73,6 +79,9 @@ module Economic
         end
         end_p = end_p.gsub("Journals", "Journals-Experimental")
         end_p = end_p.gsub("Selfs", "Self")
+        # PaymentTerms is named with a plural s for a single record, but the end point is still just paymentterms.
+        # Therefore the endpoint gets substituted
+        end_p = end_p.gsub("PaymentTermss", "PaymentTerms")
         kebab(end_p)
       end
 

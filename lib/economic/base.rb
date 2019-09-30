@@ -12,8 +12,8 @@ module Economic
       (@attributes ||= []).push(name)
     end
 
-    def self.add_relation(name, fields)
-      (@relations ||= []).push(name: name, fields: fields)
+    def self.add_relation(name, fields, multiple)
+      (@relations ||= []).push(name: name, fields: fields, multiple: multiple)
     end
 
     def self.field(name, id: false)
@@ -22,13 +22,19 @@ module Economic
       alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
       alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
       alias_method "id_key", economic_cased_attibute_name if id
+      alias_method "id_key=", "#{economic_cased_attibute_name}=" if id
       add_attribute economic_cased_attibute_name
     end
 
-    def self.relation(name, fields:)
+    def self.relation(name, fields:, multiple: false)
       economic_cased_attibute_name = name.to_s
-      add_relation economic_cased_attibute_name, fields
-      attr_reader economic_cased_attibute_name
+      add_relation economic_cased_attibute_name, fields, multiple
+      if multiple
+        attr_accessor economic_cased_attibute_name
+        alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
+      else
+        attr_reader economic_cased_attibute_name
+      end
       alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
     end
 
@@ -39,10 +45,18 @@ module Economic
       end
 
       self.class.relations&.each do |relation_hash|
-        name = relation_hash[:name]
-        related_model = model_class(name).new(@internal_hash[name])
-
-        instance_variable_set("@#{name}", related_model)
+        if relation_hash[:multiple]
+          relation_name = relation_hash[:name]
+          model_name = relation_hash[:name].singularize
+          related_model_array = @internal_hash[relation_name]&.map { |data|
+            model_class(model_name).new(data)
+          }
+          instance_variable_set("@#{relation_name}", related_model_array)
+        else
+          name = relation_hash[:name]
+          related_model = model_class(name).new(@internal_hash[name])
+          instance_variable_set("@#{name}", related_model)
+        end
       end
     end
 
@@ -56,12 +70,21 @@ module Economic
       end
 
       self.class.relations&.each do |relation_hash|
-        relation_name = relation_hash[:name]
-        relation_fields = relation_hash[:fields]
+        if relation_hash[:multiple]
+          relation_name = relation_hash[:name]
+          relation_fields = relation_hash[:fields]
 
-        relation_data = public_send(relation_name).to_h(only_fields: relation_fields)
+          arr = public_send(relation_name).map { |relation| relation_data = relation.to_h(only_fields: relation_fields) }
 
-        return_hash[relation_name] = relation_data unless relation_data.empty?
+          return_hash[relation_name] = arr
+        else
+          relation_name = relation_hash[:name]
+          relation_fields = relation_hash[:fields]
+
+          relation_data = public_send(relation_name).to_h(only_fields: relation_fields)
+
+          return_hash[relation_name] = relation_data unless relation_data.empty?
+        end
       end
       return_hash
     end

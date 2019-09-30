@@ -1,8 +1,14 @@
 require "economic/rest/version"
+require "dotenv/load"
 require "rest-client"
+require "savon"
+require "awesome_print"
+require "active_support/inflector"
 
 require "economic/base_repo"
 require "economic/base"
+require "economic/soap_api"
+require "economic/concerns/soap_methods"
 
 require "economic/currency"
 require "economic/vat_zone"
@@ -19,6 +25,7 @@ require "economic/layout"
 require "economic/layout_repo"
 require "economic/notes"
 require "economic/payment_terms"
+require "economic/payment_terms_repo"
 require "economic/pdf"
 require "economic/project"
 require "economic/recipient"
@@ -38,6 +45,16 @@ require "economic/orders/drafts_repo"
 require "economic/orders/sent_repo"
 require "economic/product_group_repo"
 
+require "economic/invoices/repo"
+require "economic/invoice"
+require "economic/invoices/drafts_repo"
+require "economic/invoices/booked_repo"
+require "economic/invoices/not_due_repo"
+require "economic/invoices/overdue_repo"
+require "economic/invoices/paid_repo"
+require "economic/invoices/sent_repo"
+require "economic/invoices/unpaid_repo"
+
 require "economic/journal_repo"
 require "economic/journal"
 require "economic/journal_voucher_repo"
@@ -49,10 +66,12 @@ require "economic/accounting_year_repo"
 require "economic/unit"
 require "economic/unit_repo"
 
-require 'economic/user'
+require "economic/user"
+
 require "economic/company"
 require "economic/self"
 require "economic/self_repo"
+require "economic/line"
 
 module Economic
   class Demo

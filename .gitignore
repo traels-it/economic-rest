@@ -8,3 +8,6 @@
 
 # Ignore coverage
 /coverage
+
+# Ignore environment variables
+.env

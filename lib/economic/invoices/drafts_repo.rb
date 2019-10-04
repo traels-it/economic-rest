@@ -8,7 +8,7 @@ module Economic
           {
             find: {method: :current_invoice_get_data, handle: :entityHandle},
             all: {method: :current_invoice_get_all, handle: :current_invoice_handle},
-            send: {method: :current_invoice_create, handle: :debtorHandle},
+            send: {method: :current_invoice_create_from_data},
             find_lines: {
               method: :current_invoice_get_lines,
               handle: :currentInvoiceHandle,

@@ -15,10 +15,10 @@ module Economic
     field :draftInvoiceNumber, id: true # This changes name depending on its type (draft, unpaid etc)
 
     relation :customer, fields: [:customerNumber]
-    # relation :delivery, fields: []
+    relation :delivery, fields: []
     # relation :deliveryLocation, fields: []
     relation :layout, fields: [:layoutNumber]
-    # relation :notes, fields: []
+    relation :notes, fields: []
     relation :paymentTerms, fields: [:paymentTermsNumber]
     # relation :pdf, fields: []
     # relation :project, fields: []

@@ -51,7 +51,7 @@ class InvoiceRepoTest < Minitest::Test
 
     describe "send" do
       before do
-        stub_soap_get_request(soap_action: "CurrentInvoice_Create")
+        stub_soap_get_request(soap_action: "CurrentInvoice_CreateFromData")
         stub_soap_get_request(soap_action: "CurrentInvoiceLine_CreateFromDataArray")
         stub_soap_get_request(soap_action: "CurrentInvoice_GetData")
         stub_soap_get_request(soap_action: "CurrentInvoice_GetLines")
@@ -60,7 +60,11 @@ class InvoiceRepoTest < Minitest::Test
 
       it "can post" do
         draft = Economic::Invoice.new({})
+        draft.id_key = 1
         draft.currency = "DKK"
+        draft.customer.name = "Torstens Torskebutik"
+        # TODO: Where to find the exchange rate?
+        draft.exchange_rate = 10
         draft.customer.customer_number = 641
         draft.date = Date.today
         draft.due_date = Date.today.next_day
@@ -68,6 +72,17 @@ class InvoiceRepoTest < Minitest::Test
         draft.recipient.name = "Torstens Torskebutik"
         draft.recipient.vat_zone.vat_zone_number = 1
         draft.payment_terms.payment_terms_number = 1
+        draft.delivery.address = "Rødspætteallé 3"
+        draft.delivery.city = "Esbjerg"
+        draft.delivery.country = "Danmark"
+        draft.delivery.delivery_date = Date.today
+        draft.delivery.zip = "1234"
+        draft.notes.heading = "Dette er en overskrift"
+        draft.net_amount = 123.21
+        draft.vat_amount = 12.12
+        draft.gross_amount = 100.00
+        draft.margin_in_base_currency = 0
+        draft.margin_percentage = 0
         draft.lines = [
           Economic::Line.new({
             "lineNumber" => 5,

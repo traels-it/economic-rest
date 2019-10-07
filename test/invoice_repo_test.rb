@@ -63,8 +63,8 @@ class InvoiceRepoTest < Minitest::Test
         draft.id_key = 1
         draft.currency = "DKK"
         draft.customer.name = "Torstens Torskebutik"
-        # TODO: Where to find the exchange rate?
-        draft.exchange_rate = 10
+        # TODO: Exchange rate is required in the soap api. It should be 100, if currency is DKK
+        draft.exchange_rate = 100.00000
         draft.customer.customer_number = 641
         draft.date = Date.today
         draft.due_date = Date.today.next_day

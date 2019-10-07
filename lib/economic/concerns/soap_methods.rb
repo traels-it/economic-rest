@@ -51,7 +51,7 @@ module Economic
                 Code: model.currency,
               },
               ExchangeRate: model.exchange_rate,
-              IsVatIncluded: true, # TODO: Need to find this as well... And where to put it on the invoice object
+              IsVatIncluded: is_vat_included?(model),
               LayoutHandle: {
                 Id: model.layout.layout_number,
               },
@@ -207,6 +207,10 @@ module Economic
         end
 
         arr
+      end
+
+      def is_vat_included?(model)
+        model.vat_amount != 0
       end
     end
   end

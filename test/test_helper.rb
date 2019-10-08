@@ -6,6 +6,8 @@ require "economic/rest"
 require "minitest/autorun"
 require "minitest/spec"
 require "webmock/minitest"
+require "minitest/unit"
+require "mocha/minitest"
 
 def stub_get_request(endpoint:, page_or_id: nil, pageindex: 0, fixture_name:, method: :get, paged: true)
   url = "https://restapi.e-conomic.com/"

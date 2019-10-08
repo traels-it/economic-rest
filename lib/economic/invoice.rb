@@ -27,6 +27,7 @@ module Economic
     relation :lines, fields: [:lineNumber], multiple: true
 
     def self.build_from_soap_api(data)
+      # TODO: Add all the options
       hash = {
         "currency" => data[:currency_handle][:code],
         "date" => data[:date].to_date,
@@ -44,6 +45,7 @@ module Economic
         "customer" => {"customerNumber" => data[:debtor_handle][:id].to_i},
         "layout" => {"layoutNumber" => data[:layout_handle][:id].to_i},
         "paymentTerms" => {"paymentTermsNumber" => data[:term_of_payment_handle][:id].to_i},
+        "references" => {"other" => data[:other_reference]},
       }
 
       new(hash)

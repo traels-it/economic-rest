@@ -36,9 +36,10 @@ module Economic
         end
         entries
       end
+      alias _all all
 
       def filter(filter_text)
-        all(filter_text: filter_text)
+        _all(filter_text: filter_text)
       end
 
       def updated_after(date)

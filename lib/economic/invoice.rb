@@ -22,7 +22,7 @@ module Economic
     relation :paymentTerms, fields: [:paymentTermsNumber]
     # relation :pdf, fields: []
     # relation :project, fields: []
-    relation :recipient, fields: [:name]
+    relation :recipient, fields: [:name, :ean]
     relation :references, fields: [:other]
     relation :lines, fields: [:lineNumber, :description, :sortKey, :quantity, :unitNetPrice, :discountPercentage, :unitCostPrice, :marginInBaseCurrency, :marginPercentage, :totalNetAmount], multiple: true
 

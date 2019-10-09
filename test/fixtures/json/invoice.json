@@ -1,0 +1,94 @@
+{
+  "draftInvoiceNumber": 19,
+  "soap": {
+    "currentInvoiceHandle": {
+      "id": 52
+    }
+  },
+  "templates": {
+    "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/19/templates/booking-instructions",
+    "self": "https://restapi.e-conomic.com/invoices/drafts/19/templates"
+  },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      },
+      "product": {
+        "productNumber": "3027",
+        "self": "https://restapi.e-conomic.com/products/3027"
+      },
+      "quantity": 2.0,
+      "discountPercentage": 15.0,
+      "unitCostPrice": 7.0,
+      "marginInBaseCurrency": 0.0,
+      "marginPercentage": 0.0
+    },
+    {
+      "lineNumber": 2,
+      "sortKey": 2,
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      },
+      "product": {
+        "productNumber": "3027",
+        "self": "https://restapi.e-conomic.com/products/3027"
+      },
+      "quantity": 2.0,
+      "discountPercentage": 15.0,
+      "unitCostPrice": 7.0,
+      "marginInBaseCurrency": 0.0,
+      "marginPercentage": 0.0
+    }
+  ],
+  "date": "2019-10-09",
+  "currency": "DKK",
+  "exchangeRate": 100.0,
+  "netAmount": 0.0,
+  "netAmountInBaseCurrency": 0.0,
+  "grossAmount": 0.0,
+  "grossAmountInBaseCurrency": 0.0,
+  "marginInBaseCurrency": -28.0,
+  "marginPercentage": 0.0,
+  "vatAmount": 0.0,
+  "roundingAmount": 0.0,
+  "costPriceInBaseCurrency": 28.0,
+  "dueDate": "2019-10-17",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "daysOfCredit": 8,
+    "name": "Netto 8 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "customer": {
+    "customerNumber": 1,
+    "self": "https://restapi.e-conomic.com/customers/1"
+  },
+  "recipient": {
+    "name": "Torstens Torskebutik",
+    "vatZone": {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    }
+  },
+  "layout": {
+    "layoutNumber": 15,
+    "self": "https://restapi.e-conomic.com/layouts/15"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/drafts/19/pdf"
+  },
+  "self": "https://restapi.e-conomic.com/invoices/drafts/19"
+}

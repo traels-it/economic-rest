@@ -40,10 +40,9 @@ module Economic
         end
         entries
       end
-      alias _all all
 
       def filter(filter_text)
-        _all(filter_text: filter_text)
+        all(filter_text: filter_text)
       end
 
       def updated_after(date)
@@ -60,13 +59,13 @@ module Economic
         URL + endpoint_name
       end
 
-      private
-
       def destroy(id)
         response = send_request(method: :delete, url: endpoint_url + "/" + id.to_s)
 
         JSON.parse(response.body)["message"] == "Deleted #{model.to_s.split("::").last.downcase}."
       end
+
+      private
 
       def model
         scopes = name.split("::")

@@ -1,0 +1,110 @@
+{
+  "draftInvoiceNumber": 21,
+  "soap": {
+    "currentInvoiceHandle": {
+      "id": 54
+    }
+  },
+  "templates": {
+    "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/21/templates/booking-instructions",
+    "self": "https://restapi.e-conomic.com/invoices/drafts/21/templates"
+  },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "Frisk torsk - med rogn",
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      },
+      "product": {
+        "productNumber": "3027",
+        "self": "https://restapi.e-conomic.com/products/3027"
+      },
+      "quantity": 3.0,
+      "unitNetPrice": 153.44,
+      "discountPercentage": 10.0,
+      "unitCostPrice": 10.2,
+      "totalNetAmount": 414.29,
+      "marginInBaseCurrency": 383.69,
+      "marginPercentage": 92.61
+    },
+    {
+      "lineNumber": 2,
+      "sortKey": 2,
+      "description": "Helleflynder",
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      },
+      "product": {
+        "productNumber": "3075",
+        "self": "https://restapi.e-conomic.com/products/3075"
+      },
+      "quantity": 2.0,
+      "unitNetPrice": 23.0,
+      "discountPercentage": 0.0,
+      "unitCostPrice": 10.22,
+      "totalNetAmount": 46.0,
+      "marginInBaseCurrency": 25.56,
+      "marginPercentage": 55.57
+    }
+  ],
+  "date": "2019-10-09",
+  "currency": "DKK",
+  "exchangeRate": 100.0,
+  "netAmount": 460.29,
+  "netAmountInBaseCurrency": 460.29,
+  "grossAmount": 575.36,
+  "grossAmountInBaseCurrency": 575.36,
+  "marginInBaseCurrency": 409.25,
+  "marginPercentage": 88.91,
+  "vatAmount": 115.07,
+  "roundingAmount": 0.0,
+  "costPriceInBaseCurrency": 51.04,
+  "dueDate": "2019-10-17",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "daysOfCredit": 8,
+    "name": "Netto 8 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "customer": {
+    "customerNumber": 641,
+    "self": "https://restapi.e-conomic.com/customers/641"
+  },
+  "recipient": {
+    "name": "Torstens Torskebutik",
+    "vatZone": {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    }
+  },
+  "delivery": {
+    "address": "Rødspætteallé 3",
+    "zip": "1234",
+    "city": "Esbjerg",
+    "country": "Danmark",
+    "deliveryDate": "2019-10-09"
+  },
+  "notes": {
+    "heading": "Dette er en overskrift"
+  },
+  "layout": {
+    "layoutNumber": 15,
+    "self": "https://restapi.e-conomic.com/layouts/15"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/drafts/21/pdf"
+  },
+  "self": "https://restapi.e-conomic.com/invoices/drafts/21"
+}

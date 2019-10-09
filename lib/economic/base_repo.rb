@@ -14,7 +14,11 @@ module Economic
       end
 
       def send(model)
-        send_request(method: :post, url: URI.escape(endpoint_url), payload: model.to_h.to_json)
+        response = send_request(method: :post, url: URI.escape(endpoint_url), payload: model.to_h.to_json)
+
+        entry_hash = JSON.parse(response.body)
+
+        model.class.new(entry_hash)
       end
 
       def all(filter_text: "")

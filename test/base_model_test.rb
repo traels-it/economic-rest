@@ -73,6 +73,12 @@ class BaseModelTest < Minitest::Test
       assert_equal 97_939_393, base_model.base_model_relations.first.base_model_relation_number
       assert_equal 97_222, base_model.base_model_relations[1].base_model_relation_number
     end
+
+    it "returns an empty array, if a relation, where multiple is true, is not set" do
+      base_model = Economic::BaseModelWithMultipleRelations.new
+
+      assert_equal [], base_model.base_model_relations
+    end
   end
 
   describe "to_h" do

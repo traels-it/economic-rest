@@ -13,6 +13,7 @@ module Economic
     field :roundingAmount
     field :vatAmount
     field :draftInvoiceNumber, id: true # This changes name depending on its type (draft, unpaid etc)
+    field :bookedInvoiceNumber
 
     relation :customer, fields: [:customerNumber]
     relation :delivery, fields: []

@@ -24,7 +24,7 @@ module Economic
     # relation :project, fields: []
     relation :recipient, fields: [:name]
     relation :references, fields: [:other]
-    relation :lines, fields: [:lineNumber], multiple: true
+    relation :lines, fields: [:lineNumber, :description, :sortKey, :quantity, :unitNetPrice, :discountPercentage, :unitCostPrice, :marginInBaseCurrency, :marginPercentage, :totalNetAmount], multiple: true
 
     def self.build_from_soap_api(data)
       # TODO: Add all the options

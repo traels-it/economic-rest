@@ -88,5 +88,17 @@ class CustomerContactRepoTest < Minitest::Test
         assert_equal "Torsten Test", result.first.name
       end
     end
+
+    describe "#destroy" do
+      it "can destroy a customer contact" do
+        stub_request(:delete, "https://restapi.e-conomic.com/customers/1/contacts/327")
+          .to_return(status: 204, body: "", headers: {})
+
+        customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
+        result = Economic::CustomerContactRepo.destroy(327, on: customer)
+
+        assert_equal true, result
+      end
+    end
   end
 end

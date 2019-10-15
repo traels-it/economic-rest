@@ -55,7 +55,6 @@ module Economic
 
       def find(id, url: nil)
         url = url.nil? ? endpoint_url + "/" + id.to_s : url
-
         response = send_request(method: :get, url: url)
 
         entry_hash = JSON.parse(response.body)
@@ -66,8 +65,14 @@ module Economic
         URL + endpoint_name
       end
 
-      def destroy(id)
-        response = send_request(method: :delete, url: endpoint_url + "/" + id.to_s)
+      def destroy(id, url: nil)
+        url = url.nil? ? endpoint_url + "/" + id.to_s : url
+        response = send_request(method: :delete, url: url)
+
+        # The response to a delete action looks different, depending on the end point. For instance, all the
+        # delete actions for the customer endpoint returns a 204 with an empty body, while deleting a draft
+        # invoice returns a 200 with a message detailing the items deleted
+        return true if response.code == 204
 
         JSON.parse(response.body)["message"] == "Deleted #{model.to_s.split("::").last.downcase}."
       end

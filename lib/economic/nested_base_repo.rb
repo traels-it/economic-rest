@@ -28,6 +28,10 @@ module Economic
       def find(id, on:)
         super(id, url: endpoint_url(on) + "/" + id.to_s)
       end
+
+      def destroy(id, on:)
+        super(id, url: endpoint_url(on) + "/" + id.to_s)
+      end
     end
   end
 end

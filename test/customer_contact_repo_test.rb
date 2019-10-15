@@ -76,5 +76,17 @@ class CustomerContactRepoTest < Minitest::Test
         assert_equal 325, result.id_key
       end
     end
+
+    describe "#filter" do
+      it "can filter the customer contacts" do
+        stub_get_request(endpoint: "customers/1/contacts?filter=name$like:Torsten&pagesize=1000&skippages=0", nested: true, fixture_name: "customer_contact_filter", method: :get)
+
+        customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
+        result = Economic::CustomerContactRepo.filter("name$like:Torsten", on: customer)
+
+        assert_kind_of Economic::CustomerContact, result.first
+        assert_equal "Torsten Test", result.first.name
+      end
+    end
   end
 end

@@ -5,6 +5,10 @@ module Economic
         super(filter_text: filter_text, url: endpoint_url(on))
       end
 
+      def filter(filter_text, on:)
+        all(filter_text: filter_text, on: on)
+      end
+
       def endpoint_url(model)
         Economic::BaseRepo::URL + endpoint_name(model)
       end

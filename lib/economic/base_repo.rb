@@ -45,8 +45,8 @@ module Economic
         entries
       end
 
-      def filter(filter_text)
-        all(filter_text: filter_text)
+      def filter(filter_text, url: nil)
+        all(filter_text: filter_text, url: url)
       end
 
       def updated_after(date)

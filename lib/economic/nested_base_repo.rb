@@ -1,6 +1,10 @@
 module Economic
   class NestedBaseRepo < Economic::BaseRepo
     class << self
+      def all(filter_text: "", on:)
+        super(filter_text: filter_text, url: endpoint_url(on))
+      end
+
       def endpoint_url(model)
         Economic::BaseRepo::URL + endpoint_name(model)
       end

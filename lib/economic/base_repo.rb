@@ -16,7 +16,7 @@ module Economic
       def send(model)
         response = send_request(method: :post, url: URI.escape(endpoint_url), payload: model.to_h.to_json)
 
-        entry_hash = JSON.parse(response.body)
+        entry_hash = response.body.blank? ? {} : JSON.parse(response.body)
 
         model.class.new(entry_hash)
       end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    economic-rest (0.4.5)
+    economic-rest (0.4.3)
       activesupport
       rest-client
       savon
@@ -50,7 +50,7 @@ GEM
     method_source (0.9.2)
     mime-types (3.3)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2019.0904)
+    mime-types-data (3.2019.1009)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     mocha (1.9.0)
@@ -113,7 +113,7 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    zeitwerk (2.1.10)
+    zeitwerk (2.2.0)
 
 PLATFORMS
   ruby

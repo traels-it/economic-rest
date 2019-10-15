@@ -72,9 +72,8 @@ module Economic
         # The response to a delete action looks different, depending on the end point. For instance, all the
         # delete actions for the customer endpoint returns a 204 with an empty body, while deleting a draft
         # invoice returns a 200 with a message detailing the items deleted
-        return true if response.code == 204
-
-        JSON.parse(response.body)["message"] == "Deleted #{model.to_s.split("::").last.downcase}."
+        success_codes = [200, 204]
+        return true if success_codes.include?(response.code)
       end
 
       private

@@ -86,6 +86,7 @@ module Economic
         # PaymentTerms is named with a plural s for a single record, but the end point is still just paymentterms.
         # Therefore the endpoint gets substituted
         end_p = end_p.gsub("PaymentTermss", "PaymentTerms")
+        end_p = end_p.gsub("CustomerContacts", "Contacts")
         kebab(end_p)
       end
 

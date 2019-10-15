@@ -52,11 +52,24 @@ class CustomerContactRepoTest < Minitest::Test
       end
 
       it "can update an existing customer contact" do
-        stub_get_request(endpoint: "customers/1/contacts/325", nested: true, fixture_name: "customer_contact_update", method: :put)
+        stub_get_request(endpoint: "customers/1/contacts/325", nested: true, fixture_name: "customer_contact", method: :put)
 
         customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
         contact = Economic::CustomerContact.new({"name" => "Torsten Torsten", "customerContactNumber" => 325})
         result = Economic::CustomerContactRepo.save(contact, on: customer)
+
+        assert_kind_of Economic::CustomerContact, result
+        assert_equal "Torsten Torsten", result.name
+        assert_equal 325, result.id_key
+      end
+    end
+
+    describe "#find" do
+      it "can find a single customer contact by its id" do
+        stub_get_request(endpoint: "customers/1/contacts/325", nested: true, fixture_name: "customer_contact", method: :get)
+
+        customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
+        result = Economic::CustomerContactRepo.find(325, on: customer)
 
         assert_kind_of Economic::CustomerContact, result
         assert_equal "Torsten Torsten", result.name

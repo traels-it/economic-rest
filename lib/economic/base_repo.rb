@@ -53,8 +53,11 @@ module Economic
         filter("lastUpdated$gt:#{to_iso8601z(date)}")
       end
 
-      def find(id)
-        response = send_request(method: :get, url: endpoint_url + "/" + id.to_s)
+      def find(id, url: nil)
+        url = url.nil? ? endpoint_url + "/" + id.to_s : url
+
+        response = send_request(method: :get, url: url)
+
         entry_hash = JSON.parse(response.body)
         model.new(entry_hash)
       end

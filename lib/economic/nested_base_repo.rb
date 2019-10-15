@@ -20,6 +20,10 @@ module Economic
       def save(model, on:)
         super(model, url: endpoint_url(on) + "/" + model.id_key.to_s)
       end
+
+      def find(id, on:)
+        super(id, url: endpoint_url(on) + "/" + id.to_s)
+      end
     end
   end
 end

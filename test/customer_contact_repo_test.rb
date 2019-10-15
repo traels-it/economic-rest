@@ -37,5 +37,31 @@ class CustomerContactRepoTest < Minitest::Test
         refute_nil result.id_key
       end
     end
+
+    describe "#save" do
+      it "can create a customer contact" do
+        stub_get_request(endpoint: "customers/1/contacts/", nested: true, fixture_name: "customer_contact_send", method: :post)
+
+        customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
+        contact = Economic::CustomerContact.new({"name" => "Torsten Test"})
+        result = Economic::CustomerContactRepo.save(contact, on: customer)
+
+        assert_kind_of Economic::CustomerContact, result
+        assert_equal "Torsten Test", result.name
+        refute_nil result.id_key
+      end
+
+      it "can update an existing customer contact" do
+        stub_get_request(endpoint: "customers/1/contacts/325", nested: true, fixture_name: "customer_contact_update", method: :put)
+
+        customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
+        contact = Economic::CustomerContact.new({"name" => "Torsten Torsten", "customerContactNumber" => 325})
+        result = Economic::CustomerContactRepo.save(contact, on: customer)
+
+        assert_kind_of Economic::CustomerContact, result
+        assert_equal "Torsten Torsten", result.name
+        assert_equal 325, result.id_key
+      end
+    end
   end
 end

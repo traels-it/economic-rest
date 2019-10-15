@@ -7,18 +7,22 @@ module Economic
     URL = "https://restapi.e-conomic.com/".freeze
 
     class << self
-      def save(model)
+      def save(model, url: nil)
         post_or_put = model.id_key.nil? ? :post : :put
+        url = url.nil? ? endpoint_url + "/" + model.id_key.to_s : url
 
-        send_request(method: post_or_put, url: URI.escape(endpoint_url + "/" + model.id_key.to_s), payload: model.to_h.to_json)
+        response = send_request(method: post_or_put, url: url, payload: model.to_h.to_json)
+
+        modelize_response(response)
       end
 
-      def send(model)
-        response = send_request(method: :post, url: URI.escape(endpoint_url), payload: model.to_h.to_json)
+      # TODO: This method does not seem to do anything that the save method cannot do - is there any reason to keep it? Posting to a not-existing id is apparenly fine
+      def send(model, url: nil)
+        url = url.nil? ? endpoint_url : url
 
-        entry_hash = response.body.blank? ? {} : JSON.parse(response.body)
+        response = send_request(method: :post, url: url, payload: model.to_h.to_json)
 
-        model.class.new(entry_hash)
+        modelize_response(response)
       end
 
       def all(filter_text: "", url: nil)
@@ -93,6 +97,7 @@ module Economic
       end
 
       def send_request(method:, url:, payload: "", &block)
+        url = URI.escape(url)
         if payload.strip.empty?
           RestClient::Request.execute(method: method, url: url, headers: headers, &block)
         else
@@ -120,6 +125,12 @@ module Economic
           .gsub(/([a-z\d])([A-Z])/, '\1_\2')
           .tr("_", "-")
           .downcase
+      end
+
+      def modelize_response(response)
+        entry_hash = response.body.blank? ? {} : JSON.parse(response.body)
+
+        model.new(entry_hash)
       end
     end
   end

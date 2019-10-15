@@ -7,9 +7,9 @@ module Economic
     URL = "https://restapi.e-conomic.com/".freeze
 
     class << self
-      def save(model, url: nil)
+      def save(model, url: endpoint_url)
         post_or_put = model.id_key.nil? ? :post : :put
-        url = url.nil? ? endpoint_url + "/" + model.id_key.to_s : url
+        url += "/" + model.id_key.to_s
 
         response = send_request(method: post_or_put, url: url, payload: model.to_h.to_json)
 
@@ -17,15 +17,13 @@ module Economic
       end
 
       # TODO: This method does not seem to do anything that the save method cannot do - is there any reason to keep it? Posting to a not-existing id is apparenly fine
-      def send(model, url: nil)
-        url = url.nil? ? endpoint_url : url
-
+      def send(model, url: endpoint_url)
         response = send_request(method: :post, url: url, payload: model.to_h.to_json)
 
         modelize_response(response)
       end
 
-      def all(filter_text: "", url: nil)
+      def all(filter_text: "", url: endpoint_url)
         pagination = {}
         pageindex = 0
         entries = []
@@ -45,7 +43,7 @@ module Economic
         entries
       end
 
-      def filter(filter_text, url: nil)
+      def filter(filter_text, url: endpoint_url)
         all(filter_text: filter_text, url: url)
       end
 
@@ -53,8 +51,8 @@ module Economic
         filter("lastUpdated$gt:#{to_iso8601z(date)}")
       end
 
-      def find(id, url: nil)
-        url = url.nil? ? endpoint_url + "/" + id.to_s : url
+      def find(id, url: endpoint_url)
+        url += "/" + id.to_s
         response = send_request(method: :get, url: url)
 
         entry_hash = JSON.parse(response.body)
@@ -65,8 +63,8 @@ module Economic
         URL + endpoint_name
       end
 
-      def destroy(id, url: nil)
-        url = url.nil? ? endpoint_url + "/" + id.to_s : url
+      def destroy(id, url: endpoint_url)
+        url += "/" + id.to_s
         response = send_request(method: :delete, url: url)
 
         # The response to a delete action looks different, depending on the end point. For instance, all the
@@ -118,12 +116,12 @@ module Economic
         {'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': "application/json"}
       end
 
-      def fetch(url:, pageindex: 0, filter_text: "")
-        url = url.nil? ? endpoint_url : url
+      def fetch(url: endpoint_url, pageindex: 0, filter_text: "")
+        url = url.dup
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ""
 
-        send_request(method: :get, url: URI.escape(url))
+        send_request(method: :get, url: url)
       end
 
       def kebab(string)

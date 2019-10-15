@@ -9,7 +9,7 @@ class CustomerContactRepoTest < Minitest::Test
     it "builds the correct endpoint" do
       model = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 12})
 
-      assert_equal "https://restapi.e-conomic.com/customers/12/contacts", Economic::CustomerContactRepo.endpoint_url(model)
+      assert_equal "https://restapi.e-conomic.com/customers/12/contacts", Economic::CustomerContactRepo.nested_endpoint_url(model)
     end
 
     describe "#all" do

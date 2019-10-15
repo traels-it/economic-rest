@@ -74,6 +74,8 @@ module Economic
       end
 
       def endpoint_name
+        return endpoint if respond_to?(:endpoint)
+
         end_p = name.sub("Economic::", "")
         if end_p.include?("::")
           end_p = end_p.gsub("Repo", "")
@@ -81,12 +83,6 @@ module Economic
         else
           end_p = end_p.gsub("Repo", "s")
         end
-        end_p = end_p.gsub("Journals", "Journals-Experimental")
-        end_p = end_p.gsub("Selfs", "Self")
-        # PaymentTerms is named with a plural s for a single record, but the end point is still just paymentterms.
-        # Therefore the endpoint gets substituted
-        end_p = end_p.gsub("PaymentTermss", "PaymentTerms")
-        end_p = end_p.gsub("CustomerContacts", "Contacts")
         kebab(end_p)
       end
 

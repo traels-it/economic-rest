@@ -21,14 +21,18 @@ module Economic
         model.class.new(entry_hash)
       end
 
-      def all(filter_text: "")
+      def all(filter_text: "", on: nil)
         pagination = {}
         pageindex = 0
         entries = []
 
         # Loop until last page, last page does not have a 'nextPage'
         while pagination["nextPage"] || pageindex.zero?
-          response = fetch(pageindex: pageindex, filter_text: filter_text)
+          response = if on.nil?
+            fetch(pageindex: pageindex, filter_text: filter_text)
+          else
+            fetch(pageindex: pageindex, filter_text: filter_text, model: on)
+          end
 
           hash = JSON.parse(response.body)
           hash["collection"].each do |entry_hash|
@@ -110,8 +114,12 @@ module Economic
         {'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': "application/json"}
       end
 
-      def fetch(pageindex: 0, filter_text: "")
-        url = endpoint_url
+      def fetch(pageindex: 0, filter_text: "", model: nil)
+        url = if model.nil?
+          endpoint_url
+        else
+          endpoint_url(model)
+        end
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ""
 

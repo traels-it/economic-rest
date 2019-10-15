@@ -9,10 +9,10 @@ require "webmock/minitest"
 require "minitest/unit"
 require "mocha/minitest"
 
-def stub_get_request(endpoint:, page_or_id: nil, pageindex: 0, fixture_name:, method: :get, paged: true)
+def stub_get_request(endpoint:, page_or_id: nil, pageindex: 0, fixture_name:, method: :get, paged: true, nested: false)
   url = "https://restapi.e-conomic.com/"
   url << endpoint.to_s if endpoint
-  if paged
+  if paged && !nested
     url << if page_or_id.nil? || page_or_id.to_s.empty?
       "?skippages=#{pageindex}&pagesize=1000"
     else

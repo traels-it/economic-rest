@@ -23,5 +23,19 @@ class CustomerContactRepoTest < Minitest::Test
         assert_equal "Simon Testersen", customer_contacts.first.name
       end
     end
+
+    describe "#send" do
+      it "can create a customer contact" do
+        stub_get_request(endpoint: "customers/1/contacts", nested: true, fixture_name: "customer_contact_send", method: :post)
+
+        customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
+        contact = Economic::CustomerContact.new({"name" => "Torsten Test"})
+        result = Economic::CustomerContactRepo.send(contact, on: customer)
+
+        assert_kind_of Economic::CustomerContact, result
+        assert_equal "Torsten Test", result.name
+        refute_nil result.id_key
+      end
+    end
   end
 end

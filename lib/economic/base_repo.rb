@@ -31,7 +31,7 @@ module Economic
           response = if on.nil?
             fetch(pageindex: pageindex, filter_text: filter_text)
           else
-            fetch(pageindex: pageindex, filter_text: filter_text, model: on)
+            fetch(pageindex: pageindex, filter_text: filter_text, on: on)
           end
 
           hash = JSON.parse(response.body)
@@ -114,11 +114,11 @@ module Economic
         {'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': "application/json"}
       end
 
-      def fetch(pageindex: 0, filter_text: "", model: nil)
-        url = if model.nil?
+      def fetch(pageindex: 0, filter_text: "", on: nil)
+        url = if on.nil?
           endpoint_url
         else
-          endpoint_url(model)
+          endpoint_url(on)
         end
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ""

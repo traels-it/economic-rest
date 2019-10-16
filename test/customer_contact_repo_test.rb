@@ -40,14 +40,16 @@ class CustomerContactRepoTest < Minitest::Test
 
     describe "#save" do
       it "can create a customer contact" do
-        stub_get_request(endpoint: "customers/1/contacts/", nested: true, fixture_name: "customer_contact_send", method: :post)
+        WebMock.allow_net_connect!
+        # stub_get_request(endpoint: "customers/1/contacts/", nested: true, fixture_name: "customer_contact_send", method: :post)
 
         customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
-        contact = Economic::CustomerContact.new({"name" => "Torsten Test"})
+        contact = Economic::CustomerContact.new({"name" => "Torsten Test", "eInvoiceId" => "1234567890"})
         result = Economic::CustomerContactRepo.save(contact, on: customer)
 
         assert_kind_of Economic::CustomerContact, result
         assert_equal "Torsten Test", result.name
+        assert_equal "1234567890", result.e_invoice_id
         refute_nil result.id_key
       end
 

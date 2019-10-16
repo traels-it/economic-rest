@@ -48,13 +48,9 @@ module Economic
         if relation_hash[:multiple]
           relation_name = relation_hash[:name]
           model_name = relation_hash[:name].singularize
-          related_model_array = if @internal_hash[relation_name].nil?
-            []
-          else
-            @internal_hash[relation_name]&.map { |data|
-              model_class(model_name).new(data)
-            }
-          end
+          related_model_array = Array(@internal_hash[relation_name])&.map { |data|
+            model_class(model_name).new(data)
+          }
           instance_variable_set("@#{relation_name}", related_model_array)
         else
           name = relation_hash[:name]

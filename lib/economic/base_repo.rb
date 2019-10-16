@@ -69,9 +69,6 @@ module Economic
         url += "/" + id.to_s
         response = send_request(method: :delete, url: url)
 
-        # The response to a delete action looks different, depending on the end point. For instance, all the
-        # delete actions for the customer endpoint returns a 204 with an empty body, while deleting a draft
-        # invoice returns a 200 with a message detailing the items deleted
         success_codes = [200, 204]
         return true if success_codes.include?(response.code)
       end

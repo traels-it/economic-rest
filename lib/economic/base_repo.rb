@@ -7,6 +7,8 @@ module Economic
     URL = "https://restapi.e-conomic.com/".freeze
 
     class << self
+      attr_accessor :endpoint
+
       def save(model, url: endpoint_url)
         post_or_put = model.id_key.nil? ? :post : :put
         url += "/" + model.id_key.to_s
@@ -83,7 +85,7 @@ module Economic
       end
 
       def endpoint_name
-        return endpoint if respond_to?(:endpoint)
+        return endpoint unless endpoint.nil?
 
         end_p = name.sub("Economic::", "")
         if end_p.include?("::")

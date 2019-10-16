@@ -1,9 +1,5 @@
 module Economic
   class CustomerContactRepo < Economic::NestedBaseRepo
-    class << self
-      def endpoint
-        "contacts"
-      end
-    end
+    self.endpoint = "contacts"
   end
 end

@@ -1,9 +1,5 @@
 module Economic
   class JournalRepo < Economic::BaseRepo
-    class << self
-      def endpoint
-        "journals-experimental"
-      end
-    end
+    self.endpoint = "journals-experimental"
   end
 end

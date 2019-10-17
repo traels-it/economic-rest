@@ -1,0 +1,114 @@
+{
+  "collection": [
+    {
+      "customerContactNumber": 319,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 10,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/319"
+    },
+    {
+      "customerContactNumber": 320,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 11,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/320"
+    },
+    {
+      "customerContactNumber": 321,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 12,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/321"
+    },
+    {
+      "customerContactNumber": 322,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 13,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/322"
+    },
+    {
+      "customerContactNumber": 323,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 14,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/323"
+    },
+    {
+      "customerContactNumber": 324,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 15,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/324"
+    },
+    {
+      "customerContactNumber": 325,
+      "name": "Torsten Torsten",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 16,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/325"
+    },
+    {
+      "customerContactNumber": 326,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 17,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/326"
+    },
+    {
+      "customerContactNumber": 327,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 18,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/327"
+    },
+    {
+      "customerContactNumber": 328,
+      "name": "Torsten Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 19,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/328"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 10,
+    "resultsWithoutFilter": 13,
+    "firstPage": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000&filter=name%24like%3aTorsten",
+    "lastPage": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000&filter=name%24like%3aTorsten"
+  },
+  "self": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000&filter=name%24like%3aTorsten"
+}

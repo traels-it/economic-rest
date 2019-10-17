@@ -1,0 +1,100 @@
+{
+  "bookedInvoiceNumber": 10,
+  "date": "2019-10-03",
+  "currency": "DKK",
+  "exchangeRate": 100.0,
+  "netAmount": 60.0,
+  "netAmountInBaseCurrency": 60.0,
+  "grossAmount": 75.0,
+  "grossAmountInBaseCurrency": 75.0,
+  "vatAmount": 15.0,
+  "roundingAmount": 0.0,
+  "remainder": 75.0,
+  "remainderInBaseCurrency": 75.0,
+  "dueDate": "2019-10-10",
+  "paymentTerms": {
+    "paymentTermsNumber": 6,
+    "name": "En anden term",
+    "paymentTermsType": "dueDate",
+    "self": "https://restapi.e-conomic.com/payment-terms/6"
+  },
+  "customer": {
+    "customerNumber": 3128,
+    "self": "https://restapi.e-conomic.com/customers/3128"
+  },
+  "recipient": {
+    "name": "Steen 3 ApS",
+    "vatZone": {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    }
+  },
+  "delivery": {
+    "address": "Steen 3 ApS\rVirksomhedsvej 58",
+    "zip": "7741",
+    "city": "Frøstrup",
+    "country": "Danmark",
+    "deliveryDate": "2019-10-03"
+  },
+  "references": {
+    "other": "FM765"
+  },
+  "layout": {
+    "layoutNumber": 15,
+    "self": "https://restapi.e-conomic.com/layouts/15"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/booked/10/pdf"
+  },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "Flaske med vand og brus",
+      "quantity": 2.0,
+      "unitNetPrice": 5.0,
+      "discountPercentage": 0.0,
+      "unitCostPrice": 3.0,
+      "vatRate": 25.0,
+      "vatAmount": 2.5,
+      "totalNetAmount": 10.0,
+      "product": {
+        "productNumber": "3097",
+        "self": "https://restapi.e-conomic.com/products/3097"
+      },
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      }
+    },
+    {
+      "lineNumber": 2,
+      "sortKey": 2,
+      "description": "Kasse med flasker og brus",
+      "quantity": 1.0,
+      "unitNetPrice": 50.0,
+      "discountPercentage": 0.0,
+      "unitCostPrice": 30.0,
+      "vatRate": 25.0,
+      "vatAmount": 12.5,
+      "totalNetAmount": 50.0,
+      "product": {
+        "productNumber": "3098",
+        "self": "https://restapi.e-conomic.com/products/3098"
+      },
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      }
+    }
+  ],
+  "sent": "https://restapi.e-conomic.com/invoices/booked/10/sent",
+  "self": "https://restapi.e-conomic.com/invoices/booked/10"
+}

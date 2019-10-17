@@ -7,24 +7,32 @@ module Economic
     URL = "https://restapi.e-conomic.com/".freeze
 
     class << self
-      def save(model)
+      attr_accessor :endpoint
+
+      def save(model, url: endpoint_url)
         post_or_put = model.id_key.nil? ? :post : :put
+        url += "/" + model.id_key.to_s
 
-        send_request(method: post_or_put, url: URI.escape(endpoint_url + "/" + model.id_key.to_s), payload: model.to_h.to_json)
+        response = send_request(method: post_or_put, url: url, payload: model.to_h.to_json)
+
+        modelize_response(response)
       end
 
-      def send(model)
-        send_request(method: :post, url: URI.escape(endpoint_url), payload: model.to_h.to_json)
+      # TODO: This method does not seem to do anything that the save method cannot do - is there any reason to keep it? Posting to a not-existing id is apparenly fine
+      def send(model, url: endpoint_url)
+        response = send_request(method: :post, url: url, payload: model.to_h.to_json)
+
+        modelize_response(response)
       end
 
-      def all(filter_text: "")
+      def all(filter_text: "", url: endpoint_url)
         pagination = {}
         pageindex = 0
         entries = []
 
         # Loop until last page, last page does not have a 'nextPage'
         while pagination["nextPage"] || pageindex.zero?
-          response = fetch(pageindex: pageindex, filter_text: filter_text)
+          response = fetch(url: url, pageindex: pageindex, filter_text: filter_text)
 
           hash = JSON.parse(response.body)
           hash["collection"].each do |entry_hash|
@@ -37,16 +45,18 @@ module Economic
         entries
       end
 
-      def filter(filter_text)
-        all(filter_text: filter_text)
+      def filter(filter_text, url: endpoint_url)
+        all(filter_text: filter_text, url: url)
       end
 
       def updated_after(date)
         filter("lastUpdated$gt:#{to_iso8601z(date)}")
       end
 
-      def find(id)
-        response = send_request(method: :get, url: endpoint_url + "/" + id.to_s)
+      def find(id, url: endpoint_url)
+        url += "/" + id.to_s
+        response = send_request(method: :get, url: url)
+
         entry_hash = JSON.parse(response.body)
         model.new(entry_hash)
       end
@@ -55,13 +65,15 @@ module Economic
         URL + endpoint_name
       end
 
-      private
+      def destroy(id, url: endpoint_url)
+        url += "/" + id.to_s
+        response = send_request(method: :delete, url: url)
 
-      def destroy(id)
-        response = send_request(method: :delete, url: endpoint_url + "/" + id.to_s)
-
-        JSON.parse(response.body)["message"] == "Deleted #{model.to_s.split("::").last.downcase}."
+        success_codes = [200, 204]
+        return true if success_codes.include?(response.code)
       end
+
+      private
 
       def model
         scopes = name.split("::")
@@ -70,6 +82,8 @@ module Economic
       end
 
       def endpoint_name
+        return endpoint unless endpoint.nil?
+
         end_p = name.sub("Economic::", "")
         if end_p.include?("::")
           end_p = end_p.gsub("Repo", "")
@@ -77,11 +91,6 @@ module Economic
         else
           end_p = end_p.gsub("Repo", "s")
         end
-        end_p = end_p.gsub("Journals", "Journals-Experimental")
-        end_p = end_p.gsub("Selfs", "Self")
-        # PaymentTerms is named with a plural s for a single record, but the end point is still just paymentterms.
-        # Therefore the endpoint gets substituted
-        end_p = end_p.gsub("PaymentTermss", "PaymentTerms")
         kebab(end_p)
       end
 
@@ -92,6 +101,7 @@ module Economic
       end
 
       def send_request(method:, url:, payload: "", &block)
+        url = URI.escape(url)
         if payload.strip.empty?
           RestClient::Request.execute(method: method, url: url, headers: headers, &block)
         else
@@ -105,12 +115,12 @@ module Economic
         {'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': "application/json"}
       end
 
-      def fetch(pageindex: 0, filter_text: "")
-        url = endpoint_url
+      def fetch(url: endpoint_url, pageindex: 0, filter_text: "")
+        url = url.dup
         url << "?skippages=#{pageindex}&pagesize=1000"
         url << "&filter=#{filter_text}" unless filter_text == ""
 
-        send_request(method: :get, url: URI.escape(url))
+        send_request(method: :get, url: url)
       end
 
       def kebab(string)
@@ -119,6 +129,12 @@ module Economic
           .gsub(/([a-z\d])([A-Z])/, '\1_\2')
           .tr("_", "-")
           .downcase
+      end
+
+      def modelize_response(response)
+        entry_hash = response.body.blank? ? {} : JSON.parse(response.body)
+
+        model.new(entry_hash)
       end
     end
   end

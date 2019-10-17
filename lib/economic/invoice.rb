@@ -13,20 +13,23 @@ module Economic
     field :roundingAmount
     field :vatAmount
     field :draftInvoiceNumber, id: true # This changes name depending on its type (draft, unpaid etc)
+    field :bookedInvoiceNumber
+    field :remainder
 
     relation :customer, fields: [:customerNumber]
-    # relation :delivery, fields: []
+    relation :delivery, fields: []
     # relation :deliveryLocation, fields: []
     relation :layout, fields: [:layoutNumber]
-    # relation :notes, fields: []
+    relation :notes, fields: []
     relation :paymentTerms, fields: [:paymentTermsNumber]
     # relation :pdf, fields: []
     # relation :project, fields: []
-    relation :recipient, fields: [:name]
+    relation :recipient, fields: [:name, :ean]
     relation :references, fields: [:other]
-    relation :lines, fields: [:lineNumber], multiple: true
+    relation :lines, fields: [:lineNumber, :description, :sortKey, :quantity, :unitNetPrice, :discountPercentage, :unitCostPrice, :marginInBaseCurrency, :marginPercentage, :totalNetAmount], multiple: true
 
     def self.build_from_soap_api(data)
+      # TODO: Add all the options
       hash = {
         "currency" => data[:currency_handle][:code],
         "date" => data[:date].to_date,
@@ -44,6 +47,7 @@ module Economic
         "customer" => {"customerNumber" => data[:debtor_handle][:id].to_i},
         "layout" => {"layoutNumber" => data[:layout_handle][:id].to_i},
         "paymentTerms" => {"paymentTermsNumber" => data[:term_of_payment_handle][:id].to_i},
+        "references" => {"other" => data[:other_reference]},
       }
 
       new(hash)

@@ -1,0 +1,47 @@
+{
+  "collection": [
+    {
+      "customerContactNumber": 314,
+      "email": "sj@morningtrain-test.dk",
+      "name": "Simon Testersen",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 7,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/314"
+    },
+    {
+      "customerContactNumber": 315,
+      "email": "sj@morningtrain-test.dk",
+      "name": "Simon Testersen",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 8,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/315"
+    },
+    {
+      "customerContactNumber": 317,
+      "email": "test@example.com",
+      "name": "kontaktperson",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 9,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/317"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 3,
+    "resultsWithoutFilter": 3,
+    "firstPage": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000"
+}

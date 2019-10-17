@@ -34,8 +34,38 @@ module Economic
 
         result = Economic::SoapAPI.call(
           soap_method_names[:send][:method], message: {
-            soap_method_names[:send][:handle] => {
-              Number: model.customer.customerNumber,
+            data: {
+              Handle: {
+                Id: model.id_key,
+              },
+              DebtorHandle: {
+                Number: model.customer.customer_number,
+              },
+              DebtorName: model.customer.name,
+              Date: to_iso8601z(model.date.to_datetime),
+              TermOfPaymentHandle: {
+                Id: model.payment_terms.payment_terms_number,
+              },
+              DueDate: to_iso8601z(model.due_date.to_datetime),
+              CurrencyHandle: {
+                Code: model.currency,
+              },
+              ExchangeRate: model.exchange_rate,
+              IsVatIncluded: is_vat_included?(model),
+              LayoutHandle: {
+                Id: model.layout.layout_number,
+              },
+              DeliveryAddress: model.delivery.address,
+              DeliveryPostalCode: model.delivery.zip,
+              DeliveryCity: model.delivery.city,
+              DeliveryCountry: model.delivery.country,
+              DeliveryDate: to_iso8601z(model.delivery.delivery_date.to_datetime),
+              Heading: model.notes.heading,
+              NetAmount: model.net_amount,
+              VatAmount: model.vat_amount,
+              GrossAmount: model.gross_amount,
+              Margin: model.margin_in_base_currency,
+              MarginAsPercent: model.margin_percentage,
             },
           }
         )
@@ -177,6 +207,10 @@ module Economic
         end
 
         arr
+      end
+
+      def is_vat_included?(model)
+        model.vat_amount != 0
       end
     end
   end

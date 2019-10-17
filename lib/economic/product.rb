@@ -15,6 +15,6 @@ module Economic
     # field :invoices
     # field :pricing
     relation :productGroup, fields: [:productGroupNumber]
-    # field :unit
+    relation :unit, fields: [:unitNumber]
   end
 end

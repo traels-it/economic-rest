@@ -10,6 +10,7 @@ require "economic/base"
 require "economic/soap_api"
 require "economic/concerns/soap_methods"
 
+require "economic/attention"
 require "economic/currency"
 require "economic/vat_zone"
 require "economic/vat_zone_repo"

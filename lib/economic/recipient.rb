@@ -7,6 +7,7 @@ module Economic
     field :ean
     field :mobilePhone
     field :publicEntryNumber
+    field :zip
 
     relation :vatZone, fields: []
     relation :attention, fields: []

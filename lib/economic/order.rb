@@ -8,7 +8,6 @@ module Economic
     field :exchangeRate
     field :grossAmount
     field :grossAmountInBaseCurrency
-    field :lines
     field :marginInBaseCurrency
     field :marginPercentage
     field :netAmount
@@ -20,6 +19,7 @@ module Economic
     relation :customer, fields: [:customerNumber]
     #   relation :delivery, fields: []
     #    relation :notes, fields: []
+    relation :lines, fields: [], multiple: true
     relation :paymentTerms, fields: [:paymentTermsNumber]
     #   relation :pdf, fields: []
     #    relation :project, fields: []

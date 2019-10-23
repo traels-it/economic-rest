@@ -41,21 +41,25 @@ module Economic
     def values_based_on_hash(hash)
       @internal_hash = hash || {}
       self.class.attributes.each do |field_name|
-        public_send("#{field_name}=", @internal_hash[field_name])
+        public_send("#{field_name}=", @internal_hash[field_name] || @internal_hash[field_name.to_sym])
       end
 
       self.class.relations&.each do |relation_hash|
+        relation_name = relation_hash[:name]
         if relation_hash[:multiple]
-          relation_name = relation_hash[:name]
           model_name = relation_hash[:name].singularize
           related_model_array = Array(@internal_hash[relation_name])&.map { |data|
             model_class(model_name).new(data)
           }
           instance_variable_set("@#{relation_name}", related_model_array)
         else
-          name = relation_hash[:name]
-          related_model = model_class(name).new(@internal_hash[name])
-          instance_variable_set("@#{name}", related_model)
+          related_model = model_class(relation_name).new(@internal_hash[relation_name])
+          instance_variable_set("@#{relation_name}", related_model)
+        end
+        if related_model
+          unless @internal_hash[relation_name.to_sym].blank?
+            related_model.values_based_on_hash(@internal_hash[relation_name.to_sym])
+          end
         end
       end
     end

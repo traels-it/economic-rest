@@ -23,26 +23,5 @@ class BookedInvoiceRepoTest < Minitest::Test
       assert_kind_of Economic::Invoice, booked_invoice
       assert_equal 9999999, booked_invoice.booked_invoice_number
     end
-
-    describe "#download_pdf" do
-      # TODO: Write some better tests
-      it "writes the pdf at the supplied path" do
-        stub_request(:get, "https://restapi.e-conomic.com/invoices/booked/9999999/pdf")
-          .to_return(status: 200, body: File.read("test/fixtures/pdf/booked_invoice.pdf"))
-
-        Economic::Invoices::BookedRepo.download_pdf(9999999, path: "tmp/test.pdf")
-
-        assert Pathname.new("tmp/test.pdf").exist?
-      end
-
-      it "returns the pdf as a string if a path is not supplied" do
-        stub_request(:get, "https://restapi.e-conomic.com/invoices/booked/9999999/pdf")
-          .to_return(status: 200, body: File.read("test/fixtures/pdf/booked_invoice.pdf"))
-
-        result = Economic::Invoices::BookedRepo.download_pdf(9999999)
-
-        assert_kind_of String, result
-      end
-    end
   end
 end

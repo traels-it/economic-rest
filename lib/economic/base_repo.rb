@@ -73,6 +73,18 @@ module Economic
         return true if success_codes.include?(response.code)
       end
 
+      def send_request(method:, url:, payload: "", &block)
+        url = URI.escape(url)
+        if payload.strip.empty?
+          RestClient::Request.execute(method: method, url: url, headers: headers, &block)
+        else
+          RestClient::Request.execute(method: method, url: url, payload: payload, headers: headers, &block)
+        end
+      rescue => e
+        warn "#{e} #{e.response}" if e.respond_to?(:response)
+        raise e
+      end
+
       private
 
       def model
@@ -98,18 +110,6 @@ module Economic
         date = date.iso8601
         date = date[0...-5].tr("+", "Z") if date.include?("+")
         date
-      end
-
-      def send_request(method:, url:, payload: "", &block)
-        url = URI.escape(url)
-        if payload.strip.empty?
-          RestClient::Request.execute(method: method, url: url, headers: headers, &block)
-        else
-          RestClient::Request.execute(method: method, url: url, payload: payload, headers: headers, &block)
-        end
-      rescue => e
-        warn "#{e} #{e.response}" if e.respond_to?(:response)
-        raise e
       end
 
       def headers

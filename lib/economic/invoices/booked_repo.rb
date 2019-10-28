@@ -10,18 +10,6 @@ module Economic
           invoice.class.new(entry_hash)
         end
 
-        def download_pdf(id, path: nil)
-          response = send_request(method: :get, url: URI.escape(endpoint_url + "/#{id}/pdf"))
-
-          return response.body if path.nil?
-
-          dirname = File.dirname(path)
-          unless File.directory?(dirname)
-            FileUtils.mkdir_p(dirname)
-          end
-          File.open(path, "wb") { |f| f.puts response.body }
-        end
-
         private
 
         def payload(invoice, book_with_number: nil)

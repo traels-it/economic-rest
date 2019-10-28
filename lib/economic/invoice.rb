@@ -22,7 +22,7 @@ module Economic
     relation :layout, fields: [:layoutNumber]
     relation :notes, fields: []
     relation :paymentTerms, fields: [:paymentTermsNumber]
-    # relation :pdf, fields: []
+    relation :pdf, fields: [:download]
     # relation :project, fields: []
     relation :recipient, fields: [:name, :ean]
     relation :references, fields: [:other]

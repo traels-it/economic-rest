@@ -2,7 +2,6 @@ require "test_helper"
 
 class PdfTest < Minitest::Test
   describe "#download_pdf" do
-    # TODO: Write some better tests
     it "writes the pdf at the supplied path" do
       stub_request(:get, "https://restapi.e-conomic.com/invoices/booked/9999999/pdf")
         .to_return(status: 200, body: File.read("test/fixtures/pdf/booked_invoice.pdf"))
@@ -12,6 +11,7 @@ class PdfTest < Minitest::Test
       invoice.pdf.download_pdf(path: "tmp/test.pdf")
 
       assert Pathname.new("tmp/test.pdf").exist?
+      File.delete("tmp/test.pdf") if File.exist?("tmp/test.pdf")
     end
 
     it "returns the pdf as a string if a path is not supplied" do

@@ -58,7 +58,7 @@ module Economic
         end
         if related_model
           unless @internal_hash[relation_name.to_sym].blank?
-            related_model.values_based_on_hash(@internal_hash[relation_name.to_sym])
+            related_model.values_based_on_hash(@internal_hash[relation_name.to_sym].to_h)
           end
         end
       end

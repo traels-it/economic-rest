@@ -1,0 +1,85 @@
+{
+  "orderNumber": 97,
+  "templates": {
+    "upgradeInstructions": "https://restapi.e-conomic.com/orders/drafts/97/templates/upgrade-instructions/draftInvoice",
+    "self": "https://restapi.e-conomic.com/orders/drafts/97/templates"
+  },
+  "soap": {
+    "orderHandle": {
+      "id": 94
+    }
+  },
+  "attachment": "https://restapi.e-conomic.com/orders/drafts/97/attachment",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "Kasse flasker",
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      },
+      "product": {
+        "productNumber": "3084",
+        "self": "https://restapi.e-conomic.com/products/3084"
+      },
+      "quantity": 1.00,
+      "unitNetPrice": 9.98,
+      "discountPercentage": 0.00,
+      "unitCostPrice": 3.51,
+      "totalNetAmount": 9.98,
+      "marginInBaseCurrency": 6.47,
+      "marginPercentage": 64.83
+    }
+  ],
+  "date": "2019-10-31",
+  "currency": "DKK",
+  "exchangeRate": 100.000000,
+  "netAmount": 9.980000,
+  "netAmountInBaseCurrency": 9.98,
+  "grossAmount": 12.48,
+  "grossAmountInBaseCurrency": 12.48,
+  "marginInBaseCurrency": 6.47,
+  "marginPercentage": 64.83,
+  "vatAmount": 2.500000,
+  "roundingAmount": 0.00,
+  "costPriceInBaseCurrency": 3.5100,
+  "dueDate": "2019-10-31",
+  "paymentTerms": {
+    "paymentTermsNumber": 6,
+    "name": "En anden term",
+    "paymentTermsType": "dueDate",
+    "self": "https://restapi.e-conomic.com/payment-terms/6"
+  },
+  "customer": {
+    "customerNumber": 3128,
+    "self": "https://restapi.e-conomic.com/customers/3128"
+  },
+  "recipient": {
+    "name": "Steen 3 ApS",
+    "address": "Virksomhedsvej 58",
+    "zip": "7741",
+    "city": "Frøstrup",
+    "country": "Denmark",
+    "vatZone": {
+      "vatZoneNumber": 1,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    }
+  },
+  "delivery": {
+    "address": "Peter\nCookievej 7",
+    "zip": "8000",
+    "city": "Aarhus C",
+    "country": "Danmark"
+  },
+  "layout": {
+    "layoutNumber": 16,
+    "self": "https://restapi.e-conomic.com/layouts/16"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/orders/drafts/97/pdf"
+  },
+  "self": "https://restapi.e-conomic.com/orders/drafts/97"
+}

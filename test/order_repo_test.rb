@@ -61,5 +61,14 @@ class OrderRepoTest < Minitest::Test
 
       assert Economic::Orders::SentRepo.find(ORDER_NUMBER)
     end
+
+    it "contains delivery date" do
+      stub_get_request(endpoint: "orders/drafts", page_or_id: "97", fixture_name: "orders_drafts_one_97")
+      delivery = Economic::Orders::DraftsRepo.find(97).delivery
+      assert_equal "Peter\nCookievej 7", delivery.address
+      assert_equal "Aarhus C", delivery.city
+      assert_equal "Danmark", delivery.country
+      assert_equal "8000", delivery.zip
+    end
   end
 end

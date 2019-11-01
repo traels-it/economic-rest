@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    economic-rest (0.5.2)
+    economic-rest (0.5.3)
       activesupport
       rest-client
       savon
@@ -56,7 +56,7 @@ GEM
     mocha (1.9.0)
       metaclass (~> 0.0.1)
     netrc (0.11.0)
-    nokogiri (1.10.4)
+    nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     nori (2.6.0)
     parallel (1.17.0)

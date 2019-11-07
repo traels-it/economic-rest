@@ -77,7 +77,7 @@ require "economic/self_repo"
 require "economic/line"
 
 require "economic/sales_person"
-require "economic/vendor_references"
+require "economic/vendor_reference"
 
 module Economic
   class Demo

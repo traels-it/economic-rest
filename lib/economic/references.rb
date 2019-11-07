@@ -4,6 +4,6 @@ module Economic
 
     relation :customerContact, fields: [:customerContactNumber]
     relation :salesPerson, fields: [:employeeNumber]
-    relation :vendorReferences, fields: [:employeeNumber]
+    relation :vendorReference, fields: [:employeeNumber]
   end
 end

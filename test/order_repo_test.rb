@@ -38,8 +38,8 @@ class OrderRepoTest < Minitest::Test
       assert_kind_of Economic::Order, orders_drafts_one
       assert_kind_of Economic::Order, orders_sent_one
       assert_kind_of Economic::SalesPerson, orders_drafts_one.references.sales_person
-      assert_kind_of Economic::VendorReferences, orders_drafts_one.references.vendor_references
-      # warn orders_drafts_one.references.inspect
+      assert_kind_of Economic::VendorReference, orders_drafts_one.references.vendor_reference
+      warn orders_drafts_one.references.inspect
     end
 
     it "returns json data based on changes to the model" do

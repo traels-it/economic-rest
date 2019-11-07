@@ -1,5 +1,5 @@
 module Economic
-  class VendorReferences < Base
+  class VendorReference < Base
     field :employeeNumber
   end
 end

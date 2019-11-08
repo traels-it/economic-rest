@@ -77,10 +77,11 @@ module Economic
         if relation_hash[:multiple]
           relation_name = relation_hash[:name]
           relation_fields = relation_hash[:fields]
-
-          arr = public_send(relation_name).map { |relation| relation_data = relation.to_h(only_fields: relation_fields) }
-
-          return_hash[relation_name] = arr
+          begin
+            arr = public_send(relation_name).map { |relation| relation.to_h(only_fields: relation_fields) }
+            return_hash[relation_name] = arr
+          rescue NoMethodError
+          end
         else
           relation_name = relation_hash[:name]
           relation_fields = relation_hash[:fields]

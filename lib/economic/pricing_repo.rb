@@ -4,6 +4,7 @@ module Economic
       id = product_or_product_number.product_number if product_or_product_number.respond_to? :product_number
       id ||= product_or_product_number
 
+      id = Economic::BaseRepo.id_to_url_formatted_id(id)
       end_point = [superclass.endpoint_url, id, "pricing", "currency-specific-sales-prices"].join("/")
       response = send_request(method: :get, url: URI.escape(end_point))
       entry_hash = JSON.parse(response.body)

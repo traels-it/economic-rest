@@ -11,7 +11,7 @@ module Economic
 
       def save(model, url: endpoint_url)
         post_or_put = model.id_key.nil? ? :post : :put
-        url += "/" + model.id_key.to_s
+        url += "/" + id_to_url_formatted_id(model.id_key)
 
         response = send_request(method: post_or_put, url: url, payload: model.to_h.to_json)
 
@@ -54,7 +54,7 @@ module Economic
       end
 
       def find(id, url: endpoint_url)
-        url += "/" + id.to_s
+        url += "/" + id_to_url_formatted_id(id)
         response = send_request(method: :get, url: url)
 
         entry_hash = JSON.parse(response.body)
@@ -66,7 +66,7 @@ module Economic
       end
 
       def destroy(id, url: endpoint_url)
-        url += "/" + id.to_s
+        url += "/" + id_to_url_formatted_id(id)
         response = send_request(method: :delete, url: url)
 
         success_codes = [200, 204]
@@ -83,6 +83,23 @@ module Economic
       rescue => e
         warn "#{e} #{e.response}" if e.respond_to?(:response)
         raise e
+      end
+
+      def id_to_url_formatted_id(id)
+        id.to_s.gsub("_", "_8_")
+          .gsub("<", "_0_")
+          .gsub(">", "_1_")
+          .gsub("*", "_2_")
+          .gsub("%", "_3_")
+          .gsub(":", "_4_")
+          .gsub("&", "_5_")
+          .gsub("/", "_6_")
+          .gsub('\\', "_7_")
+          .gsub(" ", "_9_")
+          .gsub("?", "_10_")
+          .gsub(".", "_11_")
+          .gsub("#", "_12_")
+          .gsub("+", "_13_")
       end
 
       private

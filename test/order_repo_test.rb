@@ -22,6 +22,15 @@ class OrderRepoTest < Minitest::Test
       assert_kind_of Economic::Order, orders_sent[0]
     end
 
+    it "removed field lines from orders gotten by all" do
+      stub_get_request(endpoint: "orders/archived", fixture_name: "orders_archived")
+      order_archived = Economic::Orders::ArchivedRepo.all.first
+
+      assert_raises(NoMethodError) do
+        order_archived.lines
+      end
+    end
+
     it "finds based on order number" do
       stub_get_request(endpoint: "orders/archived", page_or_id: "35072", fixture_name: "orders_archived_one")
       stub_get_request(endpoint: "orders/drafts", page_or_id: "35070", fixture_name: "orders_drafts_one")

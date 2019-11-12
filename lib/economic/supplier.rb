@@ -5,7 +5,7 @@ module Economic
     field :barred
     field :city
     field :contacts
-    field :corporateIndentificationNumber
+    field :corporateIdentificationNumber
     field :country
     field :currency
     field :defaultInvoiceText

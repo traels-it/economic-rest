@@ -1,0 +1,2438 @@
+{
+  "collection": [
+    {
+      "supplierNumber": 25,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/25/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/25",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/25"
+    },
+    {
+      "supplierNumber": 51,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/51/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/51",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/51"
+    },
+    {
+      "supplierNumber": 53,
+      "name": "Orchestrator",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/53/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/53",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/53"
+    },
+    {
+      "supplierNumber": 74,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/74/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/74",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/74"
+    },
+    {
+      "supplierNumber": 165,
+      "name": "pixel Jamaica",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/165/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/165",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/165"
+    },
+    {
+      "supplierNumber": 169,
+      "name": "Jordanian Dinar",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/169/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/169",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/169"
+    },
+    {
+      "supplierNumber": 252,
+      "name": "Incredible mobile",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/252/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/252",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/252"
+    },
+    {
+      "supplierNumber": 258,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/258/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/258",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/258"
+    },
+    {
+      "supplierNumber": 282,
+      "name": "compress Car orchid",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/282/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/282",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/282"
+    },
+    {
+      "supplierNumber": 316,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/316/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/316",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/316"
+    },
+    {
+      "supplierNumber": 319,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/319/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/319",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/319"
+    },
+    {
+      "supplierNumber": 378,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/378/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/378",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/378"
+    },
+    {
+      "supplierNumber": 394,
+      "name": "Oman reboot",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/394/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/394",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/394"
+    },
+    {
+      "supplierNumber": 404,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/404/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/404",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/404"
+    },
+    {
+      "supplierNumber": 417,
+      "name": "XML",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/417/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/417",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/417"
+    },
+    {
+      "supplierNumber": 426,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/426/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/426",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/426"
+    },
+    {
+      "supplierNumber": 436,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/436/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/436",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/436"
+    },
+    {
+      "supplierNumber": 471,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/471/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/471",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/471"
+    },
+    {
+      "supplierNumber": 481,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/481/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/481",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/481"
+    },
+    {
+      "supplierNumber": 482,
+      "name": "frame Quality Estate",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/482/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/482",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/482"
+    },
+    {
+      "supplierNumber": 504,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/504/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/504",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/504"
+    },
+    {
+      "supplierNumber": 520,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/520/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/520",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/520"
+    },
+    {
+      "supplierNumber": 538,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/538/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/538",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/538"
+    },
+    {
+      "supplierNumber": 563,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/563/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/563",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/563"
+    },
+    {
+      "supplierNumber": 582,
+      "name": "frame Quality Estate",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/582/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/582",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/582"
+    },
+    {
+      "supplierNumber": 583,
+      "name": "phonePOST",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/583/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/583",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/583"
+    },
+    {
+      "supplierNumber": 584,
+      "name": "phonePOST",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "phone": "11111",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/584/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/584",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/584"
+    },
+    {
+      "supplierNumber": 592,
+      "name": "olive Connecticut",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/592/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/592",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/592"
+    },
+    {
+      "supplierNumber": 600,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/600/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/600",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/600"
+    },
+    {
+      "supplierNumber": 601,
+      "name": "Phased synergies gold",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/601/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/601",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/601"
+    },
+    {
+      "supplierNumber": 603,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/603/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/603",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/603"
+    },
+    {
+      "supplierNumber": 640,
+      "name": "dedicated",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/640/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/640",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/640"
+    },
+    {
+      "supplierNumber": 714,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/714/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/714",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/714"
+    },
+    {
+      "supplierNumber": 772,
+      "name": "deliver Wisconsin",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/772/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/772",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/772"
+    },
+    {
+      "supplierNumber": 808,
+      "name": "Soft Paradigm enable",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/808/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/808",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/808"
+    },
+    {
+      "supplierNumber": 811,
+      "name": "Factors Hryvnia",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/811/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/811",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/811"
+    },
+    {
+      "supplierNumber": 826,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/826/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/826",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/826"
+    },
+    {
+      "supplierNumber": 833,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/833/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/833",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/833"
+    },
+    {
+      "supplierNumber": 845,
+      "name": "cyan",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/845/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/845",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/845"
+    },
+    {
+      "supplierNumber": 890,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/890/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/890",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/890"
+    },
+    {
+      "supplierNumber": 908,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/908/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/908",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/908"
+    },
+    {
+      "supplierNumber": 910,
+      "name": "SCSI",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/910/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/910",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/910"
+    },
+    {
+      "supplierNumber": 912,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/912/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/912",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/912"
+    },
+    {
+      "supplierNumber": 921,
+      "name": "payment South Africa compressing",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/921/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/921",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/921"
+    },
+    {
+      "supplierNumber": 949,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/949/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/949",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/949"
+    },
+    {
+      "supplierNumber": 954,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/954/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/954",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/954"
+    },
+    {
+      "supplierNumber": 975,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/975/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/975",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/975"
+    },
+    {
+      "supplierNumber": 989,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/989/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/989",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/989"
+    },
+    {
+      "supplierNumber": 1234,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/1234/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/1234",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/1234"
+    },
+    {
+      "supplierNumber": 5000,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "contacts": "https://restapi.e-conomic.com/suppliers/5000/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/5000",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/5000"
+    },
+    {
+      "supplierNumber": 5001,
+      "name": "Din Totalleverandør A/S",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Kom forbi 47",
+      "zip": "2000",
+      "city": "Frederiksberg",
+      "contacts": "https://restapi.e-conomic.com/suppliers/5001/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/5001",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/5001"
+    },
+    {
+      "supplierNumber": 5002,
+      "name": "Madsens Eftf.",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Lyngby Hovedgade 43",
+      "zip": "2800",
+      "city": "Kongens Lyngby",
+      "contacts": "https://restapi.e-conomic.com/suppliers/5002/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/5002",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/5002"
+    },
+    {
+      "supplierNumber": 5003,
+      "name": "Konsulenthuset",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Ålborggade 9",
+      "zip": "4750",
+      "city": "Lundby",
+      "contacts": "https://restapi.e-conomic.com/suppliers/5003/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/5003",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/5003"
+    },
+    {
+      "supplierNumber": 5004,
+      "name": "Renault ApS",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Markedsgade 12",
+      "zip": "6200",
+      "city": "Aabenraa",
+      "contacts": "https://restapi.e-conomic.com/suppliers/5004/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/5004",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/5004"
+    },
+    {
+      "supplierNumber": 123554,
+      "name": "Sylvest og Co",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "address": "Industribyen 3",
+      "zip": "8000",
+      "city": "Aarhus C",
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123554/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123554",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123554"
+    },
+    {
+      "supplierNumber": 123555,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123555/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123555",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123555"
+    },
+    {
+      "supplierNumber": 123556,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123556/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123556",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123556"
+    },
+    {
+      "supplierNumber": 123557,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123557/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123557",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123557"
+    },
+    {
+      "supplierNumber": 123558,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123558/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123558",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123558"
+    },
+    {
+      "supplierNumber": 123559,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123559/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123559",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123559"
+    },
+    {
+      "supplierNumber": 123560,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123560/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123560",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123560"
+    },
+    {
+      "supplierNumber": 123561,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123561/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123561",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123561"
+    },
+    {
+      "supplierNumber": 123562,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123562/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123562",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123562"
+    },
+    {
+      "supplierNumber": 123563,
+      "name": "Phil Collins",
+      "currency": "EUR",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123563/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123563",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123563"
+    },
+    {
+      "supplierNumber": 123564,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123564/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123564",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123564"
+    },
+    {
+      "supplierNumber": 123565,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123565/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123565",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123565"
+    },
+    {
+      "supplierNumber": 123566,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123566/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123566",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123566"
+    },
+    {
+      "supplierNumber": 123567,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123567/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123567",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123567"
+    },
+    {
+      "supplierNumber": 123568,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123568/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123568",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123568"
+    },
+    {
+      "supplierNumber": 123569,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123569/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123569",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123569"
+    },
+    {
+      "supplierNumber": 123570,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123570/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123570",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123570"
+    },
+    {
+      "supplierNumber": 123571,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123571/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123571",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123571"
+    },
+    {
+      "supplierNumber": 123572,
+      "name": "TestSupplier",
+      "currency": "DKK",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "vatZone": {
+        "vatZoneNumber": 1,
+        "self": "https://restapi.e-conomic.com/vat-zones/1"
+      },
+      "supplierGroup": {
+        "supplierGroupNumber": 1,
+        "self": "https://restapi.e-conomic.com/supplier-groups/1"
+      },
+      "defaultInvoiceText": "",
+      "contacts": "https://restapi.e-conomic.com/suppliers/123572/contacts",
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "metaData": {
+        "delete": {
+          "description": "Delete this supplier.",
+          "href": "https://restapi.e-conomic.com/suppliers/123572",
+          "httpMethod": "delete"
+        }
+      },
+      "self": "https://restapi.e-conomic.com/suppliers/123572"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 73,
+    "resultsWithoutFilter": 73,
+    "firstPage": "https://restapi.e-conomic.com/suppliers?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/suppliers?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/suppliers?skippages=0&pagesize=1000"
+}

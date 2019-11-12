@@ -79,6 +79,10 @@ require "economic/line"
 require "economic/sales_person"
 require "economic/vendor_reference"
 
+require "economic/supplier"
+require "economic/supplier_group"
+require "economic/supplier_repo"
+
 module Economic
   class Demo
     def self.hello

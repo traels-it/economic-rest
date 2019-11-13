@@ -29,12 +29,8 @@ module Economic
     def self.relation(name, fields:, multiple: false)
       economic_cased_attibute_name = name.to_s
       add_relation economic_cased_attibute_name, fields, multiple
-      if multiple
-        attr_accessor economic_cased_attibute_name
-        alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
-      else
-        attr_reader economic_cased_attibute_name
-      end
+      attr_accessor economic_cased_attibute_name
+      alias_method "#{snake_case(economic_cased_attibute_name)}=", "#{economic_cased_attibute_name}="
       alias_method snake_case(economic_cased_attibute_name), economic_cased_attibute_name
     end
 

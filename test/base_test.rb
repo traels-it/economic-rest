@@ -117,5 +117,31 @@ class BaseModelTest < Minitest::Test
       ]}
       assert_equal h_expected, base_model.to_h
     end
+
+    it "allows attribute assigning" do
+      base_model = Economic::BaseModel.new
+
+      base_model.name = "floe"
+
+      assert_equal "floe", base_model.name
+    end
+
+    it "allows relation assigning" do
+      base_model = Economic::BaseModel.new
+      rel = Economic::BaseModelRelation.new
+
+      base_model.base_model_relation = rel
+
+      assert_equal rel, base_model.base_model_relation
+    end
+
+    it "allows relation assigning for model with multible relations" do
+      base_model = Economic::BaseModelWithMultipleRelations.new
+      rel = Economic::BaseModelRelation.new
+
+      base_model.base_model_relations = [rel, Economic::BaseModelRelation.new]
+
+      assert_equal rel, base_model.base_model_relations.first
+    end
   end
 end

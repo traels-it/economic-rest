@@ -26,7 +26,7 @@ class SupplierRepoTest < Minitest::Test
     end
 
     it "can post" do
-      stub_request(:post, "https://restapi.e-conomic.com/suppliers/")
+      stub_request(:post, "https://restapi.e-conomic.com/suppliers")
         .with(
           body: {"currency" => "DKK", :name => "Mr. Anderson", "supplierGroup" => {"supplierGroupNumber": 1}, "paymentTerms" => {"paymentTermsNumber": 1}, "vatZone" => {"vatZoneNumber": 1}}
         ).to_return(status: 200, body: "", headers: {})

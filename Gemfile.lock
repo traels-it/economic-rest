@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    economic-rest (0.5.6)
+    economic-rest (0.5.8)
       activesupport
       rest-client
       savon

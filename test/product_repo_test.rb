@@ -31,8 +31,8 @@ class ProductRepoTest < Minitest::Test
       assert product.to_h.inspect.include? "fudge"
     end
 
-    it "can post" do
-      stub_request(:post, "https://restapi.e-conomic.com/products")
+    it "can put" do
+      stub_request(:put, "https://restapi.e-conomic.com/products/B123")
         .with(body: {"name": "awesome toothbrush", "productNumber": "B123", "productGroup": {"productGroupNumber": 10}}).to_return(status: 200, body: "", headers: {})
 
       p = Economic::Product.new({})
@@ -40,7 +40,7 @@ class ProductRepoTest < Minitest::Test
       p.name = "awesome toothbrush"
       p.product_group.product_group_number = 10
 
-      assert Economic::ProductRepo.send p
+      assert Economic::ProductRepo.save p
     end
 
     it "gets products in group from id" do

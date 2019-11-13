@@ -90,13 +90,6 @@ module Economic
       return_hash
     end
 
-    def dirty?
-      self.class.attributes.each do |attribute|
-        return true unless send(attribute) == @internal_hash[attribute]
-      end
-      false
-    end
-
     def self.snake_case(camel_cased)
       camel_cased.to_s.gsub(/::/, "/")
         .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')

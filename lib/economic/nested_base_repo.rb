@@ -18,7 +18,8 @@ module Economic
       end
 
       def send(model, on:)
-        super(model, url: nested_endpoint_url(on))
+        warn "use #{self}.save().  #{self}.send() is deprecated"
+        save(model, on: on)
       end
 
       def save(model, on:)

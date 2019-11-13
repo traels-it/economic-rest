@@ -10,19 +10,21 @@ module Economic
       attr_accessor :endpoint
 
       def save(model, url: endpoint_url)
-        post_or_put = model.id_key.nil? ? :post : :put
-        url += "/" + id_to_url_formatted_id(model.id_key)
+        if model.id_key.nil?
+          post_or_put = :post
+        else
+          post_or_put = :put
+          url += "/" + id_to_url_formatted_id(model.id_key)
+        end
 
         response = send_request(method: post_or_put, url: url, payload: model.to_h.to_json)
 
         modelize_response(response)
       end
 
-      # TODO: This method does not seem to do anything that the save method cannot do - is there any reason to keep it? Posting to a not-existing id is apparenly fine
       def send(model, url: endpoint_url)
-        response = send_request(method: :post, url: url, payload: model.to_h.to_json)
-
-        modelize_response(response)
+        warn "use #{self}.save().  #{self}.send() is deprecated"
+        save(model, url: endpoint_url)
       end
 
       def all(filter_text: "", url: endpoint_url)

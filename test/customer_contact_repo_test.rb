@@ -30,7 +30,7 @@ class CustomerContactRepoTest < Minitest::Test
 
         customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1})
         contact = Economic::CustomerContact.new({"name" => "Torsten Test"})
-        result = Economic::CustomerContactRepo.send(contact, on: customer)
+        result = Economic::CustomerContactRepo.save(contact, on: customer)
 
         assert_kind_of Economic::CustomerContact, result
         assert_equal "Torsten Test", result.name

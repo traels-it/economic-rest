@@ -1,6 +1,5 @@
 module Economic
-  class Attention < Base
-    field :customerContactNumber
+  class SupplierContact < Base
     field :supplierContactNumber
   end
 end

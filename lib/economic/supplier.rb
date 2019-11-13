@@ -16,12 +16,12 @@ module Economic
     field :zip
 
     relation :attention, fields: [:supplierContactNumber]
-    # relation :costAccount, fields: [:accountNumber]
+    relation :costAccount, fields: [:accountNumber]
     relation :layout, fields: [:layoutNumber]
     relation :paymentTerms, fields: [:paymentTermsNumber]
-    # relation :remittanceAdvice
-    # relation :salesPerson
-    # relation :supplierContact
+    relation :remittanceAdvice, fields: [:creditorId]
+    relation :salesPerson, fields: [:employeeNumber]
+    relation :supplierContact, fields: [:supplierContactNumber]
     relation :supplierGroup, fields: [:supplierGroupNumber]
     relation :vatZone, fields: [:vatZoneNumber]
   end

@@ -82,6 +82,12 @@ require "economic/vendor_reference"
 require "economic/supplier"
 require "economic/supplier_group"
 require "economic/supplier_repo"
+require "economic/supplier_contact"
+require "economic/cost_account"
+require "economic/remittance_advice"
+
+require "economic/payment_type"
+require "economic/payment_type_repo"
 
 module Economic
   class Demo

@@ -1,0 +1,34 @@
+{
+  "supplierNumber": 25,
+  "name": "Sylvest og Co",
+  "currency": "DKK",
+  "paymentTerms": {
+    "paymentTermsNumber": 5,
+    "self": "https://restapi.e-conomic.com/payment-terms/5"
+  },
+  "vatZone": {
+    "vatZoneNumber": 1,
+    "self": "https://restapi.e-conomic.com/vat-zones/1"
+  },
+  "supplierGroup": {
+    "supplierGroupNumber": 1,
+    "self": "https://restapi.e-conomic.com/supplier-groups/1"
+  },
+  "address": "Industribyen 3",
+  "zip": "8000",
+  "city": "Aarhus C",
+  "defaultInvoiceText": "",
+  "contacts": "https://restapi.e-conomic.com/suppliers/25/contacts",
+  "layout": {
+    "layoutNumber": 19,
+    "self": "https://restapi.e-conomic.com/layouts/19"
+  },
+  "metaData": {
+    "delete": {
+      "description": "Delete this supplier.",
+      "href": "https://restapi.e-conomic.com/suppliers/25",
+      "httpMethod": "delete"
+    }
+  },
+  "self": "https://restapi.e-conomic.com/suppliers/25"
+}

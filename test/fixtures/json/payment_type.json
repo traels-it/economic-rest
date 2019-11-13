@@ -1,0 +1,5 @@
+{
+  "paymentTypeNumber": 7,
+  "name": "Bank transfer",
+  "self": "https://restapi.e-conomic.com/payment-types/7"
+}

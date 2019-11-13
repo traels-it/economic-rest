@@ -1,0 +1,49 @@
+{
+  "collection": [
+    {
+      "paymentTypeNumber": 1,
+      "name": "+71",
+      "self": "https://restapi.e-conomic.com/payment-types/1"
+    },
+    {
+      "paymentTypeNumber": 2,
+      "name": "+73",
+      "self": "https://restapi.e-conomic.com/payment-types/2"
+    },
+    {
+      "paymentTypeNumber": 5,
+      "name": "+04",
+      "self": "https://restapi.e-conomic.com/payment-types/5"
+    },
+    {
+      "paymentTypeNumber": 7,
+      "name": "Bank transfer",
+      "self": "https://restapi.e-conomic.com/payment-types/7"
+    },
+    {
+      "paymentTypeNumber": 10,
+      "name": "IBAN",
+      "self": "https://restapi.e-conomic.com/payment-types/10"
+    },
+    {
+      "paymentTypeNumber": 14,
+      "name": "Entry only",
+      "self": "https://restapi.e-conomic.com/payment-types/14"
+    },
+    {
+      "paymentTypeNumber": 17,
+      "name": "+75",
+      "self": "https://restapi.e-conomic.com/payment-types/17"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 7,
+    "resultsWithoutFilter": 7,
+    "firstPage": "https://restapi.e-conomic.com/payment-types?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/payment-types?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/payment-types?skippages=0&pagesize=1000"
+}

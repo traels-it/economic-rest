@@ -33,6 +33,7 @@ The documentation can be found at https://restdocs.e-conomic.com'
   spec.add_development_dependency "standard"
   spec.add_development_dependency "awesome_print"
   spec.add_development_dependency "mocha"
+  spec.add_development_dependency "coveralls"
 
   spec.add_dependency "savon"
   spec.add_dependency "rest-client"

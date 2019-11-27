@@ -3,6 +3,6 @@ module Economic
     field :supplierGroupNumber, id: true
     field :name
 
-    # relation :account, fields: [:accountNumber]
+    relation :account, fields: [:accountNumber]
   end
 end

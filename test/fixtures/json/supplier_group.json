@@ -1,0 +1,9 @@
+{
+  "supplierGroupNumber": 1,
+  "name": "Diverse",
+  "account": {
+    "accountNumber": 6800,
+    "self": "https://restapi.e-conomic.com/accounts/6800"
+  },
+  "self": "https://restapi.e-conomic.com/supplier-groups/1"
+}

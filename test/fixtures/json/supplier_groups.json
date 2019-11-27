@@ -1,0 +1,23 @@
+{
+  "collection": [
+    {
+      "supplierGroupNumber": 1,
+      "name": "Diverse",
+      "account": {
+        "accountNumber": 6800,
+        "self": "https://restapi.e-conomic.com/accounts/6800"
+      },
+      "self": "https://restapi.e-conomic.com/supplier-groups/1"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 1,
+    "resultsWithoutFilter": 1,
+    "firstPage": "https://restapi.e-conomic.com/supplier-groups?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/supplier-groups?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/supplier-groups?skippages=0&pagesize=1000"
+}

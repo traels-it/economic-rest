@@ -81,5 +81,14 @@ class OrderRepoTest < Minitest::Test
       assert_equal "Danmark", delivery.country
       assert_equal "8000", delivery.zip
     end
+
+    it "filters" do
+      stub_get_request(endpoint: "orders/archived", fixture_name: "orders_archived")
+      stub_request(:get, "https://restapi.e-conomic.com/orders/archived?filter=orderNumber$eq:35071&pagesize=1000&skippages=0").to_return(status: 200, body: File.read(json_fixture("orders_drafts")), headers: {})
+
+      assert_equal 2, Economic::Orders::ArchivedRepo.all.count
+      assert_equal 1, Economic::Orders::ArchivedRepo.all(filter_text: "orderNumber$eq:35071").count
+      assert_equal 1, Economic::Orders::ArchivedRepo.filter("orderNumber$eq:35071").count
+    end
   end
 end

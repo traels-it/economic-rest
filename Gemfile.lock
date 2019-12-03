@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    economic-rest (0.5.8)
+    economic-rest (0.5.10)
       activesupport
       rest-client
       savon
@@ -123,7 +123,7 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    zeitwerk (2.2.1)
+    zeitwerk (2.2.2)
 
 PLATFORMS
   ruby

@@ -1,0 +1,12 @@
+{
+  "collection": [],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 0,
+    "resultsWithoutFilter": 0,
+    "developerHint": "Pagination links are suppressed when there are no results."
+  },
+  "self": "https://restapi.e-conomic.com/departmental-distributions/distributions?skippages=0&pagesize=1000"
+}

@@ -4,8 +4,8 @@ module Economic
     field :departmentalDistributionNumber, id: true
     field :distributionType
 
-    relation :distributions, fields: [:departmentNumber, :percentage], multiple: true
-    relation :customer, fields: [:customerNumber]
+    relation :customer, fields: []
+    relation :distributions, fields: [], multiple: true
     # relation :subCollections, fields: [?]
   end
 end

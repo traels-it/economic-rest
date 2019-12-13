@@ -14,6 +14,7 @@ module Economic
     relation :product, fields: [:productNumber]
     relation :unit, fields: [:unitNumber, :name]
     relation :delivery, fields: [:address, :zip, :city, :country, :deliveryDate]
+    relation :departmentalDistribution, fields: [:departmentalDistributionNumber, :distributionType]
 
     def self.build_from_soap_api(data)
       # This is not instantiated with the hash, as lines are never pulled out by themselves, but always as part of

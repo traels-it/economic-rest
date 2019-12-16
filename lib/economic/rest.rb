@@ -90,6 +90,12 @@ require "economic/remittance_advice"
 require "economic/payment_type"
 require "economic/payment_type_repo"
 
+require "economic/department"
+require "economic/department_repo"
+require "economic/departmental_distribution"
+require "economic/distribution"
+require "economic/departmental_distribution_repo"
+
 require "economic/account"
 
 module Economic

@@ -1,0 +1,19 @@
+{
+  "collection": [
+    {
+      "departmentNumber": 1,
+      "name": "Department1",
+      "self": "https://restapi.e-conomic.com/departments/1"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 1000,
+    "results": 1,
+    "resultsWithoutFilter": 1,
+    "firstPage": "https://restapi.e-conomic.com/departments?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/departments?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/departments?skippages=0&pagesize=1000"
+}

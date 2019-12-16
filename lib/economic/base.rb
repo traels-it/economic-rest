@@ -75,7 +75,7 @@ module Economic
           relation_fields = relation_hash[:fields]
           begin
             arr = public_send(relation_name).map { |relation| relation.to_h(only_fields: relation_fields) }
-            return_hash[relation_name] = arr
+            return_hash[relation_name] = arr unless arr.empty?
           rescue NoMethodError
           end
         else

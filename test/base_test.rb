@@ -118,6 +118,12 @@ class BaseModelTest < Minitest::Test
       assert_equal h_expected, base_model.to_h
     end
 
+    it "only includes a multiple relation in the hash, when the relation has values" do
+      base_model = Economic::BaseModelWithMultipleRelations.new("baseModelRelations" => [])
+
+      assert_equal({}, base_model.to_h)
+    end
+
     it "allows attribute assigning" do
       base_model = Economic::BaseModel.new
 

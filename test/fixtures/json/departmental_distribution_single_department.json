@@ -1,0 +1,16 @@
+{
+  "departmentalDistributionNumber": 1,
+  "name": "Department1",
+  "barred": false,
+  "distributionType": "department",
+  "distributions": [
+    {
+      "percentage": 100.0,
+      "department": {
+        "departmentNumber": 1,
+        "self": "https://restapi.e-conomic.com/departments/1"
+      }
+    }
+  ],
+  "self": "https://restapi.e-conomic.com/departmental-distributions/departments/1"
+}

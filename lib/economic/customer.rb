@@ -29,7 +29,7 @@ module Economic
     relation :customerGroup, fields: [:customerGroupNumber]
     # field :defaultDeliveryLocation
     # field :invoices
-    # field :layout
+    relation :layout, fields: [:layoutNumber]
     relation :paymentTerms, fields: [:paymentTermsNumber]
     # field :salesPerson
     # field :templates

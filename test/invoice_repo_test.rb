@@ -46,15 +46,15 @@ class InvoiceRepoTest < Minitest::Test
         stub_get_request(endpoint: "invoices/drafts", fixture_name: "invoice_send", method: :post, paged: false)
 
         draft = Economic::Invoice.new({})
-        draft.id_key = 1
         draft.currency = "DKK"
         draft.customer.name = "Torstens Torskebutik"
         draft.exchange_rate = 100.00000
-        draft.customer.customer_number = 641
+        draft.customer.customer_number = 1
         draft.date = Date.today
         draft.due_date = Date.today.next_day
-        draft.layout.layout_number = 15
+        draft.layout.layout_number = 19
         draft.recipient.name = "Torstens Torskebutik"
+        draft.recipient.address = "Hejrevej 1"
         draft.recipient.vat_zone.vat_zone_number = 1
         draft.payment_terms.payment_terms_number = 1
         draft.delivery.address = "Rødspætteallé 3"
@@ -73,7 +73,7 @@ class InvoiceRepoTest < Minitest::Test
             "lineNumber" => 5,
             "description" => "Frisk torsk - med rogn",
             "unit" => {"unitNumber" => 1},
-            "product" => {"productNumber" => "3027"},
+            "product" => {"productNumber" => "1"},
             "quantity" => 3.0,
             "unitNetPrice" => 153.44,
             "discountPercentage" => 10,
@@ -85,7 +85,7 @@ class InvoiceRepoTest < Minitest::Test
             "lineNumber" => 5,
             "description" => "Helleflynder",
             "unit" => {"unitNumber" => 1},
-            "product" => {"productNumber" => "3075"},
+            "product" => {"productNumber" => "3"},
             "quantity" => 2.0,
             "unitNetPrice" => 23.00,
             "discountPercentage" => 0,
@@ -96,6 +96,7 @@ class InvoiceRepoTest < Minitest::Test
         ]
 
         response = Economic::Invoices::DraftsRepo.send draft
+
         assert_kind_of Economic::Invoice, response
       end
     end

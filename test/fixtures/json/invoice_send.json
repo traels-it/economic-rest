@@ -1,13 +1,13 @@
 {
-  "draftInvoiceNumber": 21,
+  "draftInvoiceNumber": 68384,
   "soap": {
     "currentInvoiceHandle": {
-      "id": 54
+      "id": 7331
     }
   },
   "templates": {
-    "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/21/templates/booking-instructions",
-    "self": "https://restapi.e-conomic.com/invoices/drafts/21/templates"
+    "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/68384/templates/booking-instructions",
+    "self": "https://restapi.e-conomic.com/invoices/drafts/68384/templates"
   },
   "lines": [
     {
@@ -21,8 +21,8 @@
         "self": "https://restapi.e-conomic.com/units/1"
       },
       "product": {
-        "productNumber": "3027",
-        "self": "https://restapi.e-conomic.com/products/3027"
+        "productNumber": "1",
+        "self": "https://restapi.e-conomic.com/products/1"
       },
       "quantity": 3.0,
       "unitNetPrice": 153.44,
@@ -43,8 +43,8 @@
         "self": "https://restapi.e-conomic.com/units/1"
       },
       "product": {
-        "productNumber": "3075",
-        "self": "https://restapi.e-conomic.com/products/3075"
+        "productNumber": "3",
+        "self": "https://restapi.e-conomic.com/products/3"
       },
       "quantity": 2.0,
       "unitNetPrice": 23.0,
@@ -55,7 +55,7 @@
       "marginPercentage": 55.57
     }
   ],
-  "date": "2019-10-09",
+  "date": "2020-01-08",
   "currency": "DKK",
   "exchangeRate": 100.0,
   "netAmount": 460.29,
@@ -67,7 +67,7 @@
   "vatAmount": 115.07,
   "roundingAmount": 0.0,
   "costPriceInBaseCurrency": 51.04,
-  "dueDate": "2019-10-17",
+  "dueDate": "2020-01-16",
   "paymentTerms": {
     "paymentTermsNumber": 1,
     "daysOfCredit": 8,
@@ -76,11 +76,16 @@
     "self": "https://restapi.e-conomic.com/payment-terms/1"
   },
   "customer": {
-    "customerNumber": 641,
-    "self": "https://restapi.e-conomic.com/customers/641"
+    "customerNumber": 1,
+    "self": "https://restapi.e-conomic.com/customers/1"
   },
   "recipient": {
     "name": "Torstens Torskebutik",
+    "address": "Hejrevej 1",
+    "zip": "1234",
+    "city": "Byen",
+    "country": "Danmark",
+    "publicEntryNumber": "nummer 1",
     "vatZone": {
       "name": "Domestic",
       "vatZoneNumber": 1,
@@ -94,17 +99,17 @@
     "zip": "1234",
     "city": "Esbjerg",
     "country": "Danmark",
-    "deliveryDate": "2019-10-09"
+    "deliveryDate": "2020-01-08"
   },
   "notes": {
     "heading": "Dette er en overskrift"
   },
   "layout": {
-    "layoutNumber": 15,
-    "self": "https://restapi.e-conomic.com/layouts/15"
+    "layoutNumber": 19,
+    "self": "https://restapi.e-conomic.com/layouts/19"
   },
   "pdf": {
-    "download": "https://restapi.e-conomic.com/invoices/drafts/21/pdf"
+    "download": "https://restapi.e-conomic.com/invoices/drafts/68384/pdf"
   },
-  "self": "https://restapi.e-conomic.com/invoices/drafts/21"
+  "self": "https://restapi.e-conomic.com/invoices/drafts/68384"
 }

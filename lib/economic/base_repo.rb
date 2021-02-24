@@ -76,7 +76,6 @@ module Economic
       end
 
       def send_request(method:, url:, payload: "", &block)
-        url = URI.escape(url)
         if payload.strip.empty?
           RestClient::Request.execute(method: method, url: url, headers: headers, &block)
         else

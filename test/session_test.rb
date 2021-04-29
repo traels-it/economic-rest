@@ -2,10 +2,6 @@ require "test_helper"
 
 class SessionTest < Minitest::Test
   describe "authentication header" do
-    it "throws exception if not logged in" do
-      assert_raises
-    end
-
     it "uses private tokens if logged in" do
       Economic::Session.authentication("ybyb9a8c", "awesome_app_id")
 

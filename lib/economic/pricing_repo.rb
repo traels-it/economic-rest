@@ -6,7 +6,7 @@ module Economic
 
       id = Economic::BaseRepo.id_to_url_formatted_id(id)
       end_point = [superclass.endpoint_url, id, "pricing", "currency-specific-sales-prices"].join("/")
-      response = send_request(method: :get, url: URI.escape(end_point))
+      response = send_request(method: :get, url: end_point)
       entry_hash = JSON.parse(response.body)
       pricings = []
 

@@ -97,6 +97,11 @@ require "economic/distribution"
 require "economic/departmental_distribution_repo"
 
 require "economic/account"
+require "economic/account_repo"
+require "economic/accounts_summed"
+require "economic/contra_account"
+require "economic/total_from_account"
+require "economic/vat_account"
 
 module Economic
   class Demo

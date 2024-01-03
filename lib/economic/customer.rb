@@ -32,7 +32,7 @@ module Economic
     relation :layout, fields: [:layoutNumber]
     relation :paymentTerms, fields: [:paymentTermsNumber]
     # field :salesPerson
-    # field :templates
+    field :templates
     # field :totals
     relation :vatZone, fields: [:vatZoneNumber]
   end

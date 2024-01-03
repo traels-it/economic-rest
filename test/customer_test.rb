@@ -1,7 +1,7 @@
 require "test_helper"
 
 class CustomerTest < Minitest::Test
-  describe "Customer" do
+  describe ".new" do
     it "initialize correctly with all relations" do
       assert_equal "eurozone", Economic::Customer.new(
         customerGroup: Economic::CustomerGroup.new,
@@ -23,6 +23,14 @@ class CustomerTest < Minitest::Test
           attention: Economic::Attention.new(customerContactNumber: "23")
         )
       ).recipient.attention.customerContactNumber
+    end
+  end
+
+  describe "#templates" do
+    it "returns a list of template URLs" do
+      customer = Economic::Customer.new({"name" => "Some customer", "customerNumber" => 1, "templates" => {"invoice" => "url"}})
+
+      assert_equal ["invoice"], customer.templates.keys
     end
   end
 end

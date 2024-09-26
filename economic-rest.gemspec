@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Ruby wrapper for the e-conomic REST API, that aims at making working with the API bearable.
 E-conomic is a web-based accounting system. For their marketing speak, see http://www.e-conomic.co.uk/about/. More details about their API at http://www.e-conomic.co.uk/integration/integration-partner/.
 The documentation can be found at https://restdocs.e-conomic.com'
-  spec.homepage = "https://bitbucket.org/traels/economic-rest"
+  spec.homepage = "https://github.com/traels-it/economic-rest"
   spec.license = "MIT"
 
   # Specify which files should be added to the gem when it is released.

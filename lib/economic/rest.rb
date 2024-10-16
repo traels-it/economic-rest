@@ -3,6 +3,7 @@ require "economic/rest/version"
 require "rest-client"
 require "savon"
 require "active_support/inflector"
+require "active_support/core_ext/object/blank"
 
 require "economic/base_repo"
 require "economic/nested_base_repo"

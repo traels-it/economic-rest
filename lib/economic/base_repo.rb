@@ -22,11 +22,6 @@ module Economic
         modelize_response(response)
       end
 
-      def send(model, url: endpoint_url)
-        warn "use #{self}.save().  #{self}.send() is deprecated"
-        save(model, url: endpoint_url)
-      end
-
       def all(filter_text: "", url: endpoint_url)
         pagination = {}
         pageindex = 0

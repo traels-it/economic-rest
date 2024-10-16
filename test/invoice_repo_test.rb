@@ -41,7 +41,7 @@ class InvoiceRepoTest < Minitest::Test
       end
     end
 
-    describe "send" do
+    describe "save" do
       it "can post" do
         stub_get_request(endpoint: "invoices/drafts", fixture_name: "invoice_send", method: :post, paged: false)
 
@@ -95,7 +95,7 @@ class InvoiceRepoTest < Minitest::Test
           }),
         ]
 
-        response = Economic::Invoices::DraftsRepo.send draft
+        response = Economic::Invoices::DraftsRepo.save draft
 
         assert_kind_of Economic::Invoice, response
       end
@@ -157,7 +157,7 @@ class InvoiceRepoTest < Minitest::Test
           }),
         ]
 
-        response = Economic::Invoices::DraftsRepo.send draft
+        response = Economic::Invoices::DraftsRepo.save draft
 
         assert_equal "Torstens Torskebutik", response.recipient.name
         assert_equal "Hejrevej 1", response.recipient.address

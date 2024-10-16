@@ -35,7 +35,6 @@ The documentation can be found at https://restdocs.e-conomic.com'
   spec.add_development_dependency "mocha"
   spec.add_development_dependency "coveralls"
 
-  spec.add_dependency "savon"
   spec.add_dependency "rest-client", "~> 2.1"
   spec.add_dependency "activesupport", "~> 7.0"
 end

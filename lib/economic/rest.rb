@@ -3,6 +3,7 @@ require "economic/rest/version"
 require "rest-client"
 require "active_support/inflector"
 require "active_support/core_ext/object/blank"
+require "active_support/core_ext/hash/reverse_merge"
 
 require "economic/base_repo"
 require "economic/nested_base_repo"
@@ -114,9 +115,9 @@ module Economic
   class Demo
     def self.hello
       RestClient.get("https://restapi.e-conomic.com/",
-        'X-AppSecretToken': "Demo",
-        'X-AgreementGrantToken': "Demo",
-        'Content-Type': "application/json")
+        "X-AppSecretToken": "Demo",
+        "X-AgreementGrantToken": "Demo",
+        "Content-Type": "application/json")
     end
   end
 end

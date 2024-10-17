@@ -17,12 +17,12 @@ module Economic
       describe ".new" do
         it "takes a set of credentials" do
           credentials = Economic::Credentials.new(app_secret_token: "Secret", agreement_grant_token: "Grant")
-          
+
           resource = BasicResource.new(credentials:)
-          
+
           assert_equal credentials, resource.credentials
         end
-        
+
         it "raises an error, if given nil credentials" do
           credentials = Economic::Credentials.new(app_secret_token: nil, agreement_grant_token: nil)
 
@@ -54,7 +54,7 @@ module Economic
       describe "headers" do
         it "sets the headers from the credentials" do
           credentials = Economic::Credentials.new(app_secret_token: "Demo", agreement_grant_token: "Demo")
-          expected_result = {'X-AppSecretToken': "Demo", 'X-AgreementGrantToken': "Demo", 'Content-Type': "application/json"}
+          expected_result = {"X-AppSecretToken": "Demo", "X-AgreementGrantToken": "Demo", "Content-Type": "application/json"}
 
           resource = BasicResource.new(credentials:)
 
@@ -66,7 +66,7 @@ module Economic
         it "builds an endpoint url for a resource" do
           assert_equal "basics", BasicResource.new.endpoint
         end
-        
+
         it "handles endpoints with multiple words" do
           assert_equal "multiple-words", MultipleWordResource.new.endpoint
         end
@@ -75,8 +75,22 @@ module Economic
       describe "#all" do
         it "sends a get request to the endpoint" do
           stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: []}.to_json, headers: {})
-          
+
           BasicResource.new.all
+        end
+
+        describe "pagination" do
+          it "fetches all pages" do
+            flunk
+          end
+        end
+
+        describe "filtering" do
+          it "can filter data on the resource" do
+            stub_request(:get, "https://restapi.e-conomic.com/basics?filter=fromDate$gte:2022-01-01&pagesize=1000&skippages=0").to_return(status: 200, body: {collection: []}.to_json, headers: {})
+
+            BasicResource.new.all(filter: "fromDate$gte:#{Date.new(2022, 1, 1)}")
+          end
         end
       end
     end

@@ -2,19 +2,34 @@ require "test_helper"
 
 module Resources
   class AccountingYearResourceTest < Minitest::Test
-    describe "For Accounting Year" do
+    describe Economic::Resources::AccountingYearResource do
       before do
         Economic::Configuration.app_secret_token = "Demo"
         Economic::Configuration.agreement_grant_token = "Demo"
       end
 
-      it "get account years from from from and to dates" do
-        stub_get_request(endpoint: "accounting-years", fixture_name: "accounting_years")
+      describe "#all" do
+        it "fetches all accounting years" do
+          stub_get_request(endpoint: "accounting-years", fixture_name: "accounting_years")
 
-        accounting_years = Economic::Resources::AccountingYearResource.new.all
+          accounting_years = Economic::Resources::AccountingYearResource.new.all
 
-        assert_equal "2015-01-01", accounting_years.first.from_date
-        assert_equal "2019-12-31", accounting_years.last.to_date
+          assert_equal 5, accounting_years.size
+          assert_equal "2015-01-01", accounting_years.first.from_date
+          assert_equal "2019-12-31", accounting_years.last.to_date
+        end
+
+        it "can filter records" do
+          stub_get_request(endpoint: "accounting-years", filter: "fromDate$gte:2022-01-01$and:toDate$lte:2023-12-31", fixture_name: "filtered_accounting_years")
+          from_date = Date.new(2022, 1, 1)
+          to_date = Date.new(2023, 12, 31)
+
+          accounting_years = Economic::Resources::AccountingYearResource.new.all(filter: "fromDate$gte:#{from_date}$and:toDate$lte:#{to_date}")
+
+          assert_equal 2, accounting_years.size
+          assert_equal "2022-01-01", accounting_years.first.from_date
+          assert_equal "2023-12-31", accounting_years.last.to_date
+        end
       end
     end
   end

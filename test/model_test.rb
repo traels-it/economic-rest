@@ -26,7 +26,7 @@ class BaseModelTest < Minitest::Test
     it "list attributes on model" do
       expected_result = [
         Economic::Attribute.new(name: :id, as: :corporateIdentificationNumber),
-        Economic::Attribute.new(name: :name, as: nil),
+        Economic::Attribute.new(name: :name, as: nil)
       ]
 
       assert_equal expected_result, Economic::BaseModel.attributes
@@ -36,10 +36,10 @@ class BaseModelTest < Minitest::Test
   describe ".relations" do
     it "list relations with details on model" do
       expected_result = [Economic::Relation.new(name: :base_model_relation, fields: [:base_model_relation_number], as: nil, multiple: false)]
-      
+
       assert_equal expected_result, Economic::BaseModel.relations
     end
-    
+
     it "relations can be multiple" do
       expected_result = [Economic::Relation.new(name: :base_model_relations, fields: [:base_model_relation_number], as: nil, multiple: true)]
 
@@ -53,37 +53,37 @@ class BaseModelTest < Minitest::Test
 
       assert_equal 1337, base_model.id
     end
-    
+
     it "creates and populates relations from JSON strings" do
       base_model = Economic::BaseModel.from_json('{"baseModelRelation":{"baseModelRelationNumber":97939393}}')
-  
+
       assert_kind_of Economic::BaseModelRelation, base_model.base_model_relation
       assert_equal 97_939_393, base_model.base_model_relation.base_model_relation_number
     end
-    
+
     it "is not the same for 2 different base models" do
       base_model = Economic::BaseModel.from_json('{"baseModelRelation":{"baseModelRelationNumber":97939393}}')
-  
+
       base_model2 = Economic::BaseModel.from_json('{"baseModelRelation":{"baseModelRelationNumber":97222}}')
-  
+
       refute_equal base_model.base_model_relation, base_model2.base_model_relation
     end
-    
+
     it "has multiple instances of the same relation if multiple is true" do
       base_model = Economic::BaseModelWithMultipleRelations.from_json('{"baseModelRelations":[
         {"baseModelRelationNumber":97939393},
         {"baseModelRelationNumber":97222}
       ]}')
-  
+
       assert_kind_of Array, base_model.base_model_relations
       assert_equal 2, base_model.base_model_relations.size
       assert_equal 97_939_393, base_model.base_model_relations.first.base_model_relation_number
       assert_equal 97_222, base_model.base_model_relations[1].base_model_relation_number
     end
-    
+
     it "returns an empty array, if a relation, where multiple is true, is not set" do
       base_model = Economic::BaseModelWithMultipleRelations.from_json("{}")
-  
+
       assert_equal [], base_model.base_model_relations
     end
   end
@@ -160,7 +160,7 @@ class BaseModelTest < Minitest::Test
     it "handles multiple relations" do
       expected_result = {"baseModelRelations" => [
         {"baseModelRelationNumber" => 97_939_393},
-        {"baseModelRelationNumber" => 97_222},
+        {"baseModelRelationNumber" => 97_222}
       ]}.to_json
 
       base_model_relations = [

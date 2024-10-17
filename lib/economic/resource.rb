@@ -9,8 +9,8 @@ module Economic
 
     attr_reader :credentials
 
-    def all
-      get(url)
+    def all(filter: nil)
+      get(url, filter:)
     end
 
     def url
@@ -35,8 +35,12 @@ module Economic
 
     private
 
-    def get(url, pageindex: 0)
-      transformed_url = URI("#{url}?skippages=#{pageindex}&pagesize=1000")
+    def get(url, **params)
+      uri = URI(url)
+      default_params = {skippages: 0, pagesize: 1000}
+
+      uri.query = URI.encode_www_form(params.with_defaults(default_params).compact)
+      transformed_url = uri
 
       response = Net::HTTP.get(transformed_url, headers)
 

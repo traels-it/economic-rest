@@ -10,6 +10,10 @@ require "economic/base"
 require "economic/model"
 require "economic/attribute"
 require "economic/relation"
+require "economic/resource"
+
+require "economic/resources/accounting_year_resource"
+require "economic/models/accounting_year"
 
 require "economic/attention"
 require "economic/currency"

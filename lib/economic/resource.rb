@@ -22,23 +22,25 @@ module Economic
     end
 
     def resource_name
-      self.class.to_s.demodulize[0..-("Resource".length + 1)]
+      self.class.to_s.demodulize[0..-9]
     end
 
     def headers
       {
-        'X-AppSecretToken': credentials.app_secret_token,
-        'X-AgreementGrantToken': credentials.agreement_grant_token,
-        'Content-Type': "application/json"
+        "X-AppSecretToken": credentials.app_secret_token,
+        "X-AgreementGrantToken": credentials.agreement_grant_token,
+        "Content-Type": "application/json"
       }
     end
 
     private
 
     def get(url, pageindex: 0)
-      transformed_url = "#{url}?skippages=#{pageindex}&pagesize=1000"
+      transformed_url = URI("#{url}?skippages=#{pageindex}&pagesize=1000")
 
-      parse(RestClient.get(transformed_url))
+      response = Net::HTTP.get(transformed_url, headers)
+
+      parse(response)
     end
 
     def parse(response)

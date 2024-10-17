@@ -4,7 +4,8 @@ module Resources
   class AccountingYearResourceTest < Minitest::Test
     describe "For Accounting Year" do
       before do
-        Economic::Session.authentication("Demo", "Demo")
+        Economic::Configuration.app_secret_token = "Demo"
+        Economic::Configuration.agreement_grant_token = "Demo"
       end
 
       it "get account years from from from and to dates" do

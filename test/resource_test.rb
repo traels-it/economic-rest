@@ -81,7 +81,10 @@ module Economic
 
         describe "pagination" do
           it "fetches all pages" do
-            flunk
+            stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {next_page: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1"}}.to_json, headers: {})
+            stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1").to_return(status: 200, body: {collection: []}.to_json, headers: {})
+
+            BasicResource.new.all
           end
         end
 

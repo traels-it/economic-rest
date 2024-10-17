@@ -15,7 +15,8 @@ def stub_get_request(endpoint:, fixture_name:, page_or_id: nil, skippages: 0, fi
 
   if paged && !nested
     if page_or_id.nil? || page_or_id.to_s.empty?
-      uri.query = URI.encode_www_form(skippages:, filter:, pagesize: 1000)
+      params = {skippages:, filter:, pagesize: 1000}.compact
+      uri.query = URI.encode_www_form(params)
     else
       uri.path = page_or_id
     end
@@ -23,6 +24,11 @@ def stub_get_request(endpoint:, fixture_name:, page_or_id: nil, skippages: 0, fi
 
   stub_request(method, uri).to_return(status: 200, body:
     File.read(json_fixture(fixture_name)), headers: {})
+end
+
+def set_credentials
+  Economic::Configuration.app_secret_token = "Demo"
+  Economic::Configuration.agreement_grant_token = "Demo"
 end
 
 def json_fixture(name)

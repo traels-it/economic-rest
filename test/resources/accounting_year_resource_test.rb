@@ -3,10 +3,7 @@ require "test_helper"
 module Resources
   class AccountingYearResourceTest < Minitest::Test
     describe Economic::Resources::AccountingYearResource do
-      before do
-        Economic::Configuration.app_secret_token = "Demo"
-        Economic::Configuration.agreement_grant_token = "Demo"
-      end
+      before { set_credentials }
 
       describe "#all" do
         it "fetches all accounting years" do

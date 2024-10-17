@@ -17,6 +17,8 @@ require "economic/resource"
 
 require "economic/resources/accounting_year_resource"
 require "economic/models/accounting_year"
+require "economic/resources/customer_resource"
+require "economic/models/customer"
 
 require "economic/attention"
 require "economic/currency"

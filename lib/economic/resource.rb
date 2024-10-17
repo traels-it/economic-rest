@@ -2,6 +2,13 @@ module Economic
   class Resource
     ROOT = "https://restapi.e-conomic.com".freeze
 
+    def initialize(credentials: Economic::Credentials.fetch!)
+      @credentials = credentials
+      raise Economic::MissingCredentialsError if credentials.missing?
+    end
+
+    attr_reader :credentials
+
     def all
       get(url)
     end
@@ -16,6 +23,14 @@ module Economic
 
     def resource_name
       self.class.to_s.demodulize[0..-("Resource".length + 1)]
+    end
+
+    def headers
+      {
+        'X-AppSecretToken': credentials.app_secret_token,
+        'X-AgreementGrantToken': credentials.agreement_grant_token,
+        'Content-Type': "application/json"
+      }
     end
 
     private

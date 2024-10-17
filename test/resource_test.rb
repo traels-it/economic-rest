@@ -10,6 +10,7 @@ module Economic
 
     class ::Economic::Models::Basic < Model
       field :id
+      field :name
     end
 
     describe Economic::Resource do
@@ -117,6 +118,17 @@ module Economic
           basic = BasicResource.new.create(Economic::Models::Basic.new(id: 2))
 
           assert_equal 2, basic.id
+        end
+      end
+
+      describe "#update" do
+        it "updates a record" do
+          stub_request(:put, "https://restapi.e-conomic.com/basics/2").to_return(status: 200, body: {id: 2, name: "Now with a name"}.to_json, headers: {})
+
+          model = Models::Basic.new(id: 2, name: "Now with a name")
+          updated_model = BasicResource.new.update(model)
+
+          assert_equal "Now with a name", updated_model.name
         end
       end
 

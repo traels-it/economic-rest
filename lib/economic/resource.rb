@@ -36,6 +36,21 @@ module Economic
       model_klass.from_json(response.entry.to_json)
     end
 
+    def update(model)
+      uri = URI("#{url}/#{model.id}")
+      http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)
+      http.use_ssl = true
+      res = http.put(uri.path, model.to_json, headers)
+
+      entry = JSON.parse(res.body)
+      response = Response.new(
+        next_page: nil,
+        collection: nil,
+        entry:
+      )
+      model_klass.from_json(response.entry.to_json)
+    end
+
     def destroy(id_or_model)
       id = id_or_model.try(:id) || id_or_model
 

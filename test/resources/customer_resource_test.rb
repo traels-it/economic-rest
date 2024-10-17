@@ -65,6 +65,29 @@ module Resources
         end
       end
 
+      describe "#update" do
+        it "can update a customer" do
+          stub_request(:put, "https://restapi.e-conomic.com/customers/974994344")
+            .with(
+              body: {customerNumber: 974994344, currency: "DKK", name: "A new name", customerGroup: {customerGroupNumber: 1}, paymentTerms: {paymentTermsNumber: 1}, vatZone: {vatZoneNumber: 1}}
+            ).to_return(status: 200, body: File.read(json_fixture("update_customer")), headers: {})
+
+          customer = Economic::Models::Customer.new(
+            id: 974994344,
+            currency: "DKK",
+            name: "A new name",
+            customer_group: Economic::Models::CustomerGroup.new(id: 1),
+            vat_zone: Economic::Models::VatZone.new(vat_zone_number: 1),
+            payment_terms: Economic::Models::PaymentTerm.new(payment_terms_number: 1)
+          )
+
+          updated_customer = Economic::Resources::CustomerResource.new.update(customer)
+
+          assert_instance_of Economic::Models::Customer, updated_customer
+          assert_equal "A new name", updated_customer.name
+        end
+      end
+
       describe "#destroy" do
         it "can destroy a customer from id" do
           stub_request(:delete, "https://restapi.e-conomic.com/customers/974994345")

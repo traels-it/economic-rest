@@ -48,15 +48,15 @@ module Economic
     def initialize(**kwargs)
       valid_keys = self.class.attributes.map(&:name) + (self.class.relations&.map(&:name) || [])
       invalid_keys = kwargs.keys - valid_keys
-      raise ArgumentError, "invalid keys: #{invalid_keys.join(', ')}" unless invalid_keys.empty?
+      raise ArgumentError, "invalid keys: #{invalid_keys.join(", ")}" unless invalid_keys.empty?
 
-      self.class.attributes.each { |attribute| instance_variable_set "@#{attribute.name}", kwargs[attribute.name] }
-      self.class.relations&.each { |relation| instance_variable_set "@#{relation.name}", relation_value(relation, kwargs) }
+      self.class.attributes.each { |attribute| instance_variable_set :"@#{attribute.name}", kwargs[attribute.name] }
+      self.class.relations&.each { |relation| instance_variable_set :"@#{relation.name}", relation_value(relation, kwargs) }
     end
 
     def to_h
       result = {}
-      self.class.attributes.each_with_object(result) { |attribute, hash| hash[attribute.economic_name] = instance_variable_get "@#{attribute.name}" }
+      self.class.attributes.each_with_object(result) { |attribute, hash| hash[attribute.economic_name] = instance_variable_get :"@#{attribute.name}" }
       self.class.relations&.each_with_object(result) { |relation, hash| hash[relation.economic_name] = relation_to_h(relation) }
       result.compact
     end
@@ -72,7 +72,7 @@ module Economic
     end
 
     def relation_to_h(relation)
-      value = instance_variable_get("@#{relation.name}")
+      value = instance_variable_get(:"@#{relation.name}")
       return if value.nil? || (value.respond_to?(:empty?) && value.empty?)
 
       relation.multiple? ? value.map(&:to_h) : value.to_h

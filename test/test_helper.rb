@@ -34,7 +34,3 @@ end
 def json_fixture(name)
   "test/fixtures/json/#{name}.json"
 end
-
-def xml_fixture(name)
-  "test/fixtures/xml/#{name}.xml"
-end

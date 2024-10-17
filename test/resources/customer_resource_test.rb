@@ -42,6 +42,28 @@ module Resources
           assert_equal "aaaa@aaa.com", customer.email
         end
       end
+
+      describe "#create" do
+        it "creates a new customer" do
+          stub_request(:post, "https://restapi.e-conomic.com/customers")
+            .with(
+              body: {currency: "DKK", name: "Mr. Anderson", customerGroup: {customerGroupNumber: 1}, paymentTerms: {paymentTermsNumber: 1}, vatZone: {vatZoneNumber: 1}}
+            ).to_return(status: 200, body: File.read(json_fixture("create_customer")), headers: {})
+
+          customer = Economic::Models::Customer.new(
+            currency: "DKK",
+            name: "Mr. Anderson",
+            customer_group: Economic::Models::CustomerGroup.new(id: 1),
+            vat_zone: Economic::Models::VatZone.new(vat_zone_number: 1),
+            payment_terms: Economic::Models::PaymentTerm.new(payment_terms_number: 1)
+          )
+
+          result = Economic::Resources::CustomerResource.new.create(customer)
+
+          assert_instance_of Economic::Models::Customer, result
+          assert_equal 974994345, result.id
+        end
+      end
     end
   end
 end

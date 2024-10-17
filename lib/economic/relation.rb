@@ -7,7 +7,7 @@ module Economic
     end
 
     def klass
-      "Economic::#{name.to_s.classify}".constantize
+      "Economic::Models::#{name.to_s.classify}".constantize
     end
 
     def multiple?

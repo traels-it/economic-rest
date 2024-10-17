@@ -102,11 +102,21 @@ module Economic
       end
 
       describe "#find" do
-        it "finds a specific resource" do
+        it "finds a specific record" do
           stub_request(:get, "https://restapi.e-conomic.com/basics/1").to_return(status: 200, body: {id: 1}.to_json, headers: {})
           basic = BasicResource.new.find(1)
 
           assert_equal 1, basic.id
+        end
+      end
+
+      describe "#create" do
+        it "creates a new record" do
+          stub_request(:post, "https://restapi.e-conomic.com/basics").to_return(status: 200, body: {id: 2}.to_json, headers: {})
+
+          basic = BasicResource.new.create(Economic::Models::Basic.new(id: 2))
+
+          assert_equal 2, basic.id
         end
       end
     end

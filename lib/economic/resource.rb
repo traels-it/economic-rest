@@ -22,6 +22,20 @@ module Economic
       model_klass.from_json(response.entry.to_json)
     end
 
+    def create(model)
+      uri = URI(url)
+      data = model.to_json
+      res = Net::HTTP.post(uri, data, headers)
+
+      entry = JSON.parse(res.body)
+      response = Response.new(
+        next_page: nil,
+        collection: nil,
+        entry:
+      )
+      model_klass.from_json(response.entry.to_json)
+    end
+
     def url
       "#{ROOT}/#{endpoint}"
     end
@@ -72,6 +86,10 @@ module Economic
 
     def send_request(uri)
       response = Net::HTTP.get(uri, headers)
+      parse_response(response)
+    end
+
+    def parse_response(response)
       parsed = JSON.parse(response)
       next_page_data = parsed.dig("pagination", "nextPage")
       next_page = next_page_data.nil? ? nil : URI(next_page_data)

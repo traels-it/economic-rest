@@ -27,15 +27,15 @@ module Economic
 
       # # field :attention
       # # field :customerContact
-      # relation :customerGroup, fields: [:customerGroupNumber]
+      relation :customer_group
       # # field :defaultDeliveryLocation
       # # field :invoices
       # relation :layout, fields: [:layoutNumber]
-      # relation :paymentTerms, fields: [:paymentTermsNumber]
+      relation :payment_terms
       # # field :salesPerson
       # field :templates
       # # field :totals
-      # relation :vatZone, fields: [:vatZoneNumber]
+      relation :vat_zone
     end
   end
 end

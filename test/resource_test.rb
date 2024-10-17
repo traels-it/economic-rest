@@ -119,6 +119,17 @@ module Economic
           assert_equal 2, basic.id
         end
       end
+
+      describe "#destroy" do
+        it "destroys a record" do
+          stub_request(:delete, "https://restapi.e-conomic.com/basics/3")
+            .to_return(status: 204, body: "", headers: {})
+
+          response = BasicResource.new.destroy(3)
+
+          assert_equal true, response
+        end
+      end
     end
   end
 end

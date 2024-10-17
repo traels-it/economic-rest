@@ -36,6 +36,17 @@ module Economic
       model_klass.from_json(response.entry.to_json)
     end
 
+    def destroy(id_or_model)
+      id = id_or_model.try(:id) || id_or_model
+
+      uri = URI("#{url}/#{id}")
+      http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)
+      http.use_ssl = true
+      response = http.delete(uri.path, headers)
+
+      response.code_type == Net::HTTPNoContent
+    end
+
     def url
       "#{ROOT}/#{endpoint}"
     end

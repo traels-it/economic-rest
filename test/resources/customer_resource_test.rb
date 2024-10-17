@@ -64,6 +64,26 @@ module Resources
           assert_equal 974994345, result.id
         end
       end
+
+      describe "#destroy" do
+        it "can destroy a customer from id" do
+          stub_request(:delete, "https://restapi.e-conomic.com/customers/974994345")
+            .to_return(status: 204, body: "", headers: {})
+
+          result = Economic::Resources::CustomerResource.new.destroy(974994345)
+
+          assert_equal true, result
+        end
+
+        it "can destroy a customer from a model" do
+          stub_request(:delete, "https://restapi.e-conomic.com/customers/974994345")
+            .to_return(status: 204, body: "", headers: {})
+
+          result = Economic::Resources::CustomerResource.new.destroy(Economic::Models::Customer.new(id: 974994345))
+
+          assert_equal true, result
+        end
+      end
     end
   end
 end

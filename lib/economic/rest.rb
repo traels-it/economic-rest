@@ -3,6 +3,7 @@ require "economic/rest/version"
 require "rest-client"
 require "active_support/inflector"
 require "active_support/core_ext/object/blank"
+require "active_support/core_ext/object/try"
 require "active_support/core_ext/hash/reverse_merge"
 
 require "economic/base_repo"

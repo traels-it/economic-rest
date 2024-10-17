@@ -8,6 +8,10 @@ module Economic
     class MultipleWordResource < Resource
     end
 
+    class ::Economic::Models::Basic < Model
+      field :id
+    end
+
     describe Economic::Resource do
       before do
         Economic::Configuration.app_secret_token = "Demo"
@@ -94,6 +98,15 @@ module Economic
 
             BasicResource.new.all(filter: "fromDate$gte:#{Date.new(2022, 1, 1)}")
           end
+        end
+      end
+
+      describe "#find" do
+        it "finds a specific resource" do
+          stub_request(:get, "https://restapi.e-conomic.com/basics/1").to_return(status: 200, body: {id: 1}.to_json, headers: {})
+          basic = BasicResource.new.find(1)
+
+          assert_equal 1, basic.id
         end
       end
     end

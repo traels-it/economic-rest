@@ -18,7 +18,7 @@ def stub_get_request(endpoint:, fixture_name:, page_or_id: nil, skippages: 0, fi
       params = {skippages:, filter:, pagesize: 1000}.compact
       uri.query = URI.encode_www_form(params)
     else
-      uri.path = page_or_id
+      uri = "#{uri}/#{page_or_id}"
     end
   end
 

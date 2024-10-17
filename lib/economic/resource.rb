@@ -13,6 +13,15 @@ module Economic
       get(url, filter:)
     end
 
+    def find(id_or_model)
+      id = id_or_model.try(:id) || id_or_model
+      uri = URI("#{url}/#{id}")
+
+      response = send_request(uri)
+
+      model_klass.from_json(response.entry.to_json)
+    end
+
     def url
       "#{ROOT}/#{endpoint}"
     end
@@ -67,15 +76,17 @@ module Economic
       next_page_data = parsed.dig("pagination", "nextPage")
       next_page = next_page_data.nil? ? nil : URI(next_page_data)
       collection = parsed.dig("collection")
+      entry = parsed
 
       Response.new(
         next_page:,
-        collection:
+        collection:,
+        entry:
       )
     end
   end
 
-  class Response < Data.define(:next_page, :collection)
+  class Response < Data.define(:next_page, :collection, :entry)
     def next_page?
       next_page.present?
     end

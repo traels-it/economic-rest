@@ -20,7 +20,7 @@ module Economic
 
   class MissingCredentialsError < StandardError
     def message
-      "Credentials missing! Initialize Economic::BasicResource with a set of credentials or set them on Economic::Configuration"
+      "Credentials missing! Initialize the resource with a set of credentials or set them on Economic::Configuration"
     end
   end
 end

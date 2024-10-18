@@ -76,7 +76,7 @@ module Economic
     end
 
     def resource_name
-      self.class.to_s.demodulize[0..-9]
+      self.class.to_s[21..-9]
     end
 
     def headers

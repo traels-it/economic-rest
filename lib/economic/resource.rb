@@ -1,6 +1,7 @@
 module Economic
   class Resource
     ROOT = "https://restapi.e-conomic.com".freeze
+    DEFAULT_ALL_PARAMS = {skippages: 0, pagesize: 1000}.freeze
 
     def initialize(credentials: Economic::Credentials.fetch!)
       @credentials = credentials
@@ -11,8 +12,7 @@ module Economic
 
     def all(filter: nil)
       uri = URI(url)
-      default_params = {skippages: 0, pagesize: 1000}
-      uri.query = URI.encode_www_form({filter:}.with_defaults(default_params).compact)
+      uri.query = URI.encode_www_form({filter:}.with_defaults(DEFAULT_ALL_PARAMS).compact)
 
       response = send_request(uri)
       entries = response.collection

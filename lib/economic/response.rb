@@ -19,6 +19,8 @@ module Economic
           model_class = "Economic::Models::#{endpoint.underscore.classify}".constantize
 
           collection = parsed["collection"].map do |hash|
+            # This method is very heavy. It takes about 2 seconds to run test/resources/customer_resource_test.rb:9, which instantiates 3684 customers
+            # Not instantiating them results in a runtime of 0.056 seconds.
             model_class.from_hash(hash)
           end
 

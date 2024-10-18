@@ -16,6 +16,9 @@ require "economic/attribute"
 require "economic/relation"
 require "economic/resource"
 
+require "economic/response"
+require "economic/response/pagination"
+
 require "economic/resources/accounting_year_resource"
 require "economic/models/accounting_year"
 require "economic/resources/customer_resource"

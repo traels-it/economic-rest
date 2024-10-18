@@ -8,8 +8,8 @@ module Economic
         attr_accessor name
       end
 
-      def relation(name, as: nil, fields: [], multiple: false)
-        (@relations ||= []) << Relation.new(name:, as:, fields:, multiple:)
+      def relation(name, as: nil, multiple: false, klass: nil)
+        (@relations ||= []) << Relation.new(name:, as:, multiple:, klass:)
         attr_accessor name
       end
 

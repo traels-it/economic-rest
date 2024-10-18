@@ -19,7 +19,7 @@ module Economic
 
       response = send_request(uri)
 
-      model_klass.from_json(response.entry.to_json)
+      response.entity
     end
 
     def create(model)
@@ -27,13 +27,9 @@ module Economic
       data = model.to_json
       res = Net::HTTP.post(uri, data, headers)
 
-      entry = JSON.parse(res.body)
-      response = Response.new(
-        next_page: nil,
-        collection: nil,
-        entry:
-      )
-      model_klass.from_json(response.entry.to_json)
+      response = Economic::Response.from_json(res.body)
+
+      response.entity
     end
 
     def update(model)
@@ -42,13 +38,9 @@ module Economic
       http.use_ssl = true
       res = http.put(uri.path, model.to_json, headers)
 
-      entry = JSON.parse(res.body)
-      response = Response.new(
-        next_page: nil,
-        collection: nil,
-        entry:
-      )
-      model_klass.from_json(response.entry.to_json)
+      response = Economic::Response.from_json(res.body)
+
+      response.entity
     end
 
     def destroy(id_or_model)
@@ -92,8 +84,8 @@ module Economic
       response = send_request(uri)
       entries = parse(response.collection)
 
-      while response.next_page?
-        response = send_request(response.next_page)
+      while response.pagination.next_page?
+        response = send_request(URI(response.pagination.next_page))
         entries += parse(response.collection)
       end
 
@@ -116,23 +108,7 @@ module Economic
     end
 
     def parse_response(response)
-      parsed = JSON.parse(response)
-      next_page_data = parsed.dig("pagination", "nextPage")
-      next_page = next_page_data.nil? ? nil : URI(next_page_data)
-      collection = parsed.dig("collection")
-      entry = parsed
-
-      Response.new(
-        next_page:,
-        collection:,
-        entry:
-      )
-    end
-  end
-
-  class Response < Data.define(:next_page, :collection, :entry)
-    def next_page?
-      next_page.present?
+      Economic::Response.from_json(response)
     end
   end
 end

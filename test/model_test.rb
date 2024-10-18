@@ -12,14 +12,14 @@ module Economic
       field :id, as: :corporateIdentificationNumber
       field :name
 
-      relation :base_model_relation, fields: [:base_model_relation_number]
+      relation :base_model_relation
     end
 
     class BaseModelWithMultipleRelation < Model
       field :corporate_identification_number
       field :name
 
-      relation :base_model_relations, fields: [:base_model_relation_number], multiple: true
+      relation :base_model_relations, multiple: true
     end
   end
 end
@@ -38,13 +38,13 @@ class BaseModelTest < Minitest::Test
 
   describe ".relations" do
     it "list relations with details on model" do
-      expected_result = [Economic::Relation.new(name: :base_model_relation, fields: [:base_model_relation_number], as: nil, multiple: false)]
+      expected_result = [Economic::Relation.new(name: :base_model_relation, as: nil, multiple: false, klass: nil)]
 
       assert_equal expected_result, Economic::Models::BaseModel.relations
     end
 
     it "relations can be multiple" do
-      expected_result = [Economic::Relation.new(name: :base_model_relations, fields: [:base_model_relation_number], as: nil, multiple: true)]
+      expected_result = [Economic::Relation.new(name: :base_model_relations, as: nil, multiple: true, klass: nil)]
 
       assert_equal expected_result, Economic::Models::BaseModelWithMultipleRelation.relations
     end

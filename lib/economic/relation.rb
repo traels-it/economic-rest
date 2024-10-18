@@ -1,5 +1,5 @@
 module Economic
-  class Relation < Data.define(:name, :as, :fields, :multiple)
+  class Relation < Data.define(:name, :as, :multiple, :klass)
     def economic_name
       return as.to_s unless as.to_s.blank?
 
@@ -7,7 +7,7 @@ module Economic
     end
 
     def klass
-      "Economic::Models::#{name.to_s.classify}".constantize
+      super&.constantize || "Economic::Models::#{name.to_s.classify}".constantize
     end
 
     def multiple?

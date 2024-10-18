@@ -27,6 +27,7 @@ module Economic
 
     def find(id_or_model)
       id = id_or_model.try(:id) || id_or_model
+
       uri = URI("#{url}/#{id}")
 
       response = send_request(uri)
@@ -46,22 +47,21 @@ module Economic
 
     def update(model)
       uri = URI("#{url}/#{model.id}")
-      http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)
-      http.use_ssl = true
-      res = http.put(uri.path, model.to_json, headers)
 
-      response = Economic::Response.from_json(res.body)
+      request = build_request(uri)
+      response = request.put(uri.path, model.to_json, headers)
+      parsed_response = Economic::Response.from_json(response.body)
 
-      response.entity
+      parsed_response.entity
     end
 
     def destroy(id_or_model)
       id = id_or_model.try(:id) || id_or_model
 
       uri = URI("#{url}/#{id}")
-      http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)
-      http.use_ssl = true
-      response = http.delete(uri.path, headers)
+
+      request = build_request(uri)
+      response = request.delete(uri.path, headers)
 
       response.code_type == Net::HTTPNoContent
     end
@@ -99,6 +99,13 @@ module Economic
 
     def parse_response(response)
       Economic::Response.from_json(response)
+    end
+
+    def build_request(uri)
+      http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)
+      http.use_ssl = true
+
+      http
     end
   end
 end

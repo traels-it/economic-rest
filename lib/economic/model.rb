@@ -14,7 +14,10 @@ module Economic
       end
 
       def from_json(json)
-        hash = JSON.parse(json)
+        from_hash(JSON.parse(json))
+      end
+
+      def from_hash(hash)
         translated_attributes = translate_attributes(hash)
         translated_relations = translate_relations(hash, translated_attributes)
         new(**translated_relations)
@@ -40,7 +43,7 @@ module Economic
 
         relations_hash.each_with_object(translated_attributes) do |(key, value), result|
           relation = relations.find { |rel| rel.as.to_s == key || rel.name.to_s.camelize(:lower) == key }
-          result[relation.name] = relation.multiple? ? value.map { relation.klass.from_json(_1.to_json) } : relation.klass.from_json(value.to_json)
+          result[relation.name] = relation.multiple? ? value.map { relation.klass.from_hash(_1) } : relation.klass.from_hash(value)
         end
       end
     end

@@ -10,7 +10,19 @@ module Economic
     attr_reader :credentials
 
     def all(filter: nil)
-      get(url, filter:)
+      uri = URI(url)
+      default_params = {skippages: 0, pagesize: 1000}
+      uri.query = URI.encode_www_form({filter:}.with_defaults(default_params).compact)
+
+      response = send_request(uri)
+      entries = parse(response.collection)
+
+      while response.pagination.next_page?
+        response = send_request(URI(response.pagination.next_page))
+        entries += parse(response.collection)
+      end
+
+      entries
     end
 
     def find(id_or_model)
@@ -76,25 +88,9 @@ module Economic
 
     private
 
-    def get(url, **params)
-      uri = URI(url)
-      default_params = {skippages: 0, pagesize: 1000}
-      uri.query = URI.encode_www_form(params.with_defaults(default_params).compact)
-
-      response = send_request(uri)
-      entries = parse(response.collection)
-
-      while response.pagination.next_page?
-        response = send_request(URI(response.pagination.next_page))
-        entries += parse(response.collection)
-      end
-
-      entries
-    end
-
     def parse(collection)
       collection.map do |item|
-        model_klass.from_json(item.to_json)
+        model_klass.from_hash(item)
       end
     end
 

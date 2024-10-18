@@ -15,11 +15,11 @@ module Economic
       uri.query = URI.encode_www_form({filter:}.with_defaults(default_params).compact)
 
       response = send_request(uri)
-      entries = parse(response.collection)
+      entries = response.collection
 
       while response.pagination.next_page?
         response = send_request(URI(response.pagination.next_page))
-        entries += parse(response.collection)
+        entries += response.collection
       end
 
       entries
@@ -87,12 +87,6 @@ module Economic
     end
 
     private
-
-    def parse(collection)
-      collection.map do |item|
-        model_klass.from_hash(item)
-      end
-    end
 
     def model_klass
       "Economic::Models::#{resource_name}".constantize

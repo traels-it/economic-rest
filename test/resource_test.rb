@@ -79,15 +79,15 @@ module Economic
 
       describe "#all" do
         it "sends a get request to the endpoint" do
-          stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {}}.to_json, headers: {})
+          stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {}, self: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0"}.to_json, headers: {})
 
           BasicResource.new.all
         end
 
         describe "pagination" do
           it "fetches all pages" do
-            stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {next_page: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1"}}.to_json, headers: {})
-            stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1").to_return(status: 200, body: {collection: [], pagination: {}}.to_json, headers: {})
+            stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {next_page: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1"}, self: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0"}.to_json, headers: {})
+            stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1").to_return(status: 200, body: {collection: [], pagination: {}, self: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1"}.to_json, headers: {})
 
             BasicResource.new.all
           end
@@ -95,7 +95,7 @@ module Economic
 
         describe "filtering" do
           it "can filter data on the resource" do
-            stub_request(:get, "https://restapi.e-conomic.com/basics?filter=fromDate$gte:2022-01-01&pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {}}.to_json, headers: {})
+            stub_request(:get, "https://restapi.e-conomic.com/basics?filter=fromDate$gte:2022-01-01&pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {}, self: "https://restapi.e-conomic.com/basics?filter=fromDate$gte:2022-01-01&pagesize=1000&skippages=0"}.to_json, headers: {})
 
             BasicResource.new.all(filter: "fromDate$gte:#{Date.new(2022, 1, 1)}")
           end

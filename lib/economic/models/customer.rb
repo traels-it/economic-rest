@@ -25,16 +25,16 @@ module Economic
       field :website
       field :zip
 
-      # # field :attention
-      # # field :customerContact
+      # field :attention
+      # field :customer_contact
       relation :customer_group
-      # # field :defaultDeliveryLocation
-      # # field :invoices
-      # relation :layout, fields: [:layoutNumber]
+      # field :default_delivery_location
+      # field :invoices
+      # relation :layout
       relation :payment_terms
-      # # field :salesPerson
+      # field :sales_person
       # field :templates
-      # # field :totals
+      # field :totals
       relation :vat_zone
     end
   end

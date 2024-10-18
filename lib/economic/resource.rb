@@ -1,7 +1,7 @@
 module Economic
   class Resource
     ROOT = "https://restapi.e-conomic.com".freeze
-    DEFAULT_ALL_PARAMS = {skippages: 0, pagesize: 1000}.freeze
+    DEFAULT_QUERY_PARAMS = {skippages: 0, pagesize: 1000}.freeze
 
     def initialize(credentials: Economic::Credentials.fetch!)
       @credentials = credentials
@@ -11,68 +11,45 @@ module Economic
     attr_reader :credentials
 
     def all(filter: nil)
-      uri = URI(url)
-      uri.query = URI.encode_www_form({filter:}.with_defaults(DEFAULT_ALL_PARAMS).compact)
+      response = make_request(method: :get, query: {filter:})
 
-      parsed_response = make_request(uri:, method: :get)
-
-      entries = parsed_response.collection
-
-      while parsed_response.pagination.next_page?
-        uri = URI(parsed_response.pagination.next_page)
-        parsed_response = make_request(uri:, method: :get)
-        entries += parsed_response.collection
+      entries = response.collection
+      while response.pagination.next_page?
+        uri = build_uri(response.pagination.next_page)
+        response = make_request(uri:, method: :get)
+        entries += response.collection
       end
 
       entries
     end
 
     def find(id_or_model)
-      id = id_or_model.try(:id) || id_or_model
-
-      uri = URI("#{url}/#{id}")
-
-      parsed_response = make_request(uri:, method: :get)
-
-      parsed_response.entity
+      make_request(id_or_model:, method: :get).entity
     end
 
     def create(model)
-      uri = URI(url)
-
-      parsed_response = make_request(uri:, method: :post, data: model)
-
-      parsed_response.entity
+      make_request(method: :post, data: model).entity
     end
 
     def update(model)
-      uri = URI("#{url}/#{model.id}")
-
-      parsed_response = make_request(uri:, method: :put, data: model)
-
-      parsed_response.entity
+      make_request(id_or_model: model, method: :put, data: model).entity
     end
 
     def destroy(id_or_model)
-      id = id_or_model.try(:id) || id_or_model
-
-      uri = URI("#{url}/#{id}")
-
-      make_request(uri:, method: :delete)
+      make_request(id_or_model:, method: :delete)
     end
 
     private
 
-    def make_request(uri:, method:, data: nil)
+    def make_request(method:, uri: url, id_or_model: nil, data: nil, query: nil)
+      uri = build_uri(uri, id_or_model:, query:)
       request = build_request(uri)
       args = [method, uri, data&.to_json, headers].compact
       response = request.public_send(*args)
 
-      if response.code_type == Net::HTTPNoContent
-        true
-      else
-        Economic::Response.from_json(response.body)
-      end
+      return true if response.code_type == Net::HTTPNoContent
+
+      Economic::Response.from_json(response.body)
     end
 
     def build_request(uri)
@@ -80,6 +57,14 @@ module Economic
       http.use_ssl = true
 
       http
+    end
+
+    def build_uri(uri, id_or_model: nil, query: nil)
+      uri = id_or_model.present? ? "#{uri}/#{id_or_model.try(:id) || id_or_model}" : uri
+      uri = URI(uri)
+      uri.query = URI.encode_www_form(query.with_defaults(DEFAULT_QUERY_PARAMS).compact) if query.present?
+
+      uri
     end
 
     def url

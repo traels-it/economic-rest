@@ -14,12 +14,18 @@ module Economic
       uri = URI(url)
       uri.query = URI.encode_www_form({filter:}.with_defaults(DEFAULT_ALL_PARAMS).compact)
 
-      response = send_request(uri)
-      entries = response.collection
+      request = build_request(uri)
+      response = request.get(uri, headers)
+      parsed_response = Economic::Response.from_json(response.body)
 
-      while response.pagination.next_page?
-        response = send_request(URI(response.pagination.next_page))
-        entries += response.collection
+      entries = parsed_response.collection
+
+      while parsed_response.pagination.next_page?
+        uri = URI(parsed_response.pagination.next_page)
+        request = build_request(uri)
+        response = request.get(uri, headers)
+        parsed_response = Economic::Response.from_json(response.body)
+        entries += parsed_response.collection
       end
 
       entries
@@ -30,26 +36,30 @@ module Economic
 
       uri = URI("#{url}/#{id}")
 
-      response = send_request(uri)
+      request = build_request(uri)
+      response = request.get(uri, headers)
 
-      response.entity
+      parsed_response = Economic::Response.from_json(response.body)
+
+      parsed_response.entity
     end
 
     def create(model)
       uri = URI(url)
-      data = model.to_json
-      res = Net::HTTP.post(uri, data, headers)
 
-      response = Economic::Response.from_json(res.body)
+      request = build_request(uri)
+      response = request.post(uri, model.to_json, headers)
 
-      response.entity
+      parsed_response = Economic::Response.from_json(response.body)
+
+      parsed_response.entity
     end
 
     def update(model)
       uri = URI("#{url}/#{model.id}")
 
       request = build_request(uri)
-      response = request.put(uri.path, model.to_json, headers)
+      response = request.put(uri, model.to_json, headers)
       parsed_response = Economic::Response.from_json(response.body)
 
       parsed_response.entity
@@ -61,7 +71,7 @@ module Economic
       uri = URI("#{url}/#{id}")
 
       request = build_request(uri)
-      response = request.delete(uri.path, headers)
+      response = request.delete(uri, headers)
 
       response.code_type == Net::HTTPNoContent
     end
@@ -90,15 +100,6 @@ module Economic
 
     def model_klass
       "Economic::Models::#{resource_name}".constantize
-    end
-
-    def send_request(uri)
-      response = Net::HTTP.get(uri, headers)
-      parse_response(response)
-    end
-
-    def parse_response(response)
-      Economic::Response.from_json(response)
     end
 
     def build_request(uri)

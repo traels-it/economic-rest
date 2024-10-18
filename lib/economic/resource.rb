@@ -76,6 +76,15 @@ module Economic
       response.code_type == Net::HTTPNoContent
     end
 
+    private
+
+    def build_request(uri)
+      http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)
+      http.use_ssl = true
+
+      http
+    end
+
     def url
       "#{ROOT}/#{endpoint}"
     end
@@ -94,19 +103,6 @@ module Economic
         "X-AgreementGrantToken": credentials.agreement_grant_token,
         "Content-Type": "application/json"
       }
-    end
-
-    private
-
-    def model_klass
-      "Economic::Models::#{resource_name}".constantize
-    end
-
-    def build_request(uri)
-      http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)
-      http.use_ssl = true
-
-      http
     end
   end
 end

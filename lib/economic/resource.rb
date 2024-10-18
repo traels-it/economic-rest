@@ -14,17 +14,13 @@ module Economic
       uri = URI(url)
       uri.query = URI.encode_www_form({filter:}.with_defaults(DEFAULT_ALL_PARAMS).compact)
 
-      request = build_request(uri)
-      response = request.get(uri, headers)
-      parsed_response = Economic::Response.from_json(response.body)
+      parsed_response = make_request(uri:, method: :get)
 
       entries = parsed_response.collection
 
       while parsed_response.pagination.next_page?
         uri = URI(parsed_response.pagination.next_page)
-        request = build_request(uri)
-        response = request.get(uri, headers)
-        parsed_response = Economic::Response.from_json(response.body)
+        parsed_response = make_request(uri:, method: :get)
         entries += parsed_response.collection
       end
 
@@ -36,10 +32,7 @@ module Economic
 
       uri = URI("#{url}/#{id}")
 
-      request = build_request(uri)
-      response = request.get(uri, headers)
-
-      parsed_response = Economic::Response.from_json(response.body)
+      parsed_response = make_request(uri:, method: :get)
 
       parsed_response.entity
     end
@@ -47,10 +40,7 @@ module Economic
     def create(model)
       uri = URI(url)
 
-      request = build_request(uri)
-      response = request.post(uri, model.to_json, headers)
-
-      parsed_response = Economic::Response.from_json(response.body)
+      parsed_response = make_request(uri:, method: :post, data: model)
 
       parsed_response.entity
     end
@@ -58,9 +48,7 @@ module Economic
     def update(model)
       uri = URI("#{url}/#{model.id}")
 
-      request = build_request(uri)
-      response = request.put(uri, model.to_json, headers)
-      parsed_response = Economic::Response.from_json(response.body)
+      parsed_response = make_request(uri:, method: :put, data: model)
 
       parsed_response.entity
     end
@@ -70,13 +58,22 @@ module Economic
 
       uri = URI("#{url}/#{id}")
 
-      request = build_request(uri)
-      response = request.delete(uri, headers)
-
-      response.code_type == Net::HTTPNoContent
+      make_request(uri:, method: :delete)
     end
 
     private
+
+    def make_request(uri:, method:, data: nil)
+      request = build_request(uri)
+      args = [method, uri, data&.to_json, headers].compact
+      response = request.public_send(*args)
+
+      if response.code_type == Net::HTTPNoContent
+        true
+      else
+        Economic::Response.from_json(response.body)
+      end
+    end
 
     def build_request(uri)
       http = Net::HTTP.new(uri.hostname, Net::HTTP.https_default_port)

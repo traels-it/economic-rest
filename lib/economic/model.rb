@@ -1,8 +1,6 @@
 module Economic
   class Model
     class << self
-      attr_reader :attributes, :relations
-
       def field(name, as: nil)
         (@attributes ||= []) << Attribute.new(name:, as:)
         attr_accessor name
@@ -22,8 +20,6 @@ module Economic
         translated_relations = translate_relations(hash, translated_attributes)
         new(**translated_relations)
       end
-
-      private
 
       def translate_attributes(hash)
         economic_attribute_names = attributes.map(&:economic_name)
@@ -45,6 +41,25 @@ module Economic
           relation = relations.find { |rel| rel.as.to_s == key || rel.name.to_s.camelize(:lower) == key }
           result[relation.name] = relation.multiple? ? value.map { relation.klass.from_hash(_1) } : relation.klass.from_hash(value)
         end
+      end
+
+      def inherited(subclass)
+        return if self == Economic::Model
+
+        attributes.each do |attribute|
+          subclass.attributes << attribute
+        end
+        relations.each do |relation|
+          subclass.relations << relation
+        end
+      end
+
+      def attributes
+        @attributes ||= []
+      end
+
+      def relations
+        @relations ||= []
       end
     end
 

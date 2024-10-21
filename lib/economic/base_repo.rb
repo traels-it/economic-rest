@@ -67,14 +67,14 @@ module Economic
         response = send_request(method: :delete, url: url)
 
         success_codes = [200, 204]
-        return true if success_codes.include?(response.code)
+        true if success_codes.include?(response.code)
       end
 
-      def send_request(method:, url:, payload: "", &block)
+      def send_request(method:, url:, payload: "", &)
         if payload.strip.empty?
-          RestClient::Request.execute(method: method, url: url, headers: headers, &block)
+          RestClient::Request.execute(method: method, url: url, headers: headers, &)
         else
-          RestClient::Request.execute(method: method, url: url, payload: payload, headers: headers, &block)
+          RestClient::Request.execute(method: method, url: url, payload: payload, headers: headers, &)
         end
       rescue => e
         warn "#{e} #{e.response}" if e.respond_to?(:response)
@@ -90,7 +90,7 @@ module Economic
           .gsub(":", "_4_")
           .gsub("&", "_5_")
           .gsub("/", "_6_")
-          .gsub('\\', "_7_")
+          .gsub("\\", "_7_")
           .gsub(" ", "_9_")
           .gsub("?", "_10_")
           .gsub(".", "_11_")
@@ -126,7 +126,7 @@ module Economic
       end
 
       def headers
-        {'X-AppSecretToken': Session.app_secret_token, 'X-AgreementGrantToken': Session.agreement_grant_token, 'Content-Type': "application/json"}
+        {"X-AppSecretToken": Session.app_secret_token, "X-AgreementGrantToken": Session.agreement_grant_token, "Content-Type": "application/json"}
       end
 
       def fetch(url: endpoint_url, pageindex: 0, filter_text: "")
@@ -138,7 +138,7 @@ module Economic
       end
 
       def kebab(string)
-        string.gsub(/::/, "/")
+        string.gsub("::", "/")
           .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
           .gsub(/([a-z\d])([A-Z])/, '\1_\2')
           .tr("_", "-")

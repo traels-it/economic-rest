@@ -32,7 +32,7 @@ class InvoiceRepoTest < Minitest::Test
 
     describe "all" do
       it "can find all drafts" do
-        stub_get_request(endpoint: "invoices/drafts", pageindex: 0, fixture_name: "invoices_0")
+        stub_get_request(endpoint: "invoices/drafts", skippages: 0, fixture_name: "invoices_0")
 
         drafts = Economic::Invoices::DraftsRepo.all
 
@@ -79,7 +79,7 @@ class InvoiceRepoTest < Minitest::Test
             "discountPercentage" => 10,
             "unitCostPrice" => 10.2,
             "marginInBaseCurrency" => 0,
-            "marginPercentage" => 0,
+            "marginPercentage" => 0
           }),
           Economic::Line.new({
             "lineNumber" => 5,
@@ -91,8 +91,8 @@ class InvoiceRepoTest < Minitest::Test
             "discountPercentage" => 0,
             "unitCostPrice" => 10.22,
             "marginInBaseCurrency" => 0,
-            "marginPercentage" => 0,
-          }),
+            "marginPercentage" => 0
+          })
         ]
 
         response = Economic::Invoices::DraftsRepo.save draft
@@ -141,7 +141,7 @@ class InvoiceRepoTest < Minitest::Test
             "discountPercentage" => 10,
             "unitCostPrice" => 10.2,
             "marginInBaseCurrency" => 0,
-            "marginPercentage" => 0,
+            "marginPercentage" => 0
           }),
           Economic::Line.new({
             "lineNumber" => 5,
@@ -153,8 +153,8 @@ class InvoiceRepoTest < Minitest::Test
             "discountPercentage" => 0,
             "unitCostPrice" => 10.22,
             "marginInBaseCurrency" => 0,
-            "marginPercentage" => 0,
-          }),
+            "marginPercentage" => 0
+          })
         ]
 
         response = Economic::Invoices::DraftsRepo.save draft

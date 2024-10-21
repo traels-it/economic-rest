@@ -7,7 +7,7 @@ class SupplierRepoTest < Minitest::Test
     end
 
     it "gets all" do
-      stub_get_request(endpoint: "suppliers", pageindex: 0, fixture_name: "suppliers")
+      stub_get_request(endpoint: "suppliers", skippages: 0, fixture_name: "suppliers")
 
       suppliers = Economic::SupplierRepo.all
 
@@ -28,7 +28,7 @@ class SupplierRepoTest < Minitest::Test
     it "can post" do
       stub_request(:post, "https://restapi.e-conomic.com/suppliers")
         .with(
-          body: {"currency" => "DKK", :name => "Mr. Anderson", "supplierGroup" => {"supplierGroupNumber": 1}, "paymentTerms" => {"paymentTermsNumber": 1}, "vatZone" => {"vatZoneNumber": 1}}
+          body: {"currency" => "DKK", :name => "Mr. Anderson", "supplierGroup" => {supplierGroupNumber: 1}, "paymentTerms" => {paymentTermsNumber: 1}, "vatZone" => {vatZoneNumber: 1}}
         ).to_return(status: 200, body: "", headers: {})
 
       supplier = Economic::Supplier.new({})

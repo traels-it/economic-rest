@@ -47,9 +47,7 @@ module Economic
       args = [method, uri, data&.to_json, headers].compact
       response = request.public_send(*args)
 
-      return true if response.code_type == Net::HTTPNoContent
-
-      Economic::Response.from_json(response.body)
+      parse_response(response)
     end
 
     def build_request(uri)
@@ -65,6 +63,12 @@ module Economic
       uri.query = URI.encode_www_form(query.with_defaults(DEFAULT_QUERY_PARAMS).compact) if query.present?
 
       uri
+    end
+
+    def parse_response(response)
+      return true if response.code_type == Net::HTTPNoContent
+
+      Economic::Response.from_json(response.body)
     end
 
     def url

@@ -20,6 +20,7 @@ module Economic
       # relation :layout
       # relation :notes
       relation :payment_terms
+      relation :lines, multiple: true
       # relation :pdf
       # # relation :project
       # relation :recipient

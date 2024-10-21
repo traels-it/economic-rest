@@ -8,6 +8,9 @@ module Economic
         Economic::Models::Invoice.attributes.each do |attribute|
           attributes << attribute
         end
+        Economic::Models::Invoice.relations.each do |relation|
+          (@relations ||= []) << relation
+        end
       end
     end
   end

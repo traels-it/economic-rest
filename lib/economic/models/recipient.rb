@@ -10,7 +10,7 @@ module Economic
       field :public_entry_number
       field :zip
 
-      # relation :vat_zone
+      relation :vat_zone
       # relation :attention
     end
   end

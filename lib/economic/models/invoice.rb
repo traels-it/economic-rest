@@ -13,6 +13,8 @@ module Economic
       field :rounding_amount
       field :vat_amount
       field :remainder
+      field :cost_price_in_base_currency
+      field :net_amount_in_base_currency
 
       relation :lines, multiple: true
       relation :customer
@@ -20,9 +22,9 @@ module Economic
       relation :recipient
       relation :notes
       relation :references
+      relation :layout
       # relation :delivery
       # relation :delivery_location
-      # relation :layout
       # relation :pdf
       # relation :project
     end

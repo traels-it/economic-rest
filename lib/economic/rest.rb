@@ -39,6 +39,7 @@ require "economic/models/reference"
 require "economic/models/customer_contact"
 require "economic/models/sales_person"
 require "economic/models/vendor_reference"
+require "economic/models/layout"
 
 require "economic/attention"
 require "economic/currency"

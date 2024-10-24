@@ -32,7 +32,7 @@ module Economic
           )
         else
           # find model class
-          endpoint = parsed["self"][30..].split("/").first
+          endpoint = parsed["self"][30..].split("/")[0..-2].join("/")
           model_class = "Economic::Models::#{endpoint.underscore.classify}".constantize
 
           new(

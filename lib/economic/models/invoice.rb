@@ -14,18 +14,17 @@ module Economic
       field :vat_amount
       field :remainder
 
+      relation :lines, multiple: true
       relation :customer
+      relation :payment_terms
+      relation :recipient
+      relation :notes
+      relation :references
       # relation :delivery
       # relation :delivery_location
       # relation :layout
-      # relation :notes
-      relation :payment_terms
-      relation :lines, multiple: true
       # relation :pdf
-      # # relation :project
-      # relation :recipient
-      # relation :references
-      # relation :lines, multiple: true
+      # relation :project
     end
   end
 end

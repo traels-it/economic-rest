@@ -1,32 +1,34 @@
 {
   "collection": [
     {
-      "draftInvoiceNumber": 19,
+      "draftInvoiceNumber": 4,
       "soap": {
         "currentInvoiceHandle": {
-          "id": 52
+          "id": 2
         }
       },
       "templates": {
-        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/19/templates/booking-instructions",
-        "self": "https://restapi.e-conomic.com/invoices/drafts/19/templates"
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/4/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/4/templates"
       },
-      "date": "2019-10-09",
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/4/attachment",
+      "date": "2022-06-03",
       "currency": "DKK",
-      "exchangeRate": 100.0,
-      "netAmount": 0.0,
-      "netAmountInBaseCurrency": 0.0,
-      "grossAmount": 0.0,
-      "grossAmountInBaseCurrency": 0.0,
-      "marginInBaseCurrency": -28.0,
-      "marginPercentage": 0.0,
-      "vatAmount": 0.0,
-      "roundingAmount": 0.0,
-      "costPriceInBaseCurrency": 28.0,
-      "dueDate": "2019-10-17",
+      "exchangeRate": 100.000000,
+      "netAmount": 9450.000000,
+      "netAmountInBaseCurrency": 9450.00,
+      "grossAmount": 10750.000000,
+      "grossAmountInBaseCurrency": 10750.00,
+      "marginInBaseCurrency": 3550.0000,
+      "marginPercentage": 37.57,
+      "vatAmount": 1300.000000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 5900.0000,
+      "dueDate": "2022-06-11",
       "paymentTerms": {
         "paymentTermsNumber": 1,
         "daysOfCredit": 8,
+        "description": "Netto 8 dage",
         "name": "Netto 8 dage",
         "paymentTermsType": "net",
         "self": "https://restapi.e-conomic.com/payment-terms/1"
@@ -36,61 +38,15 @@
         "self": "https://restapi.e-conomic.com/customers/1"
       },
       "recipient": {
-        "name": "Torstens Torskebutik",
-        "vatZone": {
-          "name": "Domestic",
-          "vatZoneNumber": 1,
-          "enabledForCustomer": true,
-          "enabledForSupplier": true,
-          "self": "https://restapi.e-conomic.com/vat-zones/1"
-        }
-      },
-      "layout": {
-        "layoutNumber": 15,
-        "self": "https://restapi.e-conomic.com/layouts/15"
-      },
-      "pdf": {
-        "download": "https://restapi.e-conomic.com/invoices/drafts/19/pdf"
-      },
-      "self": "https://restapi.e-conomic.com/invoices/drafts/19"
-    },
-    {
-      "draftInvoiceNumber": 20,
-      "soap": {
-        "currentInvoiceHandle": {
-          "id": 53
-        }
-      },
-      "templates": {
-        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/20/templates/booking-instructions",
-        "self": "https://restapi.e-conomic.com/invoices/drafts/20/templates"
-      },
-      "date": "2019-10-09",
-      "currency": "DKK",
-      "exchangeRate": 100.0,
-      "netAmount": 0.0,
-      "netAmountInBaseCurrency": 0.0,
-      "grossAmount": 0.0,
-      "grossAmountInBaseCurrency": 0.0,
-      "marginInBaseCurrency": 0.0,
-      "marginPercentage": 0.0,
-      "vatAmount": 0.0,
-      "roundingAmount": 0.0,
-      "costPriceInBaseCurrency": 0.0,
-      "dueDate": "2019-11-30",
-      "paymentTerms": {
-        "paymentTermsNumber": 2,
-        "daysOfCredit": 30,
-        "name": "Løbende måned 30 dage",
-        "paymentTermsType": "invoiceMonth",
-        "self": "https://restapi.e-conomic.com/payment-terms/2"
-      },
-      "customer": {
-        "customerNumber": 3050,
-        "self": "https://restapi.e-conomic.com/customers/3050"
-      },
-      "recipient": {
-        "name": "Jep",
+        "name": "Decathlon",
+        "address": "Avenue des Arts No 5",
+        "zip": "1040",
+        "city": "Brussels",
+        "country": "Belgium",
+        "attention": {
+          "customerContactNumber": 1,
+          "self": "https://restapi.e-conomic.com/customers/1/contacts/1"
+        },
         "vatZone": {
           "name": "Domestic",
           "vatZoneNumber": 1,
@@ -98,24 +54,840 @@
           "enabledForSupplier": true,
           "self": "https://restapi.e-conomic.com/vat-zones/1"
         },
+        "mobilePhone": "066567657657575",
         "nemHandelType": "ean"
       },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1/delivery-locations/1"
+      },
+      "delivery": {
+        "address": "Langebrogade 1",
+        "zip": "1411",
+        "city": "København K",
+        "country": "Denmark"
+      },
+      "notes": {
+        "heading": "This is UI heading",
+        "textLine1": "This is UI text 1",
+        "textLine2": "This is UI Text 2"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 2,
+          "customer": {
+            "customerNumber": 1,
+            "self": "https://restapi.e-conomic.com/customers/1"
+          },
+          "self": "https://restapi.e-conomic.com/customers/1/contacts/2"
+        },
+        "salesPerson": {
+          "employeeNumber": 1,
+          "self": "https://restapi.e-conomic.com/employees/1"
+        },
+        "vendorReference": {
+          "employeeNumber": 8,
+          "self": "https://restapi.e-conomic.com/employees/8"
+        },
+        "other": "UI Other ref"
+      },
       "layout": {
-        "layoutNumber": 16,
-        "self": "https://restapi.e-conomic.com/layouts/16"
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
       },
       "pdf": {
-        "download": "https://restapi.e-conomic.com/invoices/drafts/20/pdf"
+        "download": "https://restapi.e-conomic.com/invoices/drafts/4/pdf"
       },
-      "self": "https://restapi.e-conomic.com/invoices/drafts/20"
+      "lastUpdated": "2024-10-08T12:23:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/4"
+    },
+    {
+      "draftInvoiceNumber": 5,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 3
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/5/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/5/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/5/attachment",
+      "date": "2022-06-03",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 12000.000000,
+      "netAmountInBaseCurrency": 12000.00,
+      "grossAmount": 15000.000000,
+      "grossAmountInBaseCurrency": 15000.00,
+      "marginInBaseCurrency": 4000.0000,
+      "marginPercentage": 33.33,
+      "vatAmount": 3000.000000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 8000.0000,
+      "dueDate": "2022-06-11",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 4,
+        "self": "https://restapi.e-conomic.com/customers/4"
+      },
+      "recipient": {
+        "name": "Customer with EAN",
+        "address": "Avenue des arts 4",
+        "zip": "3221",
+        "city": "Brussels",
+        "country": "Belgium",
+        "ean": "9774994892965",
+        "attention": {
+          "customerContactNumber": 7,
+          "self": "https://restapi.e-conomic.com/customers/4/contacts/7"
+        },
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        },
+        "mobilePhone": "0964646474",
+        "nemHandelType": "ean",
+        "cvr": "00059374"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 4,
+        "self": "https://restapi.e-conomic.com/customers/4/delivery-locations/4"
+      },
+      "delivery": {
+        "address": "Avenue des arts no 3",
+        "zip": "1212",
+        "city": "København K",
+        "country": "Denmark"
+      },
+      "notes": {
+        "heading": "Pens and ice-skates",
+        "textLine1": "Text 1",
+        "textLine2": "text 2"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 8,
+          "customer": {
+            "customerNumber": 4,
+            "self": "https://restapi.e-conomic.com/customers/4"
+          },
+          "self": "https://restapi.e-conomic.com/customers/4/contacts/8"
+        },
+        "salesPerson": {
+          "employeeNumber": 6,
+          "self": "https://restapi.e-conomic.com/employees/6"
+        },
+        "vendorReference": {
+          "employeeNumber": 4,
+          "self": "https://restapi.e-conomic.com/employees/4"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "project": {
+        "projectNumber": 2,
+        "self": "https://restapi.e-conomic.com/projects/2"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/5/pdf"
+      },
+      "lastUpdated": "2024-09-26T16:03:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/5"
+    },
+    {
+      "draftInvoiceNumber": 6,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 4
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/6/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/6/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/6/attachment",
+      "date": "2022-06-03",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 15300.000000,
+      "netAmountInBaseCurrency": 15300.00,
+      "grossAmount": 18000.000000,
+      "grossAmountInBaseCurrency": 18000.00,
+      "marginInBaseCurrency": 6300.0000,
+      "marginPercentage": 41.18,
+      "vatAmount": 2700.000000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 9000.0000,
+      "dueDate": "2022-06-11",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 2,
+        "self": "https://restapi.e-conomic.com/customers/2"
+      },
+      "recipient": {
+        "name": "Intersport",
+        "address": "Avenue des arts no 3",
+        "zip": "1212",
+        "city": "Brussels",
+        "country": "Belgium",
+        "attention": {
+          "customerContactNumber": 3,
+          "self": "https://restapi.e-conomic.com/customers/2/contacts/3"
+        },
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        },
+        "mobilePhone": "03435436",
+        "nemHandelType": "ean"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 2,
+        "self": "https://restapi.e-conomic.com/customers/2/delivery-locations/2"
+      },
+      "delivery": {
+        "address": "Avenue Louise No 1",
+        "zip": "1321",
+        "city": "Brussels",
+        "country": "Belgium"
+      },
+      "notes": {
+        "heading": "Draft No 4"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 4,
+          "customer": {
+            "customerNumber": 2,
+            "self": "https://restapi.e-conomic.com/customers/2"
+          },
+          "self": "https://restapi.e-conomic.com/customers/2/contacts/4"
+        },
+        "salesPerson": {
+          "employeeNumber": 4,
+          "self": "https://restapi.e-conomic.com/employees/4"
+        },
+        "vendorReference": {
+          "employeeNumber": 5,
+          "self": "https://restapi.e-conomic.com/employees/5"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/6/pdf"
+      },
+      "lastUpdated": "2024-09-25T14:39:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/6"
+    },
+    {
+      "draftInvoiceNumber": 7,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 5
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/7/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/7/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/7/attachment",
+      "date": "2022-06-03",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 1550.000000,
+      "netAmountInBaseCurrency": 1550.00,
+      "grossAmount": 1937.500000,
+      "grossAmountInBaseCurrency": 1937.50,
+      "marginInBaseCurrency": 650.0000,
+      "marginPercentage": 41.94,
+      "vatAmount": 387.500000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 900.0000,
+      "dueDate": "2022-06-11",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 4,
+        "self": "https://restapi.e-conomic.com/customers/4"
+      },
+      "recipient": {
+        "name": "Customer with EAN",
+        "address": "Avenue des arts 4",
+        "zip": "3221",
+        "city": "Brussels",
+        "country": "Belgium",
+        "ean": "9774994892965",
+        "attention": {
+          "customerContactNumber": 7,
+          "self": "https://restapi.e-conomic.com/customers/4/contacts/7"
+        },
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        },
+        "mobilePhone": "0964646474",
+        "nemHandelType": "ean",
+        "cvr": "00059374"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 4,
+        "self": "https://restapi.e-conomic.com/customers/4/delivery-locations/4"
+      },
+      "delivery": {
+        "address": "Avenue des arts no 3",
+        "zip": "1212",
+        "city": "København K",
+        "country": "Denmark"
+      },
+      "notes": {
+        "heading": "Draft No 7"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 8,
+          "customer": {
+            "customerNumber": 4,
+            "self": "https://restapi.e-conomic.com/customers/4"
+          },
+          "self": "https://restapi.e-conomic.com/customers/4/contacts/8"
+        },
+        "salesPerson": {
+          "employeeNumber": 6,
+          "self": "https://restapi.e-conomic.com/employees/6"
+        },
+        "vendorReference": {
+          "employeeNumber": 5,
+          "self": "https://restapi.e-conomic.com/employees/5"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "project": {
+        "projectNumber": 1,
+        "self": "https://restapi.e-conomic.com/projects/1"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/7/pdf"
+      },
+      "lastUpdated": "2024-09-12T17:15:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/7"
+    },
+    {
+      "draftInvoiceNumber": 8,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 6
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/8/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/8/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/8/attachment",
+      "date": "2022-06-03",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 6950.000000,
+      "netAmountInBaseCurrency": 6950.00,
+      "grossAmount": 8687.500000,
+      "grossAmountInBaseCurrency": 8687.50,
+      "marginInBaseCurrency": 1950.0000,
+      "marginPercentage": 28.06,
+      "vatAmount": 1737.500000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 5000.0000,
+      "dueDate": "2022-06-11",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "recipient": {
+        "name": "Decathlon",
+        "address": "Avenue des Arts No 5",
+        "zip": "1040",
+        "city": "Brussels",
+        "country": "Belgium",
+        "attention": {
+          "customerContactNumber": 1,
+          "self": "https://restapi.e-conomic.com/customers/1/contacts/1"
+        },
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        },
+        "mobilePhone": "066567657657575",
+        "nemHandelType": "ean"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1/delivery-locations/1"
+      },
+      "delivery": {
+        "address": "Langebrogade 1",
+        "zip": "1411",
+        "city": "København K",
+        "country": "Denmark"
+      },
+      "notes": {
+        "heading": "Draft No 8"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 2,
+          "customer": {
+            "customerNumber": 1,
+            "self": "https://restapi.e-conomic.com/customers/1"
+          },
+          "self": "https://restapi.e-conomic.com/customers/1/contacts/2"
+        },
+        "salesPerson": {
+          "employeeNumber": 1,
+          "self": "https://restapi.e-conomic.com/employees/1"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/8/pdf"
+      },
+      "lastUpdated": "2024-09-25T22:44:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/8"
+    },
+    {
+      "draftInvoiceNumber": 9,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 7
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/9/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/9/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/9/attachment",
+      "date": "2022-06-03",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 7200.000000,
+      "netAmountInBaseCurrency": 7200.00,
+      "grossAmount": 9000.000000,
+      "grossAmountInBaseCurrency": 9000.00,
+      "marginInBaseCurrency": 2200.0000,
+      "marginPercentage": 30.56,
+      "vatAmount": 1800.000000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 5000.0000,
+      "dueDate": "2022-06-11",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 2,
+        "self": "https://restapi.e-conomic.com/customers/2"
+      },
+      "recipient": {
+        "name": "Intersport",
+        "address": "Avenue des arts no 3",
+        "zip": "1212",
+        "city": "Brussels",
+        "country": "Belgium",
+        "attention": {
+          "customerContactNumber": 3,
+          "self": "https://restapi.e-conomic.com/customers/2/contacts/3"
+        },
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        },
+        "mobilePhone": "03435436",
+        "nemHandelType": "ean"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 2,
+        "self": "https://restapi.e-conomic.com/customers/2/delivery-locations/2"
+      },
+      "delivery": {
+        "address": "Avenue Louise No 1",
+        "zip": "1321",
+        "city": "Brussels",
+        "country": "Belgium"
+      },
+      "notes": {
+        "heading": "Draft No 9",
+        "textLine1": "ice skates and t-shirts"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 4,
+          "customer": {
+            "customerNumber": 2,
+            "self": "https://restapi.e-conomic.com/customers/2"
+          },
+          "self": "https://restapi.e-conomic.com/customers/2/contacts/4"
+        },
+        "salesPerson": {
+          "employeeNumber": 4,
+          "self": "https://restapi.e-conomic.com/employees/4"
+        },
+        "vendorReference": {
+          "employeeNumber": 4,
+          "self": "https://restapi.e-conomic.com/employees/4"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "project": {
+        "projectNumber": 1,
+        "self": "https://restapi.e-conomic.com/projects/1"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/9/pdf"
+      },
+      "lastUpdated": "2024-09-12T17:58:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/9"
+    },
+    {
+      "draftInvoiceNumber": 10,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 8
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/10/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/10/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/10/attachment",
+      "date": "2022-06-07",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 7000.000000,
+      "netAmountInBaseCurrency": 7000.00,
+      "grossAmount": 8750.000000,
+      "grossAmountInBaseCurrency": 8750.00,
+      "marginInBaseCurrency": 3000.0000,
+      "marginPercentage": 42.86,
+      "vatAmount": 1750.000000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 4000.0000,
+      "dueDate": "2022-06-15",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 4,
+        "self": "https://restapi.e-conomic.com/customers/4"
+      },
+      "recipient": {
+        "name": "Customer with EAN",
+        "address": "Avenue des arts 4",
+        "zip": "3221",
+        "city": "Brussels",
+        "country": "Belgium",
+        "ean": "9774994892965",
+        "attention": {
+          "customerContactNumber": 7,
+          "self": "https://restapi.e-conomic.com/customers/4/contacts/7"
+        },
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        },
+        "mobilePhone": "0964646474",
+        "nemHandelType": "ean",
+        "cvr": "00059374"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 4,
+        "self": "https://restapi.e-conomic.com/customers/4/delivery-locations/4"
+      },
+      "delivery": {
+        "address": "Avenue des arts no 3",
+        "zip": "1212",
+        "city": "København K",
+        "country": "Denmark"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 8,
+          "customer": {
+            "customerNumber": 4,
+            "self": "https://restapi.e-conomic.com/customers/4"
+          },
+          "self": "https://restapi.e-conomic.com/customers/4/contacts/8"
+        },
+        "salesPerson": {
+          "employeeNumber": 6,
+          "self": "https://restapi.e-conomic.com/employees/6"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/10/pdf"
+      },
+      "lastUpdated": "2024-10-04T20:14:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/10"
+    },
+    {
+      "draftInvoiceNumber": 13,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 9
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/13/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/13/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/13/attachment",
+      "date": "2022-06-07",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 0.000000,
+      "netAmountInBaseCurrency": 0.00,
+      "grossAmount": 0.000000,
+      "grossAmountInBaseCurrency": 0.00,
+      "marginInBaseCurrency": 0.0000,
+      "marginPercentage": 0.0,
+      "vatAmount": 0.000000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 0.0000,
+      "dueDate": "2022-06-15",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "recipient": {
+        "name": "Decathlon",
+        "address": "Avenue des Arts No 5",
+        "zip": "1040",
+        "city": "Brussels",
+        "country": "Belgium",
+        "attention": {
+          "customerContactNumber": 1,
+          "self": "https://restapi.e-conomic.com/customers/1/contacts/1"
+        },
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        },
+        "mobilePhone": "066567657657575",
+        "nemHandelType": "ean"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1/delivery-locations/1"
+      },
+      "delivery": {
+        "address": "Langebrogade 1",
+        "zip": "1411",
+        "city": "København K",
+        "country": "Denmark"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 2,
+          "customer": {
+            "customerNumber": 1,
+            "self": "https://restapi.e-conomic.com/customers/1"
+          },
+          "self": "https://restapi.e-conomic.com/customers/1/contacts/2"
+        },
+        "salesPerson": {
+          "employeeNumber": 1,
+          "self": "https://restapi.e-conomic.com/employees/1"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/13/pdf"
+      },
+      "lastUpdated": "2024-10-23T05:10:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/13"
+    },
+    {
+      "draftInvoiceNumber": 15,
+      "soap": {
+        "currentInvoiceHandle": {
+          "id": 11
+        }
+      },
+      "templates": {
+        "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/15/templates/booking-instructions",
+        "self": "https://restapi.e-conomic.com/invoices/drafts/15/templates"
+      },
+      "attachment": "https://restapi.e-conomic.com/invoices/drafts/15/attachment",
+      "date": "2022-06-07",
+      "currency": "EUR",
+      "exchangeRate": 743.914941,
+      "netAmount": 1000.000000,
+      "netAmountInBaseCurrency": 7439.15,
+      "grossAmount": 1000.000000,
+      "grossAmountInBaseCurrency": 7439.15,
+      "marginInBaseCurrency": 6739.1500,
+      "marginPercentage": 90.59,
+      "vatAmount": 0.000000,
+      "roundingAmount": 0.00,
+      "costPriceInBaseCurrency": 700.0000,
+      "dueDate": "2022-06-15",
+      "paymentTerms": {
+        "paymentTermsNumber": 1,
+        "daysOfCredit": 8,
+        "description": "Netto 8 dage",
+        "name": "Netto 8 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/1"
+      },
+      "customer": {
+        "customerNumber": 5,
+        "self": "https://restapi.e-conomic.com/customers/5"
+      },
+      "recipient": {
+        "name": "Les Freres Heureux",
+        "address": "Avenue Centrale No 3",
+        "zip": "1231",
+        "city": "Paris",
+        "country": "France",
+        "attention": {
+          "customerContactNumber": 15,
+          "self": "https://restapi.e-conomic.com/customers/5/contacts/15"
+        },
+        "vatZone": {
+          "name": "France",
+          "vatZoneNumber": 17,
+          "enabledForCustomer": true,
+          "enabledForSupplier": false,
+          "self": "https://restapi.e-conomic.com/vat-zones/17"
+        },
+        "mobilePhone": "09675675685",
+        "nemHandelType": "ean"
+      },
+      "deliveryLocation": {
+        "deliveryLocationNumber": 5,
+        "self": "https://restapi.e-conomic.com/customers/5/delivery-locations/5"
+      },
+      "delivery": {
+        "address": "Rue d'Independence 8",
+        "zip": "2434",
+        "city": "Paris",
+        "country": "France"
+      },
+      "references": {
+        "customerContact": {
+          "customerContactNumber": 16,
+          "customer": {
+            "customerNumber": 5,
+            "self": "https://restapi.e-conomic.com/customers/5"
+          },
+          "self": "https://restapi.e-conomic.com/customers/5/contacts/16"
+        },
+        "salesPerson": {
+          "employeeNumber": 2,
+          "self": "https://restapi.e-conomic.com/employees/2"
+        }
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/drafts/15/pdf"
+      },
+      "lastUpdated": "2024-10-01T11:40:00Z",
+      "self": "https://restapi.e-conomic.com/invoices/drafts/15"
     }
   ],
   "pagination": {
-    "maxPageSizeAllowed": 1000,
     "skipPages": 0,
     "pageSize": 1000,
-    "results": 2,
-    "resultsWithoutFilter": 2,
+    "maxPageSizeAllowed": 1000,
+    "results": 9,
+    "resultsWithoutFilter": 9,
     "firstPage": "https://restapi.e-conomic.com/invoices/drafts?skippages=0&pagesize=1000",
     "lastPage": "https://restapi.e-conomic.com/invoices/drafts?skippages=0&pagesize=1000"
   },

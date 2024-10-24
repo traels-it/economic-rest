@@ -36,7 +36,7 @@ class InvoiceRepoTest < Minitest::Test
 
         drafts = Economic::Invoices::DraftsRepo.all
 
-        assert_equal 2, drafts.size
+        assert_equal 9, drafts.size
         assert_kind_of Economic::Invoice, drafts.first
       end
     end

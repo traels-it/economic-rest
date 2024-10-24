@@ -14,8 +14,8 @@ module Resources
             invoice = invoices.first
 
             assert_kind_of Economic::Models::Invoice, invoice
-            assert_equal 19, invoice.id
-            assert_equal 2, invoices.length
+            assert_equal 4, invoice.id
+            assert_equal 9, invoices.length
           end
         end
       end

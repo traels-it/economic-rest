@@ -24,7 +24,7 @@ module Economic
   end
 end
 
-class BaseModelTest < Minitest::Test
+class ModelTest < Minitest::Test
   describe ".attributes" do
     it "list attributes on model" do
       expected_result = [

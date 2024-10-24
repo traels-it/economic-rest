@@ -1,0 +1,78 @@
+{
+  "bookedInvoiceNumber": 38,
+  "orderNumber": 142,
+  "date": "2024-10-23",
+  "currency": "DKK",
+  "exchangeRate": 100.000000,
+  "netAmount": 10.00,
+  "netAmountInBaseCurrency": 10.00,
+  "grossAmount": 10.00,
+  "grossAmountInBaseCurrency": 10.00,
+  "vatAmount": 0.00,
+  "roundingAmount": 0.00,
+  "remainder": 10.00,
+  "remainderInBaseCurrency": 10.00,
+  "dueDate": "2024-11-04",
+  "paymentTerms": {
+    "paymentTermsNumber": 5,
+    "daysOfCredit": 12,
+    "name": "Netto 12 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/5"
+  },
+  "customer": {
+    "customerNumber": 264178000,
+    "self": "https://restapi.e-conomic.com/customers/264178000"
+  },
+  "recipient": {
+    "name": "Traels.it",
+    "address": "Langøvej 544",
+    "zip": "5390",
+    "city": "Martofte",
+    "ean": "5798000363007",
+    "attention": {
+      "customerContactNumber": 1,
+      "self": "https://restapi.e-conomic.com/customers/264178000/contacts/1"
+    },
+    "vatZone": {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    }
+  },
+  "notes": {
+    "heading": "GIRO"
+  },
+  "references": {
+    "other": "R276395349"
+  },
+  "layout": {
+    "layoutNumber": 22,
+    "self": "https://restapi.e-conomic.com/layouts/22"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/booked/38/pdf"
+  },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "Motoransvar",
+      "quantity": 1.00,
+      "unitNetPrice": 10.00,
+      "discountPercentage": 0.00,
+      "unitCostPrice": 0.00,
+      "vatRate": 0.00000000,
+      "vatAmount": 0.0000,
+      "totalNetAmount": 10.00,
+      "product": {
+        "productNumber": "1",
+        "self": "https://restapi.e-conomic.com/products/1"
+      }
+    }
+  ],
+  "sent": "https://restapi.e-conomic.com/invoices/booked/38/sent",
+  "self": "https://restapi.e-conomic.com/invoices/booked/38"
+}

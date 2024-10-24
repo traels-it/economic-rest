@@ -11,7 +11,7 @@ module Economic
       field :zip
 
       relation :vat_zone
-      # relation :attention
+      relation :attention
     end
   end
 end

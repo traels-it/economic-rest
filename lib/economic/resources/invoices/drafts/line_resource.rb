@@ -3,10 +3,8 @@ module Economic
     module Invoices
       module Drafts
         class LineResource < Economic::Resource
-          def create(*models)
-            draft_invoice_model_or_id = models[0]
+          def create(draft_invoice_model_or_id, lines)
             draft_invoice_id = draft_invoice_model_or_id.try(:id) || draft_invoice_model_or_id
-            lines = models[1]
             draft_invoice = Economic::Models::Invoices::Draft.new(lines: lines)
 
             uri = URI("#{Resource::ROOT}/invoices/drafts/#{draft_invoice_id}/lines")

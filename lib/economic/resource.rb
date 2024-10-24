@@ -66,9 +66,24 @@ module Economic
     end
 
     def parse_response(response)
-      return true if response.code_type == Net::HTTPNoContent
-
-      Economic::Response.from_json(response.body)
+      case response.code
+      when "200"
+        Economic::Response.from_json(response.body)
+      when "204"
+        true
+      when "400"
+        raise BadRequestError, response.body
+      when "401"
+        raise UnauthorizedError, response.body
+      when "403"
+        raise ForbiddenError, response.body
+      when "404"
+        raise NotFoundError, response.body
+      when "500"
+        raise InternalError, response.body
+      else
+        raise Error, "#{response.code} - #{response.body}"
+      end
     end
 
     def url
@@ -90,5 +105,23 @@ module Economic
         "Content-Type": "application/json"
       }
     end
+  end
+
+  class BadRequestError < StandardError
+  end
+
+  class UnauthorizedError < StandardError
+  end
+
+  class ForbiddenError < StandardError
+  end
+
+  class NotFoundError < StandardError
+  end
+
+  class InternalError < StandardError
+  end
+
+  class Error < StandardError
   end
 end

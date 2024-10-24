@@ -41,6 +41,17 @@ module Resources
           assert_equal 1, customer.id
           assert_equal "aaaa@aaa.com", customer.email
         end
+
+        it "raises a NotFoundError, when not finding customer with the supplied id" do
+          expected_result = File.read(json_fixture("404"))
+          stub_request(:get, "https://restapi.e-conomic.com/customers/10000000000")
+            .to_return(status: 404, body: expected_result, headers: {})
+
+          error = assert_raises Economic::NotFoundError do
+            Economic::Resources::CustomerResource.new.find(10000000000)
+          end
+          assert_equal expected_result, error.message
+        end
       end
 
       describe "#create" do

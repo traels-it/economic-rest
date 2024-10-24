@@ -121,6 +121,53 @@ module Economic
           assert_equal true, response
         end
       end
+
+      describe "errors" do
+        it "handles 400s" do
+          stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0")
+            .to_return(status: 400, body: "", headers: {})
+
+          assert_raises Economic::BadRequestError do
+            Economic::Resources::BasicResource.new.all
+          end
+        end
+
+        it "handles 401s" do
+          stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0")
+            .to_return(status: 401, body: "", headers: {})
+
+          assert_raises Economic::UnauthorizedError do
+            Economic::Resources::BasicResource.new.all
+          end
+        end
+
+        it "handles 403s" do
+          stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0")
+            .to_return(status: 403, body: "", headers: {})
+
+          assert_raises Economic::ForbiddenError do
+            Economic::Resources::BasicResource.new.all
+          end
+        end
+
+        it "handles 404s" do
+          stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0")
+            .to_return(status: 404, body: "", headers: {})
+
+          assert_raises Economic::NotFoundError do
+            Economic::Resources::BasicResource.new.all
+          end
+        end
+
+        it "handles 500s" do
+          stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0")
+            .to_return(status: 500, body: "", headers: {})
+
+          assert_raises Economic::InternalError do
+            Economic::Resources::BasicResource.new.all
+          end
+        end
+      end
     end
   end
 end

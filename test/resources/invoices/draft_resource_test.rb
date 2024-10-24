@@ -25,7 +25,7 @@ module Resources
               .with(
                 body: {currency: "DKK", date: "2014-08-08", grossAmount: 12.5, marginInBaseCurrency: -46.93, marginPercentage: 0.0, netAmount: 10.0, roundingAmount: 0.0, vatAmount: 2.5, costPriceInBaseCurrency: 46.93, netAmountInBaseCurrency: 0.0, customer: {customerNumber: 1}, paymentTerms: {paymentTermsNumber: 1}, recipient: {address: "Vejlevej 21", name: "Toj & Co Grossisten", city: "Fredericia", zip: "7000", vatZone: {vatZoneNumber: 1, enabledForCustomer: true, enabledForSupplier: true, name: "Domestic"}}, references: {other: "Custom reference"}, layout: {layoutNumber: 20}}
               )
-              .to_return(status: 200, body: File.read(json_fixture("create_invoice")), headers: {})
+              .to_return(status: 200, body: File.read(json_fixture("create_draft_invoice")), headers: {})
 
             payment_terms = Economic::Models::PaymentTerm.new(
               payment_terms_number: 1

@@ -67,7 +67,7 @@ module Economic
 
     def parse_response(response)
       case response.code
-      when "200"
+      when "200", "201"
         Economic::Response.from_json(response.body)
       when "204"
         true

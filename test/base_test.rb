@@ -141,7 +141,7 @@ class BaseModelTest < Minitest::Test
       assert_equal rel, base_model.base_model_relation
     end
 
-    it "allows relation assigning for model with multible relations" do
+    it "allows relation assigning for model with multiple relations" do
       base_model = Economic::BaseModelWithMultipleRelations.new
       rel = Economic::BaseModelRelation.new
 

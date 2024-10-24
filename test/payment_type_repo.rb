@@ -7,7 +7,7 @@ class PaymentTypeRepoTest < Minitest::Test
     end
 
     it "gets all" do
-      stub_get_request(endpoint: "payment-types", pageindex: 0, fixture_name: "payment_types")
+      stub_get_request(endpoint: "payment-types", skippages: 0, fixture_name: "payment_types")
 
       payment_types = Economic::PaymentTypeRepo.all
 

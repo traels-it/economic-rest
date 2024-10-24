@@ -1,0 +1,10 @@
+{
+  "maxPageSizeAllowed": 1000,
+  "skipPages": 0,
+  "pageSize": 1000,
+  "results": 3684,
+  "resultsWithoutFilter": 3684,
+  "firstPage": "https://restapi.e-conomic.com/customers?skippages=0&pagesize=1000",
+  "nextPage": "https://restapi.e-conomic.com/customers?skippages=1&pagesize=1000",
+  "lastPage": "https://restapi.e-conomic.com/customers?skippages=3&pagesize=1000"
+}

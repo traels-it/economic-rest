@@ -1,0 +1,51 @@
+{
+  "customerNumber": 974994345,
+  "currency": "DKK",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "customerGroup": {
+    "customerGroupNumber": 1,
+    "self": "https://restapi.e-conomic.com/customer-groups/1"
+  },
+  "balance": 0,
+  "dueAmount": 0.00,
+  "name": "Mr. Anderson",
+  "vatZone": {
+    "vatZoneNumber": 1,
+    "self": "https://restapi.e-conomic.com/vat-zones/1"
+  },
+  "lastUpdated": "2024-10-17T14:09:30Z",
+  "contacts": "https://restapi.e-conomic.com/customers/974994345/contacts",
+  "templates": {
+    "invoice": "https://restapi.e-conomic.com/customers/974994345/templates/invoice",
+    "invoiceLine": "https://restapi.e-conomic.com/customers/974994345/templates/invoiceline",
+    "self": "https://restapi.e-conomic.com/customers/974994345/templates"
+  },
+  "totals": {
+    "drafts": "https://restapi.e-conomic.com/invoices/totals/drafts/customers/974994345",
+    "booked": "https://restapi.e-conomic.com/invoices/totals/booked/customers/974994345",
+    "self": "https://restapi.e-conomic.com/customers/974994345/totals"
+  },
+  "deliveryLocations": "https://restapi.e-conomic.com/customers/974994345/delivery-locations",
+  "invoices": {
+    "drafts": "https://restapi.e-conomic.com/customers/974994345/invoices/drafts",
+    "booked": "https://restapi.e-conomic.com/customers/974994345/invoices/booked",
+    "self": "https://restapi.e-conomic.com/customers/974994345/invoices"
+  },
+  "eInvoicingDisabledByDefault": false,
+  "metaData": {
+    "delete": {
+      "description": "Delete this customer.",
+      "href": "https://restapi.e-conomic.com/customers/974994345",
+      "httpMethod": "delete"
+    },
+    "replace": {
+      "description": "Replace this customer.",
+      "href": "https://restapi.e-conomic.com/customers/974994345",
+      "httpMethod": "put"
+    }
+  },
+  "self": "https://restapi.e-conomic.com/customers/974994345"
+}

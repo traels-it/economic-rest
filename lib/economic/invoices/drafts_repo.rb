@@ -7,5 +7,7 @@ module Economic
         modelize_response(response)
       end
     end
+
+    deprecate_constant :DraftsRepo
   end
 end

@@ -13,7 +13,7 @@ module Economic
           invoices
         end
 
-        def send(model, url: endpoint_url)
+        def save(model, url: endpoint_url)
           response = send_request(method: :post, url: url, payload: model.to_h.to_json)
 
           modelize_response(response)

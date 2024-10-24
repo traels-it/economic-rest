@@ -1,0 +1,7 @@
+{
+  "message": "Resource not found.",
+  "developerHint": "The API tries to provide all the resource urls you need. If you have hard coded urls yourself, then try to look at the enclosing collection for hypermedia information on where the resource you are looking for could be.",
+  "logId": "8d79f54f226ebe44-CPH",
+  "httpStatusCode": 404,
+  "logTime": "2024-10-24T14:26:57"
+}

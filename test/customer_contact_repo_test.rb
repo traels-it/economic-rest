@@ -24,7 +24,7 @@ class CustomerContactRepoTest < Minitest::Test
       end
     end
 
-    describe "#send" do
+    describe "#save" do
       it "can create a customer contact" do
         stub_get_request(endpoint: "customers/1/contacts", nested: true, fixture_name: "customer_contact_send", method: :post)
 
@@ -36,9 +36,7 @@ class CustomerContactRepoTest < Minitest::Test
         assert_equal "Torsten Test", result.name
         refute_nil result.id_key
       end
-    end
 
-    describe "#save" do
       it "can create a customer contact" do
         skip "implement stub"
         stub_get_request(endpoint: "customers/1/contacts/", nested: true, fixture_name: "customer_contact_send", method: :post)

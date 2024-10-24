@@ -7,7 +7,7 @@ class SupplierGroupRepoTest < Minitest::Test
     end
 
     it "gets all" do
-      stub_get_request(endpoint: "supplier-groups", pageindex: 0, fixture_name: "supplier_groups")
+      stub_get_request(endpoint: "supplier-groups", skippages: 0, fixture_name: "supplier_groups")
       supplier_groups = Economic::SupplierGroupRepo.all
 
       assert_equal 1, supplier_groups[0].supplier_group_number

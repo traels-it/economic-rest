@@ -1,0 +1,64 @@
+{
+  "draftInvoiceNumber": 148,
+  "soap": {
+    "currentInvoiceHandle": {
+      "id": 6
+    }
+  },
+  "templates": {
+    "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/148/templates/booking-instructions",
+    "self": "https://restapi.e-conomic.com/invoices/drafts/148/templates"
+  },
+  "attachment": "https://restapi.e-conomic.com/invoices/drafts/148/attachment",
+  "date": "2014-08-08",
+  "currency": "DKK",
+  "exchangeRate": 100.000000,
+  "netAmount": 0.000000,
+  "netAmountInBaseCurrency": 0.00,
+  "grossAmount": 0.000000,
+  "grossAmountInBaseCurrency": 0.00,
+  "marginInBaseCurrency": 0.0000,
+  "marginPercentage": 0.0,
+  "vatAmount": 0.000000,
+  "roundingAmount": 0.00,
+  "costPriceInBaseCurrency": 0.0000,
+  "dueDate": "2014-08-16",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "daysOfCredit": 8,
+    "description": "Netto 8 dage",
+    "name": "Netto 8 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "customer": {
+    "customerNumber": 1,
+    "self": "https://restapi.e-conomic.com/customers/1"
+  },
+  "recipient": {
+    "name": "Toj & Co Grossisten",
+    "address": "Vejlevej 21",
+    "zip": "7000",
+    "city": "Fredericia",
+    "vatZone": {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    },
+    "cvr": "22001884"
+  },
+  "references": {
+    "other": "Custom reference"
+  },
+  "layout": {
+    "layoutNumber": 20,
+    "self": "https://restapi.e-conomic.com/layouts/20"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/drafts/148/pdf"
+  },
+  "lastUpdated": "2024-10-24T07:49:00Z",
+  "self": "https://restapi.e-conomic.com/invoices/drafts/148"
+}

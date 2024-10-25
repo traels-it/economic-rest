@@ -1,16 +1,16 @@
 require "test_helper"
 
-module Resources
+module Repos
   module Invoices
-    class DraftResourceTest < Minitest::Test
-      describe Economic::Resources::Invoices::DraftResource do
+    class DraftTest < Minitest::Test
+      describe Economic::Repos::Invoices::Draft do
         before { set_credentials }
 
         describe "#all" do
           it "returns all invoices" do
             stub_get_request(endpoint: "invoices/drafts", skippages: 0, fixture_name: "invoices_0")
 
-            invoices = Economic::Resources::Invoices::DraftResource.new.all
+            invoices = Economic::Repos::Invoices::Draft.new.all
             invoice = invoices.first
 
             assert_instance_of Economic::Models::Invoices::Draft, invoice
@@ -70,7 +70,7 @@ module Resources
               layout:
             )
 
-            created_invoice = Economic::Resources::Invoices::DraftResource.new.create(invoice)
+            created_invoice = Economic::Repos::Invoices::Draft.new.create(invoice)
 
             assert_instance_of Economic::Models::Invoices::Draft, created_invoice
             assert_equal 148, created_invoice.id

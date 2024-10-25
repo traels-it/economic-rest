@@ -1,5 +1,5 @@
 module Economic
-  class Resource
+  class Repo
     ROOT = "https://restapi.e-conomic.com".freeze
     DEFAULT_QUERY_PARAMS = {skippages: 0, pagesize: 1000}.freeze
 
@@ -95,7 +95,7 @@ module Economic
     end
 
     def resource_name
-      self.class.to_s[21..-9]
+      self.class.to_s[17..]
     end
 
     def headers

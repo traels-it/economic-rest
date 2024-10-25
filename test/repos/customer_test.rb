@@ -1,8 +1,8 @@
 require "test_helper"
 
-module Resources
-  class CustomerResourceTest < Minitest::Test
-    describe Economic::Resources::CustomerResource do
+module Repos
+  class CustomerTest < Minitest::Test
+    describe Economic::Repos::Customer do
       before { set_credentials }
 
       describe "#all" do
@@ -12,7 +12,7 @@ module Resources
           stub_get_request(endpoint: "customers", skippages: 2, fixture_name: "customers_2")
           stub_get_request(endpoint: "customers", skippages: 3, fixture_name: "customers_3")
 
-          customers = Economic::Resources::CustomerResource.new.all
+          customers = Economic::Repos::Customer.new.all
           customer = customers.first
 
           assert_kind_of Economic::Models::Customer, customer
@@ -25,7 +25,7 @@ module Resources
         it "finds based on customer number" do
           stub_get_request(endpoint: "customers", page_or_id: "1", fixture_name: "customer")
 
-          customer = Economic::Resources::CustomerResource.new.find(1)
+          customer = Economic::Repos::Customer.new.find(1)
 
           assert_kind_of Economic::Models::Customer, customer
           assert_equal 1, customer.id
@@ -35,7 +35,7 @@ module Resources
         it "finds from customer instance" do
           stub_get_request(endpoint: "customers", page_or_id: "1", fixture_name: "customer")
 
-          customer = Economic::Resources::CustomerResource.new.find(Economic::Models::Customer.new(id: 1))
+          customer = Economic::Repos::Customer.new.find(Economic::Models::Customer.new(id: 1))
 
           assert_kind_of Economic::Models::Customer, customer
           assert_equal 1, customer.id
@@ -48,7 +48,7 @@ module Resources
             .to_return(status: 404, body: expected_result, headers: {})
 
           error = assert_raises Economic::NotFoundError do
-            Economic::Resources::CustomerResource.new.find(10000000000)
+            Economic::Repos::Customer.new.find(10000000000)
           end
           assert_equal expected_result, error.message
         end
@@ -69,7 +69,7 @@ module Resources
             payment_terms: Economic::Models::PaymentTerm.new(payment_terms_number: 1)
           )
 
-          result = Economic::Resources::CustomerResource.new.create(customer)
+          result = Economic::Repos::Customer.new.create(customer)
 
           assert_instance_of Economic::Models::Customer, result
           assert_equal 974994345, result.id
@@ -92,7 +92,7 @@ module Resources
             payment_terms: Economic::Models::PaymentTerm.new(payment_terms_number: 1)
           )
 
-          updated_customer = Economic::Resources::CustomerResource.new.update(customer)
+          updated_customer = Economic::Repos::Customer.new.update(customer)
 
           assert_instance_of Economic::Models::Customer, updated_customer
           assert_equal "A new name", updated_customer.name
@@ -104,7 +104,7 @@ module Resources
           stub_request(:delete, "https://restapi.e-conomic.com/customers/974994345")
             .to_return(status: 204, body: "", headers: {})
 
-          result = Economic::Resources::CustomerResource.new.destroy(974994345)
+          result = Economic::Repos::Customer.new.destroy(974994345)
 
           assert_equal true, result
         end
@@ -113,7 +113,7 @@ module Resources
           stub_request(:delete, "https://restapi.e-conomic.com/customers/974994345")
             .to_return(status: 204, body: "", headers: {})
 
-          result = Economic::Resources::CustomerResource.new.destroy(Economic::Models::Customer.new(id: 974994345))
+          result = Economic::Repos::Customer.new.destroy(Economic::Models::Customer.new(id: 974994345))
 
           assert_equal true, result
         end

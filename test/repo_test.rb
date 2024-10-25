@@ -1,11 +1,11 @@
 require "test_helper"
 
 module Economic
-  class ResourceTest < Minitest::Test
-    class ::Economic::Resources::BasicResource < Resource
+  class RepoTest < Minitest::Test
+    class ::Economic::Repos::Basic < Repo
     end
 
-    class ::Economic::Resources::MultipleWordResource < Resource
+    class ::Economic::Repos::MultipleWord < Repo
     end
 
     class ::Economic::Models::Basic < Model
@@ -13,7 +13,7 @@ module Economic
       field :name
     end
 
-    describe Economic::Resource do
+    describe Economic::Repo do
       before do
         Economic::Configuration.app_secret_token = "Demo"
         Economic::Configuration.agreement_grant_token = "Demo"
@@ -23,7 +23,7 @@ module Economic
         it "takes a set of credentials" do
           credentials = Economic::Credentials.new(app_secret_token: "Secret", agreement_grant_token: "Grant")
 
-          resource = Economic::Resources::BasicResource.new(credentials:)
+          resource = Economic::Repos::Basic.new(credentials:)
 
           assert_equal credentials, resource.credentials
         end
@@ -32,7 +32,7 @@ module Economic
           credentials = Economic::Credentials.new(app_secret_token: nil, agreement_grant_token: nil)
 
           error = assert_raises Economic::MissingCredentialsError do
-            Economic::Resources::BasicResource.new(credentials:)
+            Economic::Repos::Basic.new(credentials:)
           end
           assert_equal "Credentials missing! Initialize the resource with a set of credentials or set them on Economic::Configuration", error.message
         end
@@ -40,7 +40,7 @@ module Economic
         it "looks up credentials, if not given any" do
           credentials = Economic::Credentials.new(app_secret_token: "Demo", agreement_grant_token: "Demo")
 
-          resource = Economic::Resources::BasicResource.new
+          resource = Economic::Repos::Basic.new
 
           assert_equal credentials, resource.credentials
         end
@@ -50,7 +50,7 @@ module Economic
           Economic::Configuration.agreement_grant_token = nil
 
           error = assert_raises Economic::MissingCredentialsError do
-            Economic::Resources::BasicResource.new
+            Economic::Repos::Basic.new
           end
           assert_equal "Credentials missing! Initialize the resource with a set of credentials or set them on Economic::Configuration", error.message
         end
@@ -60,7 +60,7 @@ module Economic
         it "sends a get request to the endpoint" do
           stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {}, self: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0"}.to_json, headers: {})
 
-          Economic::Resources::BasicResource.new.all
+          Economic::Repos::Basic.new.all
         end
 
         describe "pagination" do
@@ -68,7 +68,7 @@ module Economic
             stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {next_page: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1"}, self: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=0"}.to_json, headers: {})
             stub_request(:get, "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1").to_return(status: 200, body: {collection: [], pagination: {}, self: "https://restapi.e-conomic.com/basics?pagesize=1000&skippages=1"}.to_json, headers: {})
 
-            Economic::Resources::BasicResource.new.all
+            Economic::Repos::Basic.new.all
           end
         end
 
@@ -76,7 +76,7 @@ module Economic
           it "can filter data on the resource" do
             stub_request(:get, "https://restapi.e-conomic.com/basics?filter=fromDate$gte:2022-01-01&pagesize=1000&skippages=0").to_return(status: 200, body: {collection: [], pagination: {}, self: "https://restapi.e-conomic.com/basics?filter=fromDate$gte:2022-01-01&pagesize=1000&skippages=0"}.to_json, headers: {})
 
-            Economic::Resources::BasicResource.new.all(filter: "fromDate$gte:#{Date.new(2022, 1, 1)}")
+            Economic::Repos::Basic.new.all(filter: "fromDate$gte:#{Date.new(2022, 1, 1)}")
           end
         end
       end
@@ -84,7 +84,7 @@ module Economic
       describe "#find" do
         it "finds a specific record" do
           stub_request(:get, "https://restapi.e-conomic.com/basics/1").to_return(status: 200, body: {id: 1, self: "https://restapi.e-conomic.com/basics/1"}.to_json, headers: {})
-          basic = Economic::Resources::BasicResource.new.find(1)
+          basic = Economic::Repos::Basic.new.find(1)
 
           assert_equal 1, basic.id
         end
@@ -94,7 +94,7 @@ module Economic
         it "creates a new record" do
           stub_request(:post, "https://restapi.e-conomic.com/basics").to_return(status: 200, body: {id: 2, self: "https://restapi.e-conomic.com/basics/1"}.to_json, headers: {})
 
-          basic = Economic::Resources::BasicResource.new.create(Economic::Models::Basic.new(id: 2))
+          basic = Economic::Repos::Basic.new.create(Economic::Models::Basic.new(id: 2))
 
           assert_equal 2, basic.id
         end
@@ -105,7 +105,7 @@ module Economic
           stub_request(:put, "https://restapi.e-conomic.com/basics/2").to_return(status: 200, body: {id: 2, name: "Now with a name", self: "https://restapi.e-conomic.com/basics/1"}.to_json, headers: {})
 
           model = Models::Basic.new(id: 2, name: "Now with a name")
-          updated_model = Economic::Resources::BasicResource.new.update(model)
+          updated_model = Economic::Repos::Basic.new.update(model)
 
           assert_equal "Now with a name", updated_model.name
         end
@@ -116,7 +116,7 @@ module Economic
           stub_request(:delete, "https://restapi.e-conomic.com/basics/3")
             .to_return(status: 204, body: "", headers: {})
 
-          response = Economic::Resources::BasicResource.new.destroy(3)
+          response = Economic::Repos::Basic.new.destroy(3)
 
           assert_equal true, response
         end
@@ -128,7 +128,7 @@ module Economic
             .to_return(status: 400, body: "", headers: {})
 
           assert_raises Economic::BadRequestError do
-            Economic::Resources::BasicResource.new.all
+            Economic::Repos::Basic.new.all
           end
         end
 
@@ -137,7 +137,7 @@ module Economic
             .to_return(status: 401, body: "", headers: {})
 
           assert_raises Economic::UnauthorizedError do
-            Economic::Resources::BasicResource.new.all
+            Economic::Repos::Basic.new.all
           end
         end
 
@@ -146,7 +146,7 @@ module Economic
             .to_return(status: 403, body: "", headers: {})
 
           assert_raises Economic::ForbiddenError do
-            Economic::Resources::BasicResource.new.all
+            Economic::Repos::Basic.new.all
           end
         end
 
@@ -155,7 +155,7 @@ module Economic
             .to_return(status: 404, body: "", headers: {})
 
           assert_raises Economic::NotFoundError do
-            Economic::Resources::BasicResource.new.all
+            Economic::Repos::Basic.new.all
           end
         end
 
@@ -164,7 +164,7 @@ module Economic
             .to_return(status: 500, body: "", headers: {})
 
           assert_raises Economic::InternalError do
-            Economic::Resources::BasicResource.new.all
+            Economic::Repos::Basic.new.all
           end
         end
       end

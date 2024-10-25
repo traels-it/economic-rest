@@ -1,9 +1,9 @@
 require "test_helper"
 
-module Resources
+module Repos
   module Invoices
-    class BookedResourceTest < Minitest::Test
-      describe Economic::Resources::Invoices::BookedResource do
+    class BookedTest < Minitest::Test
+      describe Economic::Repos::Invoices::Booked do
         before { set_credentials }
 
         describe "#create" do
@@ -19,7 +19,7 @@ module Resources
               )
             )
 
-            created_invoice = Economic::Resources::Invoices::BookedResource.new.create(booked_invoice)
+            created_invoice = Economic::Repos::Invoices::Booked.new.create(booked_invoice)
 
             assert_instance_of Economic::Models::Invoices::Booked, created_invoice
             assert_equal 31, created_invoice.id
@@ -38,7 +38,7 @@ module Resources
               )
             )
 
-            created_invoice = Economic::Resources::Invoices::BookedResource.new.create(booked_invoice, send_by: :ean)
+            created_invoice = Economic::Repos::Invoices::Booked.new.create(booked_invoice, send_by: :ean)
 
             assert_instance_of Economic::Models::Invoices::Booked, created_invoice
             assert_equal 38, created_invoice.id

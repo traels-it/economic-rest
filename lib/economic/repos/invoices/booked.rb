@@ -1,7 +1,7 @@
 module Economic
-  module Resources
+  module Repos
     module Invoices
-      class BookedResource < Economic::Resource
+      class Booked < Economic::Repo
         def create(model, send_by: nil)
           hash = model.to_h
           hash[:sendBy] = send_by if send_by.to_s == "ean"

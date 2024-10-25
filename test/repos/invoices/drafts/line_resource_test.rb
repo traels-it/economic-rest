@@ -1,8 +1,8 @@
 require "test_helper"
 
-module Resources
+module Repos
   class LineResourceTest < Minitest::Test
-    describe "Economic::Resources::Invoices::Drafts::LineResource" do
+    describe "Economic::Repos::Invoices::Drafts::LineResource" do
       before { set_credentials }
 
       describe "#create" do
@@ -31,7 +31,7 @@ module Resources
             )
           ]
 
-          Economic::Resources::Invoices::Drafts::LineResource.new.create(draft_invoice, lines)
+          Economic::Repos::Invoices::Drafts::Line.new.create(draft_invoice, lines)
         end
       end
     end

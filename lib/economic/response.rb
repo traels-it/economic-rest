@@ -16,7 +16,7 @@ module Economic
 
         if parsed.key?("collection")
           endpoint = parsed["self"][30..].split("?").first
-          model_class = "Economic::Models::#{endpoint.underscore.classify}".constantize
+          model_class = model_class_from_endpoint(endpoint)
 
           collection = parsed["collection"].map do |hash|
             # This method is very heavy. It takes about 2 seconds to run test/resources/customer_resource_test.rb:9, which instantiates 3684 customers
@@ -33,7 +33,7 @@ module Economic
         else
           # find model class
           endpoint = parsed["self"][30..].split("/")[0..-2].join("/")
-          model_class = "Economic::Models::#{endpoint.underscore.classify}".constantize
+          model_class = model_class_from_endpoint(endpoint)
 
           new(
             entity: model_class.from_json(json),
@@ -41,6 +41,10 @@ module Economic
             meta_data: parsed["metaData"]
           )
         end
+      end
+
+      def model_class_from_endpoint(endpoint)
+        "Economic::Models::#{endpoint.underscore.tr("0-9", "").gsub("//", "/").classify}".constantize
       end
     end
   end

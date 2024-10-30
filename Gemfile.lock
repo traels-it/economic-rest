@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    economic-rest (0.6.3)
+    economic-rest (0.6.4)
       activesupport (~> 7.0)
       rest-client (~> 2.1)
 

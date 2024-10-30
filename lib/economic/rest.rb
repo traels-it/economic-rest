@@ -3,10 +3,47 @@ require "economic/rest/version"
 require "rest-client"
 require "active_support/inflector"
 require "active_support/core_ext/object/blank"
+require "active_support/core_ext/object/try"
+require "active_support/core_ext/hash/reverse_merge"
 
 require "economic/base_repo"
 require "economic/nested_base_repo"
 require "economic/base"
+require "economic/configuration"
+require "economic/credentials"
+require "economic/model"
+require "economic/attribute"
+require "economic/relation"
+require "economic/repo"
+
+require "economic/response"
+require "economic/response/pagination"
+
+require "economic/repos/accounting_year"
+require "economic/models/accounting_year"
+require "economic/repos/customer"
+require "economic/models/customer"
+require "economic/models/customer_group"
+require "economic/models/payment_term"
+require "economic/models/vat_zone"
+require "economic/models/invoice"
+require "economic/repos/invoices/draft"
+require "economic/models/invoices/draft"
+require "economic/repos/invoices/drafts/line"
+require "economic/repos/invoices/booked"
+require "economic/models/invoices/booked"
+require "economic/models/line"
+require "economic/models/product"
+require "economic/models/unit"
+require "economic/models/recipient"
+require "economic/models/note"
+require "economic/models/reference"
+require "economic/models/customers/contact"
+require "economic/repos/customers/contact"
+require "economic/models/sales_person"
+require "economic/models/vendor_reference"
+require "economic/models/layout"
+require "economic/models/attention"
 
 require "economic/attention"
 require "economic/currency"
@@ -105,9 +142,9 @@ module Economic
   class Demo
     def self.hello
       RestClient.get("https://restapi.e-conomic.com/",
-        'X-AppSecretToken': "Demo",
-        'X-AgreementGrantToken': "Demo",
-        'Content-Type': "application/json")
+        "X-AppSecretToken": "Demo",
+        "X-AgreementGrantToken": "Demo",
+        "Content-Type": "application/json")
     end
   end
 end

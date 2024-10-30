@@ -10,24 +10,27 @@ require "webmock/minitest"
 require "minitest/unit"
 require "mocha/minitest"
 
-def stub_get_request(endpoint:, page_or_id: nil, pageindex: 0, fixture_name:, method: :get, paged: true, nested: false)
-  url = "https://restapi.e-conomic.com/"
-  url << endpoint.to_s if endpoint
+def stub_get_request(endpoint:, fixture_name:, page_or_id: nil, skippages: 0, filter: nil, method: :get, paged: true, nested: false)
+  uri = URI("https://restapi.e-conomic.com/#{endpoint}")
+
   if paged && !nested
-    url << if page_or_id.nil? || page_or_id.to_s.empty?
-      "?skippages=#{pageindex}&pagesize=1000"
+    if page_or_id.nil? || page_or_id.to_s.empty?
+      params = {skippages:, filter:, pagesize: 1000}.compact
+      uri.query = URI.encode_www_form(params)
     else
-      "/#{page_or_id}"
+      uri = "#{uri}/#{page_or_id}"
     end
   end
-  stub_request(method, url).to_return(status: 200, body:
+
+  stub_request(method, uri).to_return(status: 200, body:
     File.read(json_fixture(fixture_name)), headers: {})
+end
+
+def set_credentials
+  Economic::Configuration.app_secret_token = "Demo"
+  Economic::Configuration.agreement_grant_token = "Demo"
 end
 
 def json_fixture(name)
   "test/fixtures/json/#{name}.json"
-end
-
-def xml_fixture(name)
-  "test/fixtures/xml/#{name}.xml"
 end

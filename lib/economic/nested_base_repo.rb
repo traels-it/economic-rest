@@ -17,11 +17,6 @@ module Economic
         "#{kebab(model.class.name.demodulize.pluralize)}/#{model.id_key}/#{endpoint_name}"
       end
 
-      def send(model, on:)
-        warn "use #{self}.save().  #{self}.send() is deprecated"
-        save(model, on: on)
-      end
-
       def save(model, on:)
         super(model, url: nested_endpoint_url(on))
       end

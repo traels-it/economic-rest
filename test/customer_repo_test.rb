@@ -7,10 +7,10 @@ class CustomerRepoTest < Minitest::Test
     end
 
     it "gets all" do
-      stub_get_request(endpoint: "customers", pageindex: 0, fixture_name: "customers_0")
-      stub_get_request(endpoint: "customers", pageindex: 1, fixture_name: "customers_1")
-      stub_get_request(endpoint: "customers", pageindex: 2, fixture_name: "customers_2")
-      stub_get_request(endpoint: "customers", pageindex: 3, fixture_name: "customers_3")
+      stub_get_request(endpoint: "customers", skippages: 0, fixture_name: "customers_0")
+      stub_get_request(endpoint: "customers", skippages: 1, fixture_name: "customers_1")
+      stub_get_request(endpoint: "customers", skippages: 2, fixture_name: "customers_2")
+      stub_get_request(endpoint: "customers", skippages: 3, fixture_name: "customers_3")
 
       customers = Economic::CustomerRepo.all
 
@@ -40,7 +40,7 @@ class CustomerRepoTest < Minitest::Test
     it "can post" do
       stub_request(:post, "https://restapi.e-conomic.com/customers")
         .with(
-          body: {"currency": "DKK", "name": "Mr. Anderson", "customerGroup": {"customerGroupNumber": 1}, "paymentTerms": {"paymentTermsNumber": 1}, "vatZone": {"vatZoneNumber": 1}}
+          body: {currency: "DKK", name: "Mr. Anderson", customerGroup: {customerGroupNumber: 1}, paymentTerms: {paymentTermsNumber: 1}, vatZone: {vatZoneNumber: 1}}
         ).to_return(status: 200, body: "", headers: {})
 
       c = Economic::Customer.new({})

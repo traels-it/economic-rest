@@ -1,0 +1,71 @@
+{
+  "bookedInvoiceNumber": 31,
+  "orderNumber": 148,
+  "date": "2024-10-24",
+  "currency": "DKK",
+  "exchangeRate": 100.000000,
+  "netAmount": 10.00,
+  "netAmountInBaseCurrency": 10.00,
+  "grossAmount": 10.00,
+  "grossAmountInBaseCurrency": 10.00,
+  "vatAmount": 0.00,
+  "roundingAmount": 0.00,
+  "remainder": 10.00,
+  "remainderInBaseCurrency": 10.00,
+  "dueDate": "2024-11-01",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "daysOfCredit": 8,
+    "description": "Netto 8 dage",
+    "name": "Netto 8 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "customer": {
+    "customerNumber": 1,
+    "self": "https://restapi.e-conomic.com/customers/1"
+  },
+  "recipient": {
+    "name": "Toj & Co Grossisten",
+    "address": "Vejlevej 21",
+    "zip": "7000",
+    "city": "Fredericia",
+    "vatZone": {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    }
+  },
+  "references": {
+    "other": "Custom reference"
+  },
+  "layout": {
+    "layoutNumber": 20,
+    "self": "https://restapi.e-conomic.com/layouts/20"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/booked/31/pdf"
+  },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "Tredje ting",
+      "quantity": 1.00,
+      "unitNetPrice": 10.00,
+      "discountPercentage": 0.00,
+      "unitCostPrice": 0.00,
+      "vatRate": 0.00000000,
+      "vatAmount": 0.0000,
+      "totalNetAmount": 10.00,
+      "product": {
+        "productNumber": "2",
+        "self": "https://restapi.e-conomic.com/products/2"
+      }
+    }
+  ],
+  "sent": "https://restapi.e-conomic.com/invoices/booked/31/sent",
+  "self": "https://restapi.e-conomic.com/invoices/booked/31"
+}

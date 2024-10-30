@@ -1,0 +1,34 @@
+{
+  "collection": [
+    {
+      "fromDate": "2022-01-01",
+      "toDate": "2022-12-31",
+      "year": "2022",
+      "periods": "https://restapi.e-conomic.com/accounting-years/2022/periods?pageindex=0",
+      "entries": "https://restapi.e-conomic.com/accounting-years/2022/entries?pageindex=0",
+      "totals": "https://restapi.e-conomic.com/accounting-years/2022/totals?pageindex=0",
+      "vouchers": "https://restapi.e-conomic.com/accounting-years/2022/vouchers?pageindex=0",
+      "self": "https://restapi.e-conomic.com/accounting-years/2022?pageindex=0"
+    },
+    {
+      "fromDate": "2023-01-01",
+      "toDate": "2023-12-31",
+      "year": "2023",
+      "periods": "https://restapi.e-conomic.com/accounting-years/2023/periods?pageindex=0",
+      "entries": "https://restapi.e-conomic.com/accounting-years/2023/entries?pageindex=0",
+      "totals": "https://restapi.e-conomic.com/accounting-years/2023/totals?pageindex=0",
+      "vouchers": "https://restapi.e-conomic.com/accounting-years/2023/vouchers?pageindex=0",
+      "self": "https://restapi.e-conomic.com/accounting-years/2023?pageindex=0"
+    }
+  ],
+  "pagination": {
+    "skipPages": 0,
+    "pageSize": 1000,
+    "maxPageSizeAllowed": 1000,
+    "results": 2,
+    "resultsWithoutFilter": 3,
+    "firstPage": "https://restapi.e-conomic.com/accounting-years?pageindex=0&filter=fromDate%24gte%3A2022-01-01%24and%3AtoDate%24lte%3A2023-12-31&pagesize=1000&skippages=0",
+    "lastPage": "https://restapi.e-conomic.com/accounting-years?pageindex=0&filter=fromDate%24gte%3A2022-01-01%24and%3AtoDate%24lte%3A2023-12-31&pagesize=1000&skippages=0"
+  },
+  "self": "https://restapi.e-conomic.com/accounting-years?pageindex=0&filter=fromDate%24gte%3A2022-01-01%24and%3AtoDate%24lte%3A2023-12-31&pagesize=1000"
+}

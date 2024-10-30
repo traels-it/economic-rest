@@ -1,0 +1,48 @@
+{
+  "collection": [
+    {
+      "customerContactNumber": 1,
+      "email": "frasierc@mailinator.com",
+      "name": "Frasier Crane",
+      "phone": "08761343453",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 1,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/1"
+    },
+    {
+      "customerContactNumber": 2,
+      "email": "daphnem@mailinator.com",
+      "name": "Daphne Moon",
+      "phone": "08713124141",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 2,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/2"
+    },
+    {
+      "customerContactNumber": 17,
+      "name": "Test",
+      "customer": {
+        "customerNumber": 1,
+        "self": "https://restapi.e-conomic.com/customers/1"
+      },
+      "sortKey": 3,
+      "self": "https://restapi.e-conomic.com/customers/1/contacts/17"
+    }
+  ],
+  "pagination": {
+    "skipPages": 0,
+    "pageSize": 1000,
+    "maxPageSizeAllowed": 1000,
+    "results": 3,
+    "resultsWithoutFilter": 3,
+    "firstPage": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000",
+    "lastPage": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000"
+  },
+  "self": "https://restapi.e-conomic.com/customers/1/contacts?skippages=0&pagesize=1000"
+}

@@ -30,7 +30,7 @@ module Economic
       relation :customer_group
       # field :default_delivery_location
       # field :invoices
-      # relation :layout
+      relation :layout
       relation :payment_terms
       # field :sales_person
       # field :templates

@@ -14,8 +14,8 @@ module Economic
 
       relation :product
       relation :unit
-      # relation :delivery
-      # relation :departmental_distribution
+      relation :delivery
+      relation :departmental_distribution
     end
   end
 end

@@ -1,0 +1,18 @@
+{
+  "supplierNumber": 1,
+  "currency": "DKK",
+  "name": "Mr. Anderson",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "supplierGroup": {
+    "supplierGroupNumber": 1,
+    "self": "https://restapi.e-conomic.com/supplier-groups/1"
+  },
+  "vatZone": {
+    "vatZoneNumber": 1,
+    "self": "https://restapi.e-conomic.com/vat-zones/1"
+  },
+  "self": "https://restapi.e-conomic.com/suppliers/1"
+}

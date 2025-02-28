@@ -5,6 +5,7 @@ module Economic
         field :id, as: :bookedInvoiceNumber
 
         relation :draft_invoice, klass: "Economic::Models::Invoices::Draft"
+        relation :pdf
       end
     end
   end

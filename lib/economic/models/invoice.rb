@@ -23,9 +23,9 @@ module Economic
       relation :notes
       relation :references
       relation :layout
-      # relation :delivery
+      relation :delivery
       # relation :delivery_location
-      # relation :pdf
+      relation :pdf
       # relation :project
     end
   end

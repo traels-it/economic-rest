@@ -15,8 +15,8 @@ module Economic
       # relation :inventory
       # field :invoices
       # field :pricing
-      # relation :product_group
-      # relation :unit
+      relation :product_group
+      relation :unit
     end
   end
 end

@@ -50,6 +50,7 @@ require "economic/models/departmental_distribution"
 require "economic/repos/supplier"
 require "economic/models/supplier"
 require "economic/models/supplier_group"
+require "economic/repos/pdf"
 require "economic/models/pdf"
 require "economic/models/product_group"
 

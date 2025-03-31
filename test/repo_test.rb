@@ -114,7 +114,7 @@ module Economic
       describe "#destroy" do
         it "destroys a record" do
           stub_request(:delete, "https://restapi.e-conomic.com/basics/3")
-            .to_return(status: 204, body: "", headers: {})
+            .to_return(status: 200, body: {message: "Deleted invoice.", deletedCount: 1, deletedItems: [{draftInvoiceNumber: 347, self: "https://restapi.e-conomic.com/invoices/drafts/347"}]}.to_json, headers: {})
 
           response = Economic::Repos::Basic.new.destroy(3)
 

@@ -30,7 +30,7 @@ module Economic
             self_link: parsed["self"],
             pagination: Economic::Response::Pagination.from_hash(parsed["pagination"])
           )
-        else
+        elsif parsed.key?("self")
           # find model class
           endpoint = parsed["self"][30..].split("/")[0..-2].join("/")
           model_class = model_class_from_endpoint(endpoint)
@@ -40,6 +40,8 @@ module Economic
             self_link: parsed["self"],
             meta_data: parsed["metaData"]
           )
+        else
+          true
         end
       end
 
